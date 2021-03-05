@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="有个瓜哥哥">
 <meta property="og:description" content="##1、自定义View流程图  ##2、测量View的宽高onMeasure 123456789101112131415161718protected void onMeasure(int widthMeasureSpec,int heightMeasureSpec)&amp;#123;    setMeasuredDimension(getDefaultSize(getSuggestedMinimumW">
 <meta property="og:locale">
-<meta property="og:image" content="http://ru.eyxyz.com/blog/imgs/201711080927001.jpg">
+<meta property="og:image" content="http://ru.wangqinglan.cn/blog/imgs/201711080927001.jpg">
 <meta property="article:published_time" content="2021-03-05T07:15:35.475Z">
-<meta property="article:modified_time" content="2020-12-17T06:15:28.000Z">
+<meta property="article:modified_time" content="2021-03-05T08:17:37.295Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ru.eyxyz.com/blog/imgs/201711080927001.jpg">
+<meta name="twitter:image" content="http://ru.wangqinglan.cn/blog/imgs/201711080927001.jpg">
   
     <link rel="alternative" href="/atom.xml" title="有个瓜哥哥" type="application/atom+xml">
   
@@ -177,7 +177,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>##1、自定义View流程图</p>
-<p><img src="http://ru.eyxyz.com/blog/imgs/201711080927001.jpg"></p>
+<p><img src="http://ru.wangqinglan.cn/blog/imgs/201711080927001.jpg"></p>
 <p>##2、测量View的宽高onMeasure</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">protected void onMeasure(int widthMeasureSpec,int heightMeasureSpec)&#123;</span><br><span class="line">    setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec), getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));</span><br><span class="line">&#125;</span><br><span class="line">public static int getDefaultSize(int size, int measureSpec)&#123;</span><br><span class="line">    int result &#x3D; size;</span><br><span class="line">    int specMode &#x3D; MeasureSpec.getMode(measureSpec);</span><br><span class="line">    int specSize &#x3D; MeasureSpec.getSize(measureSpec);</span><br><span class="line">    switch(specMode)&#123;</span><br><span class="line">        case MeasureSpec.UNSPECIFIED:</span><br><span class="line">            result &#x3D; size;</span><br><span class="line">        break;</span><br><span class="line">        case MeasureSpec.AT_MOST:</span><br><span class="line">        case MeasureSpec.EXACTLY:</span><br><span class="line">            result &#x3D; specSize;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>MeasureSpec三种模式</strong></p>
