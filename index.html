@@ -152,6 +152,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-FBReader" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/05/FBReader/">FBReader解析</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/05/FBReader/" class="archive-article-date">
+  	<time datetime="2021-03-05T08:22:27.569Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、设置字体</p>
+<p>2、添加下划线</p>
+<p>3、修改class内容样式</p>
+<p>4、可复制标点符号</p>
+<p>5、</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/05/FBReader/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-自定义View" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1033,81 +1100,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/05/RxJava/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Retrofit使用简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/05/Retrofit%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">FastJson常用问题</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/05/Retrofit%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.444Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##简介</p>
-<p>Retrofit与okhttp共同出自于Square公司，retrofit就是对okhttp做了一层封装。把网络请求都交给给了Okhttp，我们只需要通过简单的配置就能使用retrofit来进行网络请求。<br>github地址：<a target="_blank" rel="noopener" href="https://github.com/square/retrofit">https://github.com/square/retrofit</a></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h4 id="1-引入库"><a href="#1-引入库" class="headerlink" title="1.引入库"></a>1.引入库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compile&#39;com.squareup.retrofit2: retrofit: 2.3.0&#39;&#x2F;&#x2F;Retrofit库</span><br><span class="line">compile&#39;com.squareup.retrofit2: converter-scalars: 2.1.0&#39;</span><br><span class="line">compile&#39;com.squareup.retrofit2: converter-gson: 2.1.0&#39;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-接口定义"><a href="#2-接口定义" class="headerlink" title="2.接口定义"></a>2.接口定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface BlogService&#123;</span><br><span class="line">    @GET(&quot;blog&#x2F;&#123;id&#125;&quot;)</span><br><span class="line">    Call&lt;Result&lt;Blog&gt;&gt; getBlog(@Path(&quot;id&quot;) int id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-创建Retrofit实例"><a href="#3-创建Retrofit实例" class="headerlink" title="3.创建Retrofit实例"></a>3.创建Retrofit实例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Retrofit retrofit &#x3D; new Retrofit.Builder()</span><br><span class="line">  .baseUrl(&quot;http:&#x2F;&#x2F;baidu.com&#x2F;&quot;) &#x2F;&#x2F;设置网络请求的Url地址</span><br><span class="line">  .addConverterFactory(GsonConverterFactory.create()) &#x2F;&#x2F;增加返回值为String等基本类型的支持</span><br><span class="line">  .addConverterFactory(ScalarsConverterFactory.create()) &#x2F;&#x2F;增加返回值为Gson的支持(以实体类返回)</span><br><span class="line">  .build();</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-接口调用"><a href="#4-接口调用" class="headerlink" title="4.接口调用"></a>4.接口调用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">RequestService service &#x3D; retrofit.create(RequestService.class);</span><br><span class="line">service.search(&quot;好&quot;, 70).enqueue(new Callback() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onResponse(Call call, Response response) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void onFailure(Call call, Throwable t) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="注解详解"><a href="#注解详解" class="headerlink" title="注解详解"></a>注解详解</h2><h4 id="第一类：请求方法"><a href="#第一类：请求方法" class="headerlink" title="第一类：请求方法"></a>第一类：请求方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@GET(&quot;RussianDictionaryServer&#x2F;word&#x2F;api&#x2F;search&quot;)</span><br><span class="line">Call search(@Query(&quot;key&quot;) String key, @Query(&quot;v&quot;) int v);</span><br><span class="line">@POST(&quot;RussianDictionaryServer&#x2F;word&#x2F;api&#x2F;search&quot;)</span><br><span class="line">Call search(@Query(&quot;key&quot;) String key, @Query(&quot;v&quot;) int v);</span><br></pre></td></tr></table></figure>
-<h4 id="第二类：标记类"><a href="#第二类：标记类" class="headerlink" title="第二类：标记类"></a>第二类：标记类</h4><p><img src="http://ru.wangqinglan.cn/blog/imgs/201710241705001.png"></p>
-<h4 id="第三类：参数类"><a href="#第三类：参数类" class="headerlink" title="第三类：参数类"></a>第三类：参数类</h4><p><img src="http://ru.wangqinglan.cn/blog/imgs/201710241705002.png"></p>
-<h2 id="遇到的错误"><a href="#遇到的错误" class="headerlink" title="遇到的错误"></a>遇到的错误</h2><p>java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 2 path $<br><code>addConverterFactory(ScalarsConverterFactory.create())</code></p>
-<p>java.lang.IllegalArgumentException: Could not locate ResponseBody converter for class java.lang.String.<br><code>addConverterFactory(ScalarsConverterFactory.create())</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/05/Retrofit%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">展开全文 >></a>
         </p>
       
 

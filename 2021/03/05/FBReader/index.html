@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>自定义View | 有个瓜哥哥</title>
+  <title>FBReader解析 | 有个瓜哥哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##1、自定义View流程图  ##2、测量View的宽高onMeasure 123456789101112131415161718protected void onMeasure(int widthMeasureSpec,int heightMeasureSpec)&amp;#123;    setMeasuredDimension(getDefaultSize(getSuggestedMinimumW">
+  <meta name="description" content="1、设置字体 2、添加下划线 3、修改class内容样式 4、可复制标点符号 5、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义View">
-<meta property="og:url" content="http://example.com/2021/03/05/%E8%87%AA%E5%AE%9A%E4%B9%89View/index.html">
+<meta property="og:title" content="FBReader解析">
+<meta property="og:url" content="http://example.com/2021/03/05/FBReader/index.html">
 <meta property="og:site_name" content="有个瓜哥哥">
-<meta property="og:description" content="##1、自定义View流程图  ##2、测量View的宽高onMeasure 123456789101112131415161718protected void onMeasure(int widthMeasureSpec,int heightMeasureSpec)&amp;#123;    setMeasuredDimension(getDefaultSize(getSuggestedMinimumW">
+<meta property="og:description" content="1、设置字体 2、添加下划线 3、修改class内容样式 4、可复制标点符号 5、">
 <meta property="og:locale">
-<meta property="og:image" content="http://ru.wangqinglan.cn/blog/imgs/201711080927001.jpg">
-<meta property="article:published_time" content="2021-03-05T07:15:35.475Z">
-<meta property="article:modified_time" content="2021-03-05T08:17:37.295Z">
+<meta property="article:published_time" content="2021-03-05T08:22:27.569Z">
+<meta property="article:modified_time" content="2021-03-05T08:29:36.219Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ru.wangqinglan.cn/blog/imgs/201711080927001.jpg">
   
     <link rel="alternative" href="/atom.xml" title="有个瓜哥哥" type="application/atom+xml">
   
@@ -156,44 +154,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-自定义View" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-FBReader" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      自定义View
+      FBReader解析
     </h1>
   
 
         
-        <a href="/2021/03/05/%E8%87%AA%E5%AE%9A%E4%B9%89View/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.475Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2021/03/05/FBReader/" class="archive-article-date">
+  	<time datetime="2021-03-05T08:22:27.569Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##1、自定义View流程图</p>
-<p><img src="http://ru.wangqinglan.cn/blog/imgs/201711080927001.jpg"></p>
-<p>##2、测量View的宽高onMeasure</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">protected void onMeasure(int widthMeasureSpec,int heightMeasureSpec)&#123;</span><br><span class="line">    setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec), getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));</span><br><span class="line">&#125;</span><br><span class="line">public static int getDefaultSize(int size, int measureSpec)&#123;</span><br><span class="line">    int result &#x3D; size;</span><br><span class="line">    int specMode &#x3D; MeasureSpec.getMode(measureSpec);</span><br><span class="line">    int specSize &#x3D; MeasureSpec.getSize(measureSpec);</span><br><span class="line">    switch(specMode)&#123;</span><br><span class="line">        case MeasureSpec.UNSPECIFIED:</span><br><span class="line">            result &#x3D; size;</span><br><span class="line">        break;</span><br><span class="line">        case MeasureSpec.AT_MOST:</span><br><span class="line">        case MeasureSpec.EXACTLY:</span><br><span class="line">            result &#x3D; specSize;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>MeasureSpec三种模式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MeasureSpec.UNSPECIFIED,</span><br><span class="line">MeasureSpec.EXACTLY,</span><br><span class="line">MeasureSpec.AT_MOST</span><br></pre></td></tr></table></figure>
-<p><strong>MeasureSpec.EXACTLY</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">最大尺寸，当控件的layout_width或layout_height指定为WRAP_CONTENT时，</span><br><span class="line">控件大小一般随着控件的子空间或内容进行变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。</span><br><span class="line">因此，此时的mode是AT_MOST，size给出了父控件允许的最大尺寸。</span><br><span class="line">精确尺寸，当我们将控件的layout_width或layout_height指定为具体数值时。</span><br><span class="line">如andorid: layout_width&#x3D;&quot;50dip&quot;，或者为match_parent时，都是控件大小已经确定的情况，都是精确尺寸。*</span><br></pre></td></tr></table></figure>
-<p>**  MeasureSpec.AT_MOST **</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">最大尺寸，当控件的layout_width或layout_height指定为WRAP_CONTENT时，</span><br><span class="line">控件大小一般随着控件的子空间或内容进行变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。</span><br><span class="line">因此，此时的mode是AT_MOST，size给出了父控件允许的最大尺寸。</span><br></pre></td></tr></table></figure>
-<p>**  MeasureSpec.UNSPECIFIED **</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">未指定尺寸，这种情况不多，一般都是父控件是AdapterView，通过measure方法传入的模式。</span><br></pre></td></tr></table></figure>
-<h2 id="3、自定义属性"><a href="#3、自定义属性" class="headerlink" title="3、自定义属性"></a>3、自定义属性</h2><ul>
-<li>  1.在values文件夹下，打开attrs.xml，其实这个文件名称可以是任意的，写在这里更规范一点，表示里面放的全是view的属性。</li>
-<li>  2.因为我们下面的实例会用到2个长度，一个颜色值的属性，所以我们这里先创建3个属性。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;declare-styleable name&#x3D;&quot;rainbowbar&quot;&gt;</span><br><span class="line">    &lt;attr name&#x3D;&quot;rainbowbar_hspace&quot; format&#x3D;&quot;dimension&quot;&gt;&lt;&#x2F;attr&gt;</span><br><span class="line">    &lt;attr name&#x3D;&quot;rainbowbar_vspace&quot; format&#x3D;&quot;dimension&quot;&gt;&lt;&#x2F;attr&gt;</span><br><span class="line">    &lt;attr name&#x3D;&quot;rainbowbar_color&quot; format&#x3D;&quot;color&quot;&gt;&lt;&#x2F;attr&gt;</span><br><span class="line">&lt;&#x2F;declare-styleable&gt;</span><br></pre></td></tr></table></figure></li>
-<li> 3.在构造方法中获取自定义属性的值。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TypedArray t &#x3D; context.obtainStyledAttributes(attrs, R.styleable.rainbowbar, 0, 0);</span><br><span class="line">hSpace &#x3D; t.getDimensionPixelSize(R.styleable.rainbowbar_rainbowbar_hspace, hSpace);</span><br><span class="line">vSpace &#x3D; t.getDimensionPixelOffset(R.styleable.rainbowbar_rainbowbar_vspace, vSpace);</span><br><span class="line">barColor &#x3D; t.getColor(R.styleable.rainbowbar_rainbowbar_color, barColor);</span><br><span class="line">t.recycle();   &#x2F;&#x2F; we should always recycle after used</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>1、设置字体</p>
+<p>2、添加下划线</p>
+<p>3、修改class内容样式</p>
+<p>4、可复制标点符号</p>
+<p>5、</p>
 
       
 
@@ -273,7 +258,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/05/%E8%87%AA%E5%AE%9A%E4%B9%89View/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/05/FBReader/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,18 +272,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/05/FBReader/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          FBReader解析
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/03/05/%E7%AC%A6%E5%8F%B7%E5%A4%A7%E5%85%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">符号大全</div>
+    <a href="/2021/03/05/%E8%87%AA%E5%AE%9A%E4%B9%89View/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">自定义View</div>
       <i class="icon-circle-right"></i>
     </a>
   

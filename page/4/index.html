@@ -152,6 +152,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Activity Uri解析问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/05/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">Activity Uri 解析问题</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/05/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-03-05T06:19:27.278Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天遇到客户端Uri解析出内容中汉字展示乱码，Uri格式如下：app://cnki.net?code=bb4&amp;title=50%的人口&amp;作者=中国知网。</p>
+<h4 id="查看读取代码，未发现什么问题："><a href="#查看读取代码，未发现什么问题：" class="headerlink" title="查看读取代码，未发现什么问题："></a>查看读取代码，未发现什么问题：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Uri uri &#x3D; Uri.parse(&quot;app:&#x2F;&#x2F;cnki.net?code&#x3D;bb4&amp;title&#x3D;50%的人口&amp;作者&#x3D;中国知网&quot;);</span><br><span class="line">String code &#x3D; uri.getQueryParameter(&quot;code&quot;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="进一步查看源码"><a href="#进一步查看源码" class="headerlink" title="进一步查看源码"></a>进一步查看源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public String getQueryParameter(String key) &#123;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;传入的uri参数信息，内部没有再编码，需要传入时编码</span><br><span class="line">    final String query &#x3D; getEncodedQuery();</span><br><span class="line">	&#x2F;&#x2F;注意：内部方法对key进行编码查询</span><br><span class="line">    final String encodedKey &#x3D; encode(key, null);</span><br><span class="line">    final int length &#x3D; query.length();</span><br><span class="line">    int start &#x3D; 0;</span><br><span class="line">    do &#123;</span><br><span class="line">        int nextAmpersand &#x3D; query.indexOf(&#39;&amp;&#39;, start);</span><br><span class="line">        int end &#x3D; nextAmpersand !&#x3D; -1 ? nextAmpersand : length;</span><br><span class="line">        int separator &#x3D; query.indexOf(&#39;&#x3D;&#39;, start);</span><br><span class="line">        if (separator &gt; end || separator &#x3D;&#x3D; -1) &#123;</span><br><span class="line">            separator &#x3D; end;</span><br><span class="line">        &#125;</span><br><span class="line">        if (separator - start &#x3D;&#x3D; encodedKey.length()</span><br><span class="line">            &amp;&amp; query.regionMatches(start, encodedKey, 0, encodedKey.length())) &#123;</span><br><span class="line">            if (separator &#x3D;&#x3D; end) &#123;</span><br><span class="line">                return &quot;&quot;;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                String encodedValue &#x3D; query.substring(separator + 1, end);</span><br><span class="line">				&#x2F;&#x2F;乱码原因，对传入未编码的内容进行了解码</span><br><span class="line">                return UriCodec.decode(encodedValue, true, StandardCharsets.UTF_8, false);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (nextAmpersand !&#x3D; -1) &#123;</span><br><span class="line">            start &#x3D; nextAmpersand + 1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; while (true);</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="乱码原因："><a href="#乱码原因：" class="headerlink" title="乱码原因："></a>乱码原因：</h4><p>在调用Uri.parse方法时传入数据格式不对，经查看源码发现这里接收的uri参数部门需要进行编码，查询到内容后再解码返回，由于传入内容没有进行编码导致解码出来的内容出现乱码。</p>
+<h4 id="解决办法，对参数内容进行编码"><a href="#解决办法，对参数内容进行编码" class="headerlink" title="解决办法，对参数内容进行编码"></a>解决办法，对参数内容进行编码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String url &#x3D; &quot;app:&#x2F;&#x2F;cnki.net?&quot; +</span><br><span class="line">            Uri.encode(&quot;code&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;123&quot;) + &quot;&amp;&quot; +</span><br><span class="line">            Uri.encode(&quot;title&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;50%笔记&quot;) + &quot;&amp;&quot; +</span><br><span class="line">            Uri.encode(&quot;姓名&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;王豪hhhh&quot;);</span><br><span class="line">Uri uri &#x3D; Uri.parse(url);</span><br><span class="line">String code &#x3D; uri.getQueryParameter(&quot;code&quot;);			</span><br></pre></td></tr></table></figure>
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/05/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SVN、Git常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1050,70 +1120,6 @@ summer10123 NjI3OTAzMDc=
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/05/Android%20Drawable%20%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%88%86%E5%89%B2%E7%BA%BF%E9%AB%98%E5%BA%A6%E5%92%8C%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android PopupWindow showAsDropDown 7.0上无效" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/05/Android%20PopupWindow%20showAsDropDown%207.0%E4%B8%8A%E6%97%A0%E6%95%88/">Android PopupWindow showAsDropDown 7.0上无效</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/05/Android%20PopupWindow%20showAsDropDown%207.0%E4%B8%8A%E6%97%A0%E6%95%88/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.811Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Android PopupWindow showAsDropDown 7.0上无效</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">24</span>) &#123;</span><br><span class="line">    Rect rect = <span class="keyword">new</span> Rect();</span><br><span class="line">    view.getGlobalVisibleRect(rect);</span><br><span class="line">    <span class="keyword">int</span> h = view.getResources().getDisplayMetrics().heightPixels - rect.bottom;</span><br><span class="line">    mPopupWindow.setHeight(h);</span><br><span class="line">&#125;</span><br><span class="line">mPopupWindow.showAsDropDown(view);</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/05/Android%20PopupWindow%20showAsDropDown%207.0%E4%B8%8A%E6%97%A0%E6%95%88/">展开全文 >></a>
         </p>
       
 

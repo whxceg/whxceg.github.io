@@ -152,6 +152,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos安装Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/05/Centos%E5%AE%89%E8%A3%85Tomcat/">Centos安装Tomcat</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/05/Centos%E5%AE%89%E8%A3%85Tomcat/" class="archive-article-date">
+  	<time datetime="2021-03-05T07:15:35.391Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##安装Tomcat</p>
+<p>####1、下载Tomcat<br>下载地址：<a target="_blank" rel="noopener" href="http://tomcat.apache.org/download-70.cgi">http: //tomcat.apache.org/download-70.cgi</a></p>
+<p>####2、将apache-tomcat-7.0.29.tar.gz文件上传到/usr/local中执行以下操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxv -f apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;解压压缩包</span><br><span class="line">rm -rf apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;删除压缩包</span><br><span class="line">mv apache-tomcat-7.0.29 tomcat</span><br></pre></td></tr></table></figure>
+
+<p>####3、启动Tomcat<br><code>/usr/local/tomcat/bin/startup.sh</code></p>
+<p>####4、防火墙开放8080端口</p>
+<p><strong>增加8080端口到防火墙配置中，执行以下操作：</strong><br>[root@admin ~]# vi + /etc/sysconfig/iptables<br>增加以下代码<br><code>-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT</code><br><strong>重启防火墙</strong><br>[root@admin java]# service iptables restart<br>检验Tomcat安装运行<br>通过以下地址查看tomcat是否运行正常：<br><a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a><br>看到tomcat系统界面，说明安装成功！<br><strong>停止Tomcat</strong><br> [root@admin ~]#/usr/local/tomcat/bin/shutdown.sh</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/05/Centos%E5%AE%89%E8%A3%85Tomcat/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CentOS7安装git、Maven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -871,76 +941,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/05/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Activity Uri解析问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/05/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">Activity Uri 解析问题</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/05/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:19:27.278Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天遇到客户端Uri解析出内容中汉字展示乱码，Uri格式如下：app://cnki.net?code=bb4&amp;title=50%的人口&amp;作者=中国知网。</p>
-<h4 id="查看读取代码，未发现什么问题："><a href="#查看读取代码，未发现什么问题：" class="headerlink" title="查看读取代码，未发现什么问题："></a>查看读取代码，未发现什么问题：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Uri uri &#x3D; Uri.parse(&quot;app:&#x2F;&#x2F;cnki.net?code&#x3D;bb4&amp;title&#x3D;50%的人口&amp;作者&#x3D;中国知网&quot;);</span><br><span class="line">String code &#x3D; uri.getQueryParameter(&quot;code&quot;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="进一步查看源码"><a href="#进一步查看源码" class="headerlink" title="进一步查看源码"></a>进一步查看源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public String getQueryParameter(String key) &#123;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;传入的uri参数信息，内部没有再编码，需要传入时编码</span><br><span class="line">    final String query &#x3D; getEncodedQuery();</span><br><span class="line">	&#x2F;&#x2F;注意：内部方法对key进行编码查询</span><br><span class="line">    final String encodedKey &#x3D; encode(key, null);</span><br><span class="line">    final int length &#x3D; query.length();</span><br><span class="line">    int start &#x3D; 0;</span><br><span class="line">    do &#123;</span><br><span class="line">        int nextAmpersand &#x3D; query.indexOf(&#39;&amp;&#39;, start);</span><br><span class="line">        int end &#x3D; nextAmpersand !&#x3D; -1 ? nextAmpersand : length;</span><br><span class="line">        int separator &#x3D; query.indexOf(&#39;&#x3D;&#39;, start);</span><br><span class="line">        if (separator &gt; end || separator &#x3D;&#x3D; -1) &#123;</span><br><span class="line">            separator &#x3D; end;</span><br><span class="line">        &#125;</span><br><span class="line">        if (separator - start &#x3D;&#x3D; encodedKey.length()</span><br><span class="line">            &amp;&amp; query.regionMatches(start, encodedKey, 0, encodedKey.length())) &#123;</span><br><span class="line">            if (separator &#x3D;&#x3D; end) &#123;</span><br><span class="line">                return &quot;&quot;;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                String encodedValue &#x3D; query.substring(separator + 1, end);</span><br><span class="line">				&#x2F;&#x2F;乱码原因，对传入未编码的内容进行了解码</span><br><span class="line">                return UriCodec.decode(encodedValue, true, StandardCharsets.UTF_8, false);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (nextAmpersand !&#x3D; -1) &#123;</span><br><span class="line">            start &#x3D; nextAmpersand + 1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; while (true);</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="乱码原因："><a href="#乱码原因：" class="headerlink" title="乱码原因："></a>乱码原因：</h4><p>在调用Uri.parse方法时传入数据格式不对，经查看源码发现这里接收的uri参数部门需要进行编码，查询到内容后再解码返回，由于传入内容没有进行编码导致解码出来的内容出现乱码。</p>
-<h4 id="解决办法，对参数内容进行编码"><a href="#解决办法，对参数内容进行编码" class="headerlink" title="解决办法，对参数内容进行编码"></a>解决办法，对参数内容进行编码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String url &#x3D; &quot;app:&#x2F;&#x2F;cnki.net?&quot; +</span><br><span class="line">            Uri.encode(&quot;code&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;123&quot;) + &quot;&amp;&quot; +</span><br><span class="line">            Uri.encode(&quot;title&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;50%笔记&quot;) + &quot;&amp;&quot; +</span><br><span class="line">            Uri.encode(&quot;姓名&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;王豪hhhh&quot;);</span><br><span class="line">Uri uri &#x3D; Uri.parse(url);</span><br><span class="line">String code &#x3D; uri.getQueryParameter(&quot;code&quot;);			</span><br></pre></td></tr></table></figure>
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/05/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">展开全文 >></a>
         </p>
       
 
