@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Java正则表达式 | 有个瓜哥哥</title>
+  <title>NDK开发 | 有个瓜哥哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="特别字符 描述    $ 匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。   ( ) 标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。   * 匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。   + 匹配前面的子表达">
+  <meta name="description" content="1、创建java类和native方法12345package com.example.jnitest;public class NativeUtil &amp;#123;    native String doSomething();&amp;#125; 2、执行javah命令生成头文件打开命令行切换到java目录、执行javah命令 1javah com.example.jnitest.NativeUtil 创">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java正则表达式">
-<meta property="og:url" content="http://example.com/2021/03/05/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="NDK开发">
+<meta property="og:url" content="http://example.com/2021/04/02/NDK%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="有个瓜哥哥">
-<meta property="og:description" content="特别字符 描述    $ 匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。   ( ) 标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。   * 匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。   + 匹配前面的子表达">
+<meta property="og:description" content="1、创建java类和native方法12345package com.example.jnitest;public class NativeUtil &amp;#123;    native String doSomething();&amp;#125; 2、执行javah命令生成头文件打开命令行切换到java目录、执行javah命令 1javah com.example.jnitest.NativeUtil 创">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-03-05T06:10:08.822Z">
-<meta property="article:modified_time" content="2021-04-02T02:13:00.521Z">
+<meta property="article:published_time" content="2021-04-02T07:50:51.227Z">
+<meta property="article:modified_time" content="2021-04-14T02:56:02.007Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta name="twitter:card" content="summary">
   
@@ -154,91 +154,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java正则表达式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-NDK开发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java正则表达式
+      NDK开发
     </h1>
   
 
         
-        <a href="/2021/03/05/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2021/04/02/NDK%E5%BC%80%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2021-04-02T07:50:51.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <table>
-<thead>
-<tr>
-<th>特别字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$</td>
-<td>匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。</td>
-</tr>
-<tr>
-<td>( )</td>
-<td>标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。</td>
-</tr>
-<tr>
-<td>*</td>
-<td>匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。</td>
-</tr>
-<tr>
-<td>.</td>
-<td>匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 . 。</td>
-</tr>
-<tr>
-<td>[</td>
-<td>标记一个中括号表达式的开始。要匹配 [，请使用 [。</td>
-</tr>
-<tr>
-<td>?</td>
-<td>匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。</td>
-</tr>
-<tr>
-<td>\</td>
-<td>将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\‘ 匹配 “&quot;，而 ‘(‘ 则匹配 “(“。</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配输入字符串的开始位置，除非在方括号表达式中使用，当该符号在方括号表达式中使用时，表示不接受该方括号表达式中的字符集合。要匹配 ^ 字符本身，请使用 ^。</td>
-</tr>
-<tr>
-<td>{</td>
-<td>标记限定符表达式的开始。要匹配 {，请使用 {。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字。</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母或数字或下划线或汉字 等价于 ‘[^A-Za-z0-9_]’。</td>
-</tr>
-</tbody></table>
-<h4 id="匹配-及其中的内容"><a href="#匹配-及其中的内容" class="headerlink" title="匹配{}及其中的内容"></a>匹配{}及其中的内容</h4><p>видеть на три {}аршина под землю{ (землёй)}</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.replaceAll(<span class="string">&quot;(\\&#123;.*?&#125;)&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">видеть на три аршина под землю</span><br></pre></td></tr></table></figure>
-<h4 id="Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏"><a href="#Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏" class="headerlink" title="Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏"></a>Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//隐藏手机号码中间四位</span></span><br><span class="line">String phoneNumber = <span class="string">&quot;13234567890&quot;</span>;</span><br><span class="line">String resultPhone= phoneNumber.replaceAll(<span class="string">&quot;(\\d&#123;3&#125;)\\d&#123;4&#125;(\\d&#123;4&#125;)&quot;</span>,<span class="string">&quot;$1****$2&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的手机号：&quot;</span> + resultPhone);</span><br><span class="line"><span class="comment">//隐藏邮箱</span></span><br><span class="line">String email = <span class="string">&quot;1234567@qq.com&quot;</span>;</span><br><span class="line">String resultEmail = email.replaceAll(<span class="string">&quot;(\\w?)(\\w+)(\\w)(@\\w+\\.[a-z]+(\\.[a-z]+)?)&quot;</span>, <span class="string">&quot;$1****$3$4&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的邮箱：&quot;</span> + resultEmail);</span><br><span class="line"><span class="comment">//隐藏身份证</span></span><br><span class="line">String idCard = <span class="string">&quot;420116199302220456&quot;</span>;</span><br><span class="line">String resultIdCard = idCard.replaceAll(<span class="string">&quot;(\\d&#123;4&#125;)\\d&#123;10&#125;(\\w&#123;4&#125;)&quot;</span>,<span class="string">&quot;$1*****$2&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的身份证号：&quot;</span> + resultIdCard);</span><br></pre></td></tr></table></figure>
+        <h4 id="1、创建java类和native方法"><a href="#1、创建java类和native方法" class="headerlink" title="1、创建java类和native方法"></a>1、创建java类和native方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.jnitest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NativeUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">native</span> String <span class="title">doSomething</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、执行javah命令生成头文件"><a href="#2、执行javah命令生成头文件" class="headerlink" title="2、执行javah命令生成头文件"></a>2、执行javah命令生成头文件</h4><p>打开命令行切换到java目录、执行javah命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javah com.example.jnitest.NativeUtil</span><br></pre></td></tr></table></figure>
+<h4 id="创建native文件"><a href="#创建native文件" class="headerlink" title="创建native文件"></a>创建native文件</h4><p>1、在main目录下创建jni文件夹，并在jni文件夹下创建model1文件夹。<br>2、复制命令生成的头文件到model目录下。<br>3、创建cpp文件，并引入上面的头文件。<br>4、复制方法到cpp文件并重写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;NativeUtil.h&quot;</span><br><span class="line">JNIEXPORT jstring JNICALL Java_com_example_jnitest_NativeUtil_doSomething(JNIEnv *env, jobject)&#123;</span><br><span class="line">    return env-&gt;NewStringUTF(&quot;hello java&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="匹配xxxx年xx期"><a href="#匹配xxxx年xx期" class="headerlink" title="匹配xxxx年xx期"></a>匹配xxxx年xx期</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name.replaceAll(<span class="string">&quot;(\\d&#123;4&#125;年\\w&#123;2&#125;期)$&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="创建Android-mk文件"><a href="#创建Android-mk文件" class="headerlink" title="创建Android.mk文件"></a>创建Android.mk文件</h4><p>在jni目录下创建Android.mk文件,并设置库名称和相关的cpp文件<br>LOCAL_MODULE 生成库的名称<br>LOCAL_SRC_FILES 模块中的cpp文件 多文件以空格分割</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LOCAL_PATH :&#x3D; $(call my-dir)</span><br><span class="line"></span><br><span class="line">include $(CLEAR_VARS)</span><br><span class="line"></span><br><span class="line">LOCAL_MODULE                  :&#x3D; NativeUtil-v3</span><br><span class="line">LOCAL_SRC_FILES               :&#x3D; model1&#x2F;NativeUtil.cpp</span><br><span class="line">LOCAL_LDLIBS                  :&#x3D; -lz</span><br><span class="line"></span><br><span class="line">include $(BUILD_SHARED_LIBRARY)</span><br></pre></td></tr></table></figure>
+<h4 id="创建Application-mk文件"><a href="#创建Application-mk文件" class="headerlink" title="创建Application.mk文件"></a>创建Application.mk文件</h4><p>在jni目录下创建Application.mk文件<br>APP_ABI 用来指定编译平台<br>APP_STL C++ 库支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">APP_ABI :&#x3D; arm64-v8a armeabi-v7a</span><br><span class="line">APP_STL :&#x3D; c++_static</span><br><span class="line">APP_PLATFORM :&#x3D; android-16</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改manifest文件，添加minSdkVersion"><a href="#修改manifest文件，添加minSdkVersion" class="headerlink" title="修改manifest文件，添加minSdkVersion"></a>修改manifest文件，添加minSdkVersion</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-sdk android:minSdkVersion&#x3D;&quot;23&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用ndk-build命令生成so库"><a href="#使用ndk-build命令生成so库" class="headerlink" title="使用ndk-build命令生成so库"></a>使用ndk-build命令生成so库</h4><p>命令行切换到jni目录下,执行ndk-build命令</p>
+<h4 id="把生成的so库复制到jniLibs目录下"><a href="#把生成的so库复制到jniLibs目录下" class="headerlink" title="把生成的so库复制到jniLibs目录下"></a>把生成的so库复制到jniLibs目录下</h4><p>在main目录下创建jniLibs目录，然后复制arm64-v8a等相关文件</p>
+<h4 id="Java代码中调用c-方法。"><a href="#Java代码中调用c-方法。" class="headerlink" title="Java代码中调用c++方法。"></a>Java代码中调用c++方法。</h4><p>1、加载库System.loadLibrary(“NativeUtil-v3”)；<br>注意：库的名称。例如：libNativeUtil-v3.so，要去了文件开始lib和文件后缀。<br>2、Java代码中调用native方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class NativeUtil &#123;</span><br><span class="line">    static &#123;</span><br><span class="line">        System.loadLibrary(&quot;NativeUtil-v3&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    static native String doSomething();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tv.setText(NativeUtil.doSomething());</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置ndk目录"><a href="#配置ndk目录" class="headerlink" title="配置ndk目录"></a>配置ndk目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ndk.dir&#x3D;C\:\\Users\\wanghao\\AppData\\Local\\Android\\Sdk\\ndk\\23.0.7196353</span><br></pre></td></tr></table></figure>
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>JNI类型映射</p>
+<p>Java 类型    本地类型    描述<br>boolean    jboolean    C/C++8位整型<br>byte    jbyte    C/C++带符号的8位整型<br>char    jchar    C/C++无符号的16位整型<br>short    jshort    C/C++带符号的16位整型<br>int    jint    C/C++带符号的32位整型<br>long    jlong    C/C++带符号的64位整型e<br>float    jfloat    C/C++32位浮点型<br>double    jdouble    C/C++64位浮点型<br>Object    jobject    任何Java对象，或者没有对应java类型的对象<br>Class    jclass    Class对象<br>String    jstring    字符串对象<br>Object[]    jobjectArray    任何对象的数组<br>boolean[]    jbooleanArray    布尔型数组<br>byte[]    jbyteArray    比特型数组<br>char[]    jcharArray    字符型数组<br>short[]    jshortArray    短整型数组<br>int[]    jintArray    整型数组<br>long[]    jlongArray    长整型数组<br>float[]    jfloatArray    浮点型数组<br>double[]    jdoubleArray    双浮点型数组</p>
+<h4 id="native方法常见问题"><a href="#native方法常见问题" class="headerlink" title="native方法常见问题"></a>native方法常见问题</h4><p>打印日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;android&#x2F;log.h&gt;</span><br><span class="line"></span><br><span class="line"> __android_log_print(ANDROID_LOG_INFO,&quot;myTag&quot;,&quot;info:\n%s&quot;,info);</span><br></pre></td></tr></table></figure>
+
+<p>创建字符串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env-&gt;NewStringUTF(&quot;hello java&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>获取字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取字符串</span><br><span class="line">const char* str &#x3D; env-&gt;GetStringUTFChars(jstr, 0);</span><br><span class="line">...</span><br><span class="line">&#x2F;&#x2F;释放内存</span><br><span class="line">env-&gt;ReleaseStringUTFChars(jstr, str);</span><br></pre></td></tr></table></figure>
+
+<p>获取Java中的byte[]数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取数组指针和长度</span><br><span class="line">jbyte *c_array &#x3D; env-&gt;GetByteArrayElements(j_array, 0);</span><br><span class="line">int len_arr &#x3D; env-&gt;GetArrayLength(j_array);</span><br><span class="line"></span><br><span class="line">jbyte buf[len_arr];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;释放内存</span><br><span class="line">env-&gt;ReleaseByteArrayElements(j_array, c_array, 0);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;赋值</span><br><span class="line">jbyteArray c_result &#x3D; env-&gt;NewByteArray(len_arr);</span><br><span class="line">env-&gt;SetByteArrayRegion(c_result, 0, len_arr, buf);</span><br><span class="line"></span><br><span class="line">return c_result;</span><br></pre></td></tr></table></figure>
+
+
+
+
 
       
 
@@ -318,7 +290,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/05/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/02/NDK%E5%BC%80%E5%8F%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +304,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/05/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/14/FFmpeg%E7%BC%96%E8%AF%91/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          搭建github.io博客
+          NDK开发
         
       </div>
     </a>
   
   
-    <a href="/2021/03/05/Gradle/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Gradle</div>
+    <a href="/2021/03/05/FBReader/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">FBReader解析</div>
       <i class="icon-circle-right"></i>
     </a>
   

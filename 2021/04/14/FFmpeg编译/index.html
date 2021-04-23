@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Java正则表达式 | 有个瓜哥哥</title>
+  <title>NDK开发 | 有个瓜哥哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="特别字符 描述    $ 匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。   ( ) 标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。   * 匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。   + 匹配前面的子表达">
+  <meta name="description" content="1、Window下FFmpeg编译环境搭建·1、下载软件MinGW下载地址：链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1lLtqaED9ud-IDul4cx3PhQ 提取码: pefd解压minGW、环境变量添加D:\MinGW\MinGW\bin和D:\MinGW\MinGW\msys\1.0\bin检查环境变量配置是否成功 gcc –version  make –version">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java正则表达式">
-<meta property="og:url" content="http://example.com/2021/03/05/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="NDK开发">
+<meta property="og:url" content="http://example.com/2021/04/14/FFmpeg%E7%BC%96%E8%AF%91/index.html">
 <meta property="og:site_name" content="有个瓜哥哥">
-<meta property="og:description" content="特别字符 描述    $ 匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。   ( ) 标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。   * 匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。   + 匹配前面的子表达">
+<meta property="og:description" content="1、Window下FFmpeg编译环境搭建·1、下载软件MinGW下载地址：链接: https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1lLtqaED9ud-IDul4cx3PhQ 提取码: pefd解压minGW、环境变量添加D:\MinGW\MinGW\bin和D:\MinGW\MinGW\msys\1.0\bin检查环境变量配置是否成功 gcc –version  make –version">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-03-05T06:10:08.822Z">
-<meta property="article:modified_time" content="2021-04-02T02:13:00.521Z">
+<meta property="article:published_time" content="2021-04-14T01:21:36.584Z">
+<meta property="article:modified_time" content="2021-04-14T02:12:01.931Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta name="twitter:card" content="summary">
   
@@ -154,91 +154,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java正则表达式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-FFmpeg编译" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java正则表达式
+      NDK开发
     </h1>
   
 
         
-        <a href="/2021/03/05/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2021/04/14/FFmpeg%E7%BC%96%E8%AF%91/" class="archive-article-date">
+  	<time datetime="2021-04-14T01:21:36.584Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <table>
-<thead>
-<tr>
-<th>特别字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$</td>
-<td>匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。</td>
-</tr>
-<tr>
-<td>( )</td>
-<td>标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。</td>
-</tr>
-<tr>
-<td>*</td>
-<td>匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。</td>
-</tr>
-<tr>
-<td>.</td>
-<td>匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 . 。</td>
-</tr>
-<tr>
-<td>[</td>
-<td>标记一个中括号表达式的开始。要匹配 [，请使用 [。</td>
-</tr>
-<tr>
-<td>?</td>
-<td>匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。</td>
-</tr>
-<tr>
-<td>\</td>
-<td>将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\‘ 匹配 “&quot;，而 ‘(‘ 则匹配 “(“。</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配输入字符串的开始位置，除非在方括号表达式中使用，当该符号在方括号表达式中使用时，表示不接受该方括号表达式中的字符集合。要匹配 ^ 字符本身，请使用 ^。</td>
-</tr>
-<tr>
-<td>{</td>
-<td>标记限定符表达式的开始。要匹配 {，请使用 {。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字。</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母或数字或下划线或汉字 等价于 ‘[^A-Za-z0-9_]’。</td>
-</tr>
-</tbody></table>
-<h4 id="匹配-及其中的内容"><a href="#匹配-及其中的内容" class="headerlink" title="匹配{}及其中的内容"></a>匹配{}及其中的内容</h4><p>видеть на три {}аршина под землю{ (землёй)}</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.replaceAll(<span class="string">&quot;(\\&#123;.*?&#125;)&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">видеть на три аршина под землю</span><br></pre></td></tr></table></figure>
-<h4 id="Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏"><a href="#Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏" class="headerlink" title="Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏"></a>Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//隐藏手机号码中间四位</span></span><br><span class="line">String phoneNumber = <span class="string">&quot;13234567890&quot;</span>;</span><br><span class="line">String resultPhone= phoneNumber.replaceAll(<span class="string">&quot;(\\d&#123;3&#125;)\\d&#123;4&#125;(\\d&#123;4&#125;)&quot;</span>,<span class="string">&quot;$1****$2&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的手机号：&quot;</span> + resultPhone);</span><br><span class="line"><span class="comment">//隐藏邮箱</span></span><br><span class="line">String email = <span class="string">&quot;1234567@qq.com&quot;</span>;</span><br><span class="line">String resultEmail = email.replaceAll(<span class="string">&quot;(\\w?)(\\w+)(\\w)(@\\w+\\.[a-z]+(\\.[a-z]+)?)&quot;</span>, <span class="string">&quot;$1****$3$4&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的邮箱：&quot;</span> + resultEmail);</span><br><span class="line"><span class="comment">//隐藏身份证</span></span><br><span class="line">String idCard = <span class="string">&quot;420116199302220456&quot;</span>;</span><br><span class="line">String resultIdCard = idCard.replaceAll(<span class="string">&quot;(\\d&#123;4&#125;)\\d&#123;10&#125;(\\w&#123;4&#125;)&quot;</span>,<span class="string">&quot;$1*****$2&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的身份证号：&quot;</span> + resultIdCard);</span><br></pre></td></tr></table></figure>
+        <h2 id="1、Window下FFmpeg编译环境搭建"><a href="#1、Window下FFmpeg编译环境搭建" class="headerlink" title="1、Window下FFmpeg编译环境搭建"></a>1、Window下FFmpeg编译环境搭建</h2><p>·1、下载软件MinGW<br>下载地址：链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1lLtqaED9ud-IDul4cx3PhQ">https://pan.baidu.com/s/1lLtqaED9ud-IDul4cx3PhQ</a> 提取码: pefd<br>解压minGW、环境变量添加D:\MinGW\MinGW\bin和D:\MinGW\MinGW\msys\1.0\bin<br>检查环境变量配置是否成功 gcc –version  make –version</p>
+<p>2、NDK 下载地址<br><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/downloads/">https://developer.android.google.cn/ndk/downloads/</a></p>
+<p>3、FFMpeg下载地址<br><a target="_blank" rel="noopener" href="https://gitee.com/mirrors/ffmpeg/">https://gitee.com/mirrors/ffmpeg/</a></p>
+<p>解压源码，切换到源码目录D:\ffmpeg-release-4.4\ffmpeg</p>
+<p>创建build_android.sh脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line"># ndk环境</span><br><span class="line">NDK&#x3D;d:&#x2F;android-ndk-r17c-windows-x86_64&#x2F;android-ndk-r17c</span><br><span class="line">SYSROOT&#x3D;$NDK&#x2F;platforms&#x2F;android-16&#x2F;arch-arm</span><br><span class="line">TOOLCHAIN&#x3D;$NDK&#x2F;toolchains&#x2F;arm-linux-androideabi-4.9&#x2F;prebuilt&#x2F;windows-x86_64</span><br><span class="line">CPU&#x3D;armv7-a</span><br><span class="line"></span><br><span class="line">ISYSROOT&#x3D;$NDK&#x2F;sysroot</span><br><span class="line">ASM&#x3D;$ISYSROOT&#x2F;usr&#x2F;include&#x2F;arm-linux-androideabi</span><br><span class="line"></span><br><span class="line"># 要保存动态库的目录，这里保存在源码根目录下的android&#x2F;armv7-a</span><br><span class="line">export PREFIX&#x3D;$(pwd)&#x2F;android&#x2F;$CPU</span><br><span class="line">ADDI_CFLAGS&#x3D;&quot;-marm&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 编译配置详解答</span><br><span class="line"># 设置编译针对的系统，网上查到很多资料说编译前需要修改configure文件，设置这项后就不用修改了，系统会自动修改，效果一样。</span><br><span class="line">#--target-os&#x3D;android \</span><br><span class="line"></span><br><span class="line"># 编译后文件的输出目录</span><br><span class="line">#--prefix&#x3D;$PREFIX \</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 编译动态库，shared和static的开关是相对的。</span><br><span class="line">#--enable-static \</span><br><span class="line">#--disable-shared \</span><br><span class="line"></span><br><span class="line"># 生成文档，以及相关的功能模块</span><br><span class="line">#--disable-doc \</span><br><span class="line"></span><br><span class="line"># 禁止编译可执行文件</span><br><span class="line">#--disable-programs</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 设置交叉编译器，按照实际路径修改就可以了。</span><br><span class="line">#--cross-prefix&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi- \</span><br><span class="line"># 设置编译器，不然会报错，系统默认会使用arm-linux-androideabi-clang，但是此编译器在NDK不存在，导致编译失败</span><br><span class="line">#--cc&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-gcc \</span><br><span class="line">#--nm&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-nm \</span><br><span class="line"></span><br><span class="line"># 设置编译so库的架构，当前设置为arm，可以根据实际需求修改</span><br><span class="line">#--arch&#x3D;arm \</span><br><span class="line"></span><br><span class="line"># 设置编译针对的平台，可以根据实际需求进行设置，当前设置为最低支持android-16版本，arm架构。</span><br><span class="line">#--sysroot&#x3D;$SYSROOT \</span><br><span class="line">#--extra-cflags&#x3D;&quot;-I$ASM -isysroot $ISYSROOT -D__ANDROID_API__&#x3D;16 -U_FILE_OFFSET_BITS -Os -fPIC -DANDROID -Wno-deprecated -mfloat-abi&#x3D;softfp -marm&quot; \</span><br><span class="line"></span><br><span class="line">#--extra-ldflags&#x3D;&quot;$ADDI_LDFLAGS&quot; \</span><br><span class="line"></span><br><span class="line">$ADDITIONAL_CONFIGURE_FLAG</span><br><span class="line"></span><br><span class="line">function build_android</span><br><span class="line">&#123;</span><br><span class="line">   echo -e &quot;\033[32m build start \033[0m&quot;</span><br><span class="line"></span><br><span class="line">   .&#x2F;configure \</span><br><span class="line">       --target-os&#x3D;android \</span><br><span class="line">       --prefix&#x3D;$PREFIX \</span><br><span class="line">       --enable-cross-compile \</span><br><span class="line">       --enable-static \</span><br><span class="line">       --disable-shared \</span><br><span class="line">       --enable-small \</span><br><span class="line">       --disable-programs \</span><br><span class="line">       --disable-encoders \</span><br><span class="line">       --disable-muxers \</span><br><span class="line">       --disable-filters \</span><br><span class="line">       --disable-avdevice \</span><br><span class="line">       --cross-prefix&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi- \</span><br><span class="line">       --cc&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-gcc \</span><br><span class="line">       --nm&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-nm \</span><br><span class="line">       --arch&#x3D;arm \</span><br><span class="line">       --sysroot&#x3D;$SYSROOT \</span><br><span class="line">       --extra-cflags&#x3D;&quot;-I$ASM -isysroot $ISYSROOT -D__ANDROID_API__&#x3D;16 -U_FILE_OFFSET_BITS -Os -fPIC -DANDROID -Wno-deprecated -mfloat-abi&#x3D;softfp -marm&quot; \</span><br><span class="line">       --extra-ldflags&#x3D;&quot;$ADDI_LDFLAGS&quot; \</span><br><span class="line">       $ADDITIONAL_CONFIGURE_FLAG</span><br><span class="line"></span><br><span class="line">   make clean</span><br><span class="line"></span><br><span class="line">   make -j4</span><br><span class="line">   make install</span><br><span class="line"></span><br><span class="line">   echo -e &quot;\033[32m build successful \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function merge</span><br><span class="line">&#123;</span><br><span class="line">   echo -e &quot;\033[32m package start \033[0m&quot;</span><br><span class="line"></span><br><span class="line">   # 打包</span><br><span class="line">   $TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-ld \</span><br><span class="line">       -rpath-link&#x3D;$SYSROOT&#x2F;usr&#x2F;lib \</span><br><span class="line">       -L$SYSROOT&#x2F;usr&#x2F;lib \</span><br><span class="line">       -L$PREFIX&#x2F;lib \</span><br><span class="line">       -soname libffmpeg.so -shared -nostdlib -Bsymbolic --whole-archive --no-undefined -o \</span><br><span class="line">       $PREFIX&#x2F;libffmpeg.so \</span><br><span class="line">       libavcodec&#x2F;libavcodec.a \</span><br><span class="line">       libavfilter&#x2F;libavfilter.a \</span><br><span class="line">       libavformat&#x2F;libavformat.a \</span><br><span class="line">       libavutil&#x2F;libavutil.a \</span><br><span class="line">       libswresample&#x2F;libswresample.a \</span><br><span class="line">       libswscale&#x2F;libswscale.a \</span><br><span class="line">       -lc -lm -lz -ldl -llog --dynamic-linker&#x3D;&#x2F;system&#x2F;bin&#x2F;linker \</span><br><span class="line">       $TOOLCHAIN&#x2F;lib&#x2F;gcc&#x2F;arm-linux-androideabi&#x2F;4.9.x&#x2F;libgcc.a</span><br><span class="line"></span><br><span class="line">   # strip 精简文件</span><br><span class="line">   $TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-strip  $PREFIX&#x2F;libffmpeg.so</span><br><span class="line"></span><br><span class="line">   echo -e &quot;\033[32m package successful \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">build_android</span><br><span class="line">merge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h4 id="匹配xxxx年xx期"><a href="#匹配xxxx年xx期" class="headerlink" title="匹配xxxx年xx期"></a>匹配xxxx年xx期</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name.replaceAll(<span class="string">&quot;(\\d&#123;4&#125;年\\w&#123;2&#125;期)$&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>执行脚本./build_android.sh</p>
+<h2 id="2集成到Android项目中"><a href="#2集成到Android项目中" class="headerlink" title="2集成到Android项目中"></a>2集成到Android项目中</h2><p>undefined reference to `av_register_all’</p>
+<p>ffmpeg是C语言写的,所以在引入C头文件时</p>
+<p>extern “C”<br>{<br>#include &lt;libavcodec/avcodec.h&gt;<br>#include &lt;libavformat/avformat.h&gt;<br>}</p>
 
       
 
@@ -318,7 +264,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/05/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/14/FFmpeg%E7%BC%96%E8%AF%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +278,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/05/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          搭建github.io博客
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/03/05/Gradle/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Gradle</div>
+    <a href="/2021/04/02/NDK%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">NDK开发</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -152,6 +152,141 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Charles抓包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/05/Charles%E6%8A%93%E5%8C%85/">使用Charles抓包</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/05/Charles%E6%8A%93%E5%8C%85/" class="archive-article-date">
+  	<time datetime="2021-03-05T07:15:35.395Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Charles破解："><a href="#Charles破解：" class="headerlink" title="Charles破解："></a>Charles破解：</h4><p>1.下载安装Charles<br>2.生成破解后的charles.jar(破解下载地址：<a target="_blank" rel="noopener" href="https://www.zzzmode.com/mytools/charles/">https://www.zzzmode.com/mytools/charles/</a>)<br>3.查找本地安装后charles.jar目录然后替换成破解后的charles.jar</p>
+<h4 id="手机抓包-HTTPS请求抓取"><a href="#手机抓包-HTTPS请求抓取" class="headerlink" title="手机抓包/HTTPS请求抓取"></a>手机抓包/HTTPS请求抓取</h4><h5 id="第一步：设置charles为允许状态（启用代理）；"><a href="#第一步：设置charles为允许状态（启用代理）；" class="headerlink" title="第一步：设置charles为允许状态（启用代理）；"></a>第一步：设置charles为允许状态（启用代理）；</h5><p>在Charles的菜单栏上选择“Proxy”-&gt;“Proxy Settings”，<br>1、设置端口号：8888，<br>2、勾选 Support HTTP/2<br>3、勾选 Enable transparent HTTP proxying</p>
+<h5 id="第二步：安装Charles证书，"><a href="#第二步：安装Charles证书，" class="headerlink" title="第二步：安装Charles证书，"></a>第二步：安装Charles证书，</h5><p>在Charles的菜单栏上选择“Help”-&gt;“SSL Proxying”-&gt; “Install Charles Root Certificate”：</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/05/Charles%E6%8A%93%E5%8C%85/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Centos使用Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/05/Centos%E4%BD%BF%E7%94%A8Tomcat/">Centos使用Tomcat</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/05/Centos%E4%BD%BF%E7%94%A8Tomcat/" class="archive-article-date">
+  	<time datetime="2021-03-05T07:15:35.393Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="80端口映射到8080端口"><a href="#80端口映射到8080端口" class="headerlink" title="80端口映射到8080端口"></a>80端口映射到8080端口</h2><p>iptables -tnat-APREROUTING-ptcp–dport80-jREDIRECT–to-port8080</p>
+<h2 id="保存映射避免重启失效"><a href="#保存映射避免重启失效" class="headerlink" title="保存映射避免重启失效"></a>保存映射避免重启失效</h2><p>iptables-save&gt;/etc/sysconfig/iptables</p>
+<h2 id="删除映射"><a href="#删除映射" class="headerlink" title="删除映射"></a>删除映射</h2><p><strong>iptables-tnat-DPREROUTING1</strong><br>以上那个/etc/sysconfig/iptables文件是随便一个文件名就可以。<br>打开/etc/rc.local文件，这个文件在启动时会自动load的。<br>把以下语句拷贝到rc.local里。主要要把/etc/sysconfig/iptables文件名字写对。<br><strong>iptables-restore&lt;/etc/sysconfig/iptables</strong></p>
+<h2 id="tomcat部署多个项目，通过不同域名解析访问不同的网站"><a href="#tomcat部署多个项目，通过不同域名解析访问不同的网站" class="headerlink" title="tomcat部署多个项目，通过不同域名解析访问不同的网站"></a>tomcat部署多个项目，通过不同域名解析访问不同的网站</h2><p>修改tomcat/conf/server.xml配置文件，新增部分如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Hostname&#x3D;&quot;blog.wangqinglan.cn&quot;  appBase&#x3D;&quot;webapps&quot; unpackWARs&#x3D;&quot;true&quot; autoDeploy&#x3D;&quot;true&quot;&gt;</span><br><span class="line">    &lt;Context docBase&#x3D;&quot;solo-2.4.0&quot; path&#x3D;&quot;&quot;  reloadable&#x3D;&quot;true&quot; &#x2F;&gt;</span><br><span class="line">    &lt;Valve className&#x3D;&quot;org.apache.catalina.valves.AccessLogValve&quot; directory&#x3D;&quot;logs&quot;</span><br><span class="line">               prefix&#x3D;&quot;localhost_access_log&quot; suffix&#x3D;&quot;.txt&quot;</span><br><span class="line">               pattern&#x3D;&quot;%h %l %u %t &quot;%r&quot; %s %b&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;Host&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="tomcat配置静态资源"><a href="#tomcat配置静态资源" class="headerlink" title="tomcat配置静态资源"></a>tomcat配置静态资源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Host name&#x3D;&quot;blog.wangqinglan.cn&quot;  appBase&#x3D;&quot;webapps&quot; unpackWARs&#x3D;&quot;true&quot; autoDeploy&#x3D;&quot;true&quot;&gt;</span><br><span class="line">    &lt;Context docBase&#x3D;&quot;solo-2.4.0&quot; path&#x3D;&quot;&quot;  reloadable&#x3D;&quot;true&quot; &#x2F;&gt;</span><br><span class="line">    &lt;Context docBase&#x3D;&quot;&#x2F;home&#x2F;sam&#x2F;files&quot; path&#x3D;&quot;&#x2F;files&quot;  reloadable&#x3D;&quot;true&quot; crossContext&#x3D;&quot;true&quot;&#x2F;&gt;</span><br><span class="line">    &lt;Valve className&#x3D;&quot;org.apache.catalina.valves.AccessLogValve&quot; directory&#x3D;&quot;logs&quot;</span><br><span class="line">               prefix&#x3D;&quot;localhost_access_log&quot; suffix&#x3D;&quot;.txt&quot;</span><br><span class="line">               pattern&#x3D;&quot;%h %l %u %t &quot;%r&quot; %s %b&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;Host&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase&#x3D;&quot;&#x2F;home&#x2F;sam&#x2F;files&quot; path&#x3D;&quot;&#x2F;files&quot;  reloadable&#x3D;&quot;true&quot; crossContext&#x3D;&quot;true&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="配置tomcat的centOS的开机启动："><a href="#配置tomcat的centOS的开机启动：" class="headerlink" title="配置tomcat的centOS的开机启动："></a>配置tomcat的centOS的开机启动：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">打开 #vi &#x2F;etc&#x2F;rc.local</span><br><span class="line">在文件的最后添加代码：</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;startup.sh</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/05/Centos%E4%BD%BF%E7%94%A8Tomcat/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Centos安装Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -776,171 +911,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/05/Android%20TabLayout%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-adb 查看当前页面的Activity名称" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/05/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">adb 查看当前页面的Activity名称</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/05/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:19:27.282Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br><span class="line">mCurrentFocus&#x3D;Window&#123;d7e0c6e u0 com.xunmeng.pinduoduo&#x2F;com.xunmeng.pinduoduo.ui.activity.HomeActivity&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/05/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Activity生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/05/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Activity生命周期</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/05/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:19:27.280Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##1、Activity生命周期</p>
-<p><strong>启动ActivityA</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityA: onCreate</span><br><span class="line">activityA: onStart</span><br><span class="line">activityA: onResume</span><br></pre></td></tr></table></figure>
-
-<p><strong>再启动ActivityB</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityA: onPause</span><br><span class="line">activityB: onCreate</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br><span class="line">activityA: onSaveInstanceState</span><br><span class="line">activityA: onStop</span><br></pre></td></tr></table></figure>
-
-<p><strong>再启动ActivityC</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityB: onPause</span><br><span class="line">activityC: onCreate</span><br><span class="line">activityC: onStart</span><br><span class="line">activityC: onResume</span><br><span class="line">activityB: onSaveInstanceState</span><br><span class="line">activityB: onStop</span><br></pre></td></tr></table></figure>
-
-<p><strong>退出ActivityC</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityC: onPause</span><br><span class="line">activityB: onRestart</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br><span class="line">activityC: onStop</span><br><span class="line">activityC: onDestroy</span><br></pre></td></tr></table></figure>
-<p><strong>点击Home键</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityB: onPause</span><br><span class="line">activityB: onSaveInstanceState</span><br><span class="line">activityB: onStop</span><br></pre></td></tr></table></figure>
-
-<p><strong>重新返回应用</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityB: onRestart</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br></pre></td></tr></table></figure>
-
-<p>##2、Activity的四种启动方式<br><strong>standard</strong><br>standard启动模式是默认的启动模式，每次启动一个Activity都会新建一个实例不管栈中是否已有该Activity的实例。</p>
-<p><strong>singleTop</strong><br>singleTop模式分3种情况<br>当前栈中已有该Activity的实例并且该实例位于栈顶时，不会新建实例，而是复用栈顶的实例，并且会将Intent对象传入，回调onNewIntent方法。<br>当前栈中已有该Activity的实例但是该实例不在栈顶时，其行为和standard启动模式一样，依然会创建一个新的实例。<br>当前栈中不存在该Activity的实例时，其行为同standard启动模式。<br><strong>singleTask</strong><br>singleTask启动模式启动Activity时，首先会根据taskAffinity去寻找当前是否存在一个对应名字的任务栈。<br>如果不存在，则会创建一个新的Task，并创建新的Activity实例入栈到新创建的Task中去。<br>如果存在，则得到该任务栈，查找该任务栈中是否存在该Activity实例。<br>如果存在实例，则将它上面的Activity实例都出栈，然后回调启动的Activity实例的onNewIntent方法。<br>如果不存在该实例，则新建Activity，并入栈<br>此外，我们可以将两个不同App中的Activity设置为相同的taskAffinity，这样虽然在不同的应用中，但是Activity会被分配到同一个Task中去。<br><strong>singleInstance</strong><br>该模式具备singleTask模式的所有特性外，与它的区别就是，这种模式下的Activity会单独占用一个Task栈，具有全局唯一性，即整个系统中就这么一个实例，由于栈内复用的特性，后续的请求均不会创建新的Activity实例，除非这个特殊的任务栈被销毁了。以singleInstance模式启动的Activity在整个系统中是单例的，如果在启动这样的Activiyt时，已经存在了一个实例，那么会把它所在的任务调度到前台，重用这个实例。</p>
-<p>##3、Android多线程的通信方式</p>
-<p><strong>1.安卓线程间通信的方式有以下几种</strong></p>
-<p>1）共享变量（内存）</p>
-<p>2）管道</p>
-<p>3）handle机制</p>
-<p>runOnUiThread(Runnable)</p>
-<p>view.post(Runnable)</p>
-<p>android进程内的消息驱动机制—Handler,<br>MessageQueue,<br>Runnable,<br>Looper</p>
-<p>Looper和Message的处理机制: 首先在主线程中创建了一个handler对象,<br>目的是为了处理从子线程发送过来的消息,<br>然后当子线程有发送消息的需求时会使用Message对象,<br>消息首先会被存储在Messagequeue消息队列中,<br>主线程还有一个Looper消息轮询器,<br>会循环遍历消息队列中的消息,<br>当发现消息的时候会发送消息给handler处理(更新ui等操作),<br>handler调用handleMessage处理完后将Message置为null以便回收.</p>
-<p><strong>2进程间的通信</strong></p>
-<p>进程间的通信：</p>
-<p>bind机制（IPC-&gt;AIDL)</p>
-<p>linux级共享内存</p>
-<p>boradcast</p>
-<p>Activity之间可以通过intent来传递数据</p>
-<p>##4、Android中的消息机制</p>
-<p>http: //<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/02962454adf7">www.jianshu.com/p/02962454adf7</a><br>##5、HandlerThread的原理</p>
-<p>http: //<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/4a57de01c8f5">www.jianshu.com/p/4a57de01c8f5</a><br>##5、Window的工作原理和作用<br>http: //blog.csdn.net/xieqibao/article/details/6567814</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/05/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">展开全文 >></a>
         </p>
       
 
