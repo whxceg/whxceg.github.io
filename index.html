@@ -152,38 +152,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-FFmpeg编译" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/FFmpeg%E7%BC%96%E8%AF%91/">FFmpeg编译</a>
+      <a class="article-title" href="/2021/04/26/test/">test</a>
     </h1>
   
 
         
-        <a href="/2021/FFmpeg%E7%BC%96%E8%AF%91/" class="archive-article-date">
-  	<time datetime="2021-04-14T01:21:36.584Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-14</time>
+        <a href="/2021/04/26/test/" class="archive-article-date">
+  	<time datetime="2021-04-26T02:27:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、Window下FFmpeg编译环境搭建"><a href="#1、Window下FFmpeg编译环境搭建" class="headerlink" title="1、Window下FFmpeg编译环境搭建"></a>1、Window下FFmpeg编译环境搭建</h2><p>·1、下载软件MinGW<br>下载地址：链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1lLtqaED9ud-IDul4cx3PhQ">https://pan.baidu.com/s/1lLtqaED9ud-IDul4cx3PhQ</a> 提取码: pefd<br>解压minGW、环境变量添加D:\MinGW\MinGW\bin和D:\MinGW\MinGW\msys\1.0\bin<br>检查环境变量配置是否成功 gcc –version  make –version</p>
-<p>2、NDK 下载地址<br><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/downloads/">https://developer.android.google.cn/ndk/downloads/</a></p>
-<p>3、FFMpeg下载地址<br><a target="_blank" rel="noopener" href="https://gitee.com/mirrors/ffmpeg/">https://gitee.com/mirrors/ffmpeg/</a></p>
-<p>解压源码，切换到源码目录D:\ffmpeg-release-4.4\ffmpeg</p>
-<p>创建build_android.sh脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line"># ndk环境</span><br><span class="line">NDK&#x3D;d:&#x2F;android-ndk-r17c-windows-x86_64&#x2F;android-ndk-r17c</span><br><span class="line">SYSROOT&#x3D;$NDK&#x2F;platforms&#x2F;android-16&#x2F;arch-arm</span><br><span class="line">TOOLCHAIN&#x3D;$NDK&#x2F;toolchains&#x2F;arm-linux-androideabi-4.9&#x2F;prebuilt&#x2F;windows-x86_64</span><br><span class="line">CPU&#x3D;armv7-a</span><br><span class="line"></span><br><span class="line">ISYSROOT&#x3D;$NDK&#x2F;sysroot</span><br><span class="line">ASM&#x3D;$ISYSROOT&#x2F;usr&#x2F;include&#x2F;arm-linux-androideabi</span><br><span class="line"></span><br><span class="line"># 要保存动态库的目录，这里保存在源码根目录下的android&#x2F;armv7-a</span><br><span class="line">export PREFIX&#x3D;$(pwd)&#x2F;android&#x2F;$CPU</span><br><span class="line">ADDI_CFLAGS&#x3D;&quot;-marm&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 编译配置详解答</span><br><span class="line"># 设置编译针对的系统，网上查到很多资料说编译前需要修改configure文件，设置这项后就不用修改了，系统会自动修改，效果一样。</span><br><span class="line">#--target-os&#x3D;android \</span><br><span class="line"></span><br><span class="line"># 编译后文件的输出目录</span><br><span class="line">#--prefix&#x3D;$PREFIX \</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 编译动态库，shared和static的开关是相对的。</span><br><span class="line">#--enable-static \</span><br><span class="line">#--disable-shared \</span><br><span class="line"></span><br><span class="line"># 生成文档，以及相关的功能模块</span><br><span class="line">#--disable-doc \</span><br><span class="line"></span><br><span class="line"># 禁止编译可执行文件</span><br><span class="line">#--disable-programs</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 设置交叉编译器，按照实际路径修改就可以了。</span><br><span class="line">#--cross-prefix&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi- \</span><br><span class="line"># 设置编译器，不然会报错，系统默认会使用arm-linux-androideabi-clang，但是此编译器在NDK不存在，导致编译失败</span><br><span class="line">#--cc&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-gcc \</span><br><span class="line">#--nm&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-nm \</span><br><span class="line"></span><br><span class="line"># 设置编译so库的架构，当前设置为arm，可以根据实际需求修改</span><br><span class="line">#--arch&#x3D;arm \</span><br><span class="line"></span><br><span class="line"># 设置编译针对的平台，可以根据实际需求进行设置，当前设置为最低支持android-16版本，arm架构。</span><br><span class="line">#--sysroot&#x3D;$SYSROOT \</span><br><span class="line">#--extra-cflags&#x3D;&quot;-I$ASM -isysroot $ISYSROOT -D__ANDROID_API__&#x3D;16 -U_FILE_OFFSET_BITS -Os -fPIC -DANDROID -Wno-deprecated -mfloat-abi&#x3D;softfp -marm&quot; \</span><br><span class="line"></span><br><span class="line">#--extra-ldflags&#x3D;&quot;$ADDI_LDFLAGS&quot; \</span><br><span class="line"></span><br><span class="line">$ADDITIONAL_CONFIGURE_FLAG</span><br><span class="line"></span><br><span class="line">function build_android</span><br><span class="line">&#123;</span><br><span class="line">   echo -e &quot;\033[32m build start \033[0m&quot;</span><br><span class="line"></span><br><span class="line">   .&#x2F;configure \</span><br><span class="line">       --target-os&#x3D;android \</span><br><span class="line">       --prefix&#x3D;$PREFIX \</span><br><span class="line">       --enable-cross-compile \</span><br><span class="line">       --enable-static \</span><br><span class="line">       --disable-shared \</span><br><span class="line">       --enable-small \</span><br><span class="line">       --disable-programs \</span><br><span class="line">       --disable-encoders \</span><br><span class="line">       --disable-muxers \</span><br><span class="line">       --disable-filters \</span><br><span class="line">       --disable-avdevice \</span><br><span class="line">       --cross-prefix&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi- \</span><br><span class="line">       --cc&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-gcc \</span><br><span class="line">       --nm&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-nm \</span><br><span class="line">       --arch&#x3D;arm \</span><br><span class="line">       --sysroot&#x3D;$SYSROOT \</span><br><span class="line">       --extra-cflags&#x3D;&quot;-I$ASM -isysroot $ISYSROOT -D__ANDROID_API__&#x3D;16 -U_FILE_OFFSET_BITS -Os -fPIC -DANDROID -Wno-deprecated -mfloat-abi&#x3D;softfp -marm&quot; \</span><br><span class="line">       --extra-ldflags&#x3D;&quot;$ADDI_LDFLAGS&quot; \</span><br><span class="line">       $ADDITIONAL_CONFIGURE_FLAG</span><br><span class="line"></span><br><span class="line">   make clean</span><br><span class="line"></span><br><span class="line">   make -j4</span><br><span class="line">   make install</span><br><span class="line"></span><br><span class="line">   echo -e &quot;\033[32m build successful \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function merge</span><br><span class="line">&#123;</span><br><span class="line">   echo -e &quot;\033[32m package start \033[0m&quot;</span><br><span class="line"></span><br><span class="line">   # 打包</span><br><span class="line">   $TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-ld \</span><br><span class="line">       -rpath-link&#x3D;$SYSROOT&#x2F;usr&#x2F;lib \</span><br><span class="line">       -L$SYSROOT&#x2F;usr&#x2F;lib \</span><br><span class="line">       -L$PREFIX&#x2F;lib \</span><br><span class="line">       -soname libffmpeg.so -shared -nostdlib -Bsymbolic --whole-archive --no-undefined -o \</span><br><span class="line">       $PREFIX&#x2F;libffmpeg.so \</span><br><span class="line">       libavcodec&#x2F;libavcodec.a \</span><br><span class="line">       libavfilter&#x2F;libavfilter.a \</span><br><span class="line">       libavformat&#x2F;libavformat.a \</span><br><span class="line">       libavutil&#x2F;libavutil.a \</span><br><span class="line">       libswresample&#x2F;libswresample.a \</span><br><span class="line">       libswscale&#x2F;libswscale.a \</span><br><span class="line">       -lc -lm -lz -ldl -llog --dynamic-linker&#x3D;&#x2F;system&#x2F;bin&#x2F;linker \</span><br><span class="line">       $TOOLCHAIN&#x2F;lib&#x2F;gcc&#x2F;arm-linux-androideabi&#x2F;4.9.x&#x2F;libgcc.a</span><br><span class="line"></span><br><span class="line">   # strip 精简文件</span><br><span class="line">   $TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-strip  $PREFIX&#x2F;libffmpeg.so</span><br><span class="line"></span><br><span class="line">   echo -e &quot;\033[32m package successful \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">build_android</span><br><span class="line">merge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>执行脚本./build_android.sh</p>
-<h2 id="2集成到Android项目中"><a href="#2集成到Android项目中" class="headerlink" title="2集成到Android项目中"></a>2集成到Android项目中</h2><p>undefined reference to `av_register_all’</p>
-<p>ffmpeg是C语言写的,所以在引入C头文件时</p>
-<p>extern “C”<br>{<br>#include &lt;libavcodec/avcodec.h&gt;<br>#include &lt;libavformat/avformat.h&gt;<br>}</p>
-
+        
       
 
       
@@ -191,33 +180,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">FFmpeg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/FFmpeg%E7%BC%96%E8%AF%91/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/04/26/test/">展开全文 >></a>
         </p>
       
 
@@ -247,63 +214,29 @@
 
 
   
-    <article id="post-NDK开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-CrossOver无线试用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/NDK%E5%BC%80%E5%8F%91/">NDK开发</a>
+      <a class="article-title" href="/2021/04/26/CrossOver%E6%97%A0%E7%BA%BF%E8%AF%95%E7%94%A8/">CrossOver无线试用</a>
     </h1>
   
 
         
-        <a href="/2021/NDK%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2021-04-02T07:50:51.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
+        <a href="/2021/04/26/CrossOver%E6%97%A0%E7%BA%BF%E8%AF%95%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、创建java类和native方法"><a href="#1、创建java类和native方法" class="headerlink" title="1、创建java类和native方法"></a>1、创建java类和native方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.jnitest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NativeUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">native</span> String <span class="title">doSomething</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2、执行javah命令生成头文件"><a href="#2、执行javah命令生成头文件" class="headerlink" title="2、执行javah命令生成头文件"></a>2、执行javah命令生成头文件</h4><p>打开命令行切换到java目录、执行javah命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javah com.example.jnitest.NativeUtil</span><br></pre></td></tr></table></figure>
-<h4 id="创建native文件"><a href="#创建native文件" class="headerlink" title="创建native文件"></a>创建native文件</h4><p>1、在main目录下创建jni文件夹，并在jni文件夹下创建model1文件夹。<br>2、复制命令生成的头文件到model目录下。<br>3、创建cpp文件，并引入上面的头文件。<br>4、复制方法到cpp文件并重写。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;NativeUtil.h&quot;</span><br><span class="line">JNIEXPORT jstring JNICALL Java_com_example_jnitest_NativeUtil_doSomething(JNIEnv *env, jobject)&#123;</span><br><span class="line">    return env-&gt;NewStringUTF(&quot;hello java&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="创建Android-mk文件"><a href="#创建Android-mk文件" class="headerlink" title="创建Android.mk文件"></a>创建Android.mk文件</h4><p>在jni目录下创建Android.mk文件,并设置库名称和相关的cpp文件<br>LOCAL_MODULE 生成库的名称<br>LOCAL_SRC_FILES 模块中的cpp文件 多文件以空格分割</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LOCAL_PATH :&#x3D; $(call my-dir)</span><br><span class="line"></span><br><span class="line">include $(CLEAR_VARS)</span><br><span class="line"></span><br><span class="line">LOCAL_MODULE                  :&#x3D; NativeUtil-v3</span><br><span class="line">LOCAL_SRC_FILES               :&#x3D; model1&#x2F;NativeUtil.cpp</span><br><span class="line">LOCAL_LDLIBS                  :&#x3D; -lz</span><br><span class="line"></span><br><span class="line">include $(BUILD_SHARED_LIBRARY)</span><br></pre></td></tr></table></figure>
-<h4 id="创建Application-mk文件"><a href="#创建Application-mk文件" class="headerlink" title="创建Application.mk文件"></a>创建Application.mk文件</h4><p>在jni目录下创建Application.mk文件<br>APP_ABI 用来指定编译平台<br>APP_STL C++ 库支持</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">APP_ABI :&#x3D; arm64-v8a armeabi-v7a</span><br><span class="line">APP_STL :&#x3D; c++_static</span><br><span class="line">APP_PLATFORM :&#x3D; android-16</span><br></pre></td></tr></table></figure>
-
-<h4 id="修改manifest文件，添加minSdkVersion"><a href="#修改manifest文件，添加minSdkVersion" class="headerlink" title="修改manifest文件，添加minSdkVersion"></a>修改manifest文件，添加minSdkVersion</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-sdk android:minSdkVersion&#x3D;&quot;23&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="使用ndk-build命令生成so库"><a href="#使用ndk-build命令生成so库" class="headerlink" title="使用ndk-build命令生成so库"></a>使用ndk-build命令生成so库</h4><p>命令行切换到jni目录下,执行ndk-build命令</p>
-<h4 id="把生成的so库复制到jniLibs目录下"><a href="#把生成的so库复制到jniLibs目录下" class="headerlink" title="把生成的so库复制到jniLibs目录下"></a>把生成的so库复制到jniLibs目录下</h4><p>在main目录下创建jniLibs目录，然后复制arm64-v8a等相关文件</p>
-<h4 id="Java代码中调用c-方法。"><a href="#Java代码中调用c-方法。" class="headerlink" title="Java代码中调用c++方法。"></a>Java代码中调用c++方法。</h4><p>1、加载库System.loadLibrary(“NativeUtil-v3”)；<br>注意：库的名称。例如：libNativeUtil-v3.so，要去了文件开始lib和文件后缀。<br>2、Java代码中调用native方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class NativeUtil &#123;</span><br><span class="line">    static &#123;</span><br><span class="line">        System.loadLibrary(&quot;NativeUtil-v3&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    static native String doSomething();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tv.setText(NativeUtil.doSomething());</span><br></pre></td></tr></table></figure>
-
-<h4 id="配置ndk目录"><a href="#配置ndk目录" class="headerlink" title="配置ndk目录"></a>配置ndk目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ndk.dir&#x3D;C\:\\Users\\wanghao\\AppData\\Local\\Android\\Sdk\\ndk\\23.0.7196353</span><br></pre></td></tr></table></figure>
-
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>JNI类型映射</p>
-<p>Java 类型    本地类型    描述<br>boolean    jboolean    C/C++8位整型<br>byte    jbyte    C/C++带符号的8位整型<br>char    jchar    C/C++无符号的16位整型<br>short    jshort    C/C++带符号的16位整型<br>int    jint    C/C++带符号的32位整型<br>long    jlong    C/C++带符号的64位整型e<br>float    jfloat    C/C++32位浮点型<br>double    jdouble    C/C++64位浮点型<br>Object    jobject    任何Java对象，或者没有对应java类型的对象<br>Class    jclass    Class对象<br>String    jstring    字符串对象<br>Object[]    jobjectArray    任何对象的数组<br>boolean[]    jbooleanArray    布尔型数组<br>byte[]    jbyteArray    比特型数组<br>char[]    jcharArray    字符型数组<br>short[]    jshortArray    短整型数组<br>int[]    jintArray    整型数组<br>long[]    jlongArray    长整型数组<br>float[]    jfloatArray    浮点型数组<br>double[]    jdoubleArray    双浮点型数组</p>
-<h4 id="native方法常见问题"><a href="#native方法常见问题" class="headerlink" title="native方法常见问题"></a>native方法常见问题</h4><p>打印日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;android&#x2F;log.h&gt;</span><br><span class="line"></span><br><span class="line"> __android_log_print(ANDROID_LOG_INFO,&quot;myTag&quot;,&quot;info:\n%s&quot;,info);</span><br></pre></td></tr></table></figure>
-
-<p>创建字符串：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env-&gt;NewStringUTF(&quot;hello java&quot;)</span><br></pre></td></tr></table></figure>
-
-<p>获取字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取字符串</span><br><span class="line">const char* str &#x3D; env-&gt;GetStringUTFChars(jstr, 0);</span><br><span class="line">...</span><br><span class="line">&#x2F;&#x2F;释放内存</span><br><span class="line">env-&gt;ReleaseStringUTFChars(jstr, str);</span><br></pre></td></tr></table></figure>
-
-<p>获取Java中的byte[]数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取数组指针和长度</span><br><span class="line">jbyte *c_array &#x3D; env-&gt;GetByteArrayElements(j_array, 0);</span><br><span class="line">int len_arr &#x3D; env-&gt;GetArrayLength(j_array);</span><br><span class="line"></span><br><span class="line">jbyte buf[len_arr];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;释放内存</span><br><span class="line">env-&gt;ReleaseByteArrayElements(j_array, c_array, 0);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;赋值</span><br><span class="line">jbyteArray c_result &#x3D; env-&gt;NewByteArray(len_arr);</span><br><span class="line">env-&gt;SetByteArrayRegion(c_result, 0, len_arr, buf);</span><br><span class="line"></span><br><span class="line">return c_result;</span><br></pre></td></tr></table></figure>
-
-
-
-
+        <p>1.进入.cxoffice文件夹 打开cxoffice.conf配置文件并修改NextUpdateHookDate</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[CrossOver]</span><br><span class="line">&quot;FirstRunVersion&quot; = &quot;18.5.5.31755&quot;</span><br><span class="line">&quot;NextUpdateHookDate&quot; = &quot;1569887775&quot;</span><br><span class="line">&quot;ReportWineUsage&quot; = &quot;0&quot;</span><br><span class="line"></span><br><span class="line">[OfficeSetup]</span><br><span class="line">&quot;BottleManagerSize&quot; = &quot;734x438&quot;</span><br><span class="line">&quot;ShowBottleSidebar&quot; = &quot;&quot;</span><br><span class="line">&quot;MainWindowView&quot; = &quot;TREE_VIEW&quot;</span><br><span class="line">&quot;AutoUpdate&quot; = &quot;0&quot;</span><br></pre></td></tr></table></figure>
+<p>2.进入安装应用的目录下如.cxoffice/TIM,删除.eval文件可重置15天试用期。</p>
 
       
 
@@ -312,24 +245,13 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">NDK</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -338,7 +260,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/NDK%E5%BC%80%E5%8F%91/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/04/26/CrossOver%E6%97%A0%E7%BA%BF%E8%AF%95%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -375,13 +297,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/FBReader/">FBReader解析</a>
+      <a class="article-title" href="/2021/04/26/FBReader/">FBReader解析</a>
     </h1>
   
 
         
-        <a href="/2021/FBReader/" class="archive-article-date">
-  	<time datetime="2021-03-05T08:22:27.569Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2021/04/26/FBReader/" class="archive-article-date">
+  	<time datetime="2021-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
 </a>
         
       </header>
@@ -457,7 +379,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/FBReader/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/04/26/FBReader/">展开全文 >></a>
         </p>
       
 
@@ -487,42 +409,30 @@
 
 
   
-    <article id="post-自定义View" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Gradle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E8%87%AA%E5%AE%9A%E4%B9%89View/">自定义View</a>
+      <a class="article-title" href="/2021/04/26/Gradle/">Gradle</a>
     </h1>
   
 
         
-        <a href="/2021/%E8%87%AA%E5%AE%9A%E4%B9%89View/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.475Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2021/04/26/Gradle/" class="archive-article-date">
+  	<time datetime="2021-04-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、自定义View流程图"><a href="#1、自定义View流程图" class="headerlink" title="1、自定义View流程图"></a>1、自定义View流程图</h2><p><img src="/images/201711080927001.jpg"></p>
-<h2 id="2、测量View的宽高onMeasure"><a href="#2、测量View的宽高onMeasure" class="headerlink" title="2、测量View的宽高onMeasure"></a>2、测量View的宽高onMeasure</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">protected void onMeasure(int widthMeasureSpec,int heightMeasureSpec)&#123;</span><br><span class="line">    setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec), getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));</span><br><span class="line">&#125;</span><br><span class="line">public static int getDefaultSize(int size, int measureSpec)&#123;</span><br><span class="line">    int result &#x3D; size;</span><br><span class="line">    int specMode &#x3D; MeasureSpec.getMode(measureSpec);</span><br><span class="line">    int specSize &#x3D; MeasureSpec.getSize(measureSpec);</span><br><span class="line">    switch(specMode)&#123;</span><br><span class="line">        case MeasureSpec.UNSPECIFIED:</span><br><span class="line">            result &#x3D; size;</span><br><span class="line">        break;</span><br><span class="line">        case MeasureSpec.AT_MOST:</span><br><span class="line">        case MeasureSpec.EXACTLY:</span><br><span class="line">            result &#x3D; specSize;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>MeasureSpec三种模式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MeasureSpec.UNSPECIFIED,</span><br><span class="line">MeasureSpec.EXACTLY,</span><br><span class="line">MeasureSpec.AT_MOST</span><br></pre></td></tr></table></figure>
-<p><strong>MeasureSpec.EXACTLY</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">最大尺寸，当控件的layout_width或layout_height指定为WRAP_CONTENT时，</span><br><span class="line">控件大小一般随着控件的子空间或内容进行变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。</span><br><span class="line">因此，此时的mode是AT_MOST，size给出了父控件允许的最大尺寸。</span><br><span class="line">精确尺寸，当我们将控件的layout_width或layout_height指定为具体数值时。</span><br><span class="line">如andorid: layout_width&#x3D;&quot;50dip&quot;，或者为match_parent时，都是控件大小已经确定的情况，都是精确尺寸。*</span><br></pre></td></tr></table></figure>
-<p>**  MeasureSpec.AT_MOST **</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">最大尺寸，当控件的layout_width或layout_height指定为WRAP_CONTENT时，</span><br><span class="line">控件大小一般随着控件的子空间或内容进行变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。</span><br><span class="line">因此，此时的mode是AT_MOST，size给出了父控件允许的最大尺寸。</span><br></pre></td></tr></table></figure>
-<p>**  MeasureSpec.UNSPECIFIED **</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">未指定尺寸，这种情况不多，一般都是父控件是AdapterView，通过measure方法传入的模式。</span><br></pre></td></tr></table></figure>
-<h2 id="3、自定义属性"><a href="#3、自定义属性" class="headerlink" title="3、自定义属性"></a>3、自定义属性</h2><ul>
-<li>  1.在values文件夹下，打开attrs.xml，其实这个文件名称可以是任意的，写在这里更规范一点，表示里面放的全是view的属性。</li>
-<li>  2.因为我们下面的实例会用到2个长度，一个颜色值的属性，所以我们这里先创建3个属性。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;declare-styleable name&#x3D;&quot;rainbowbar&quot;&gt;</span><br><span class="line">    &lt;attr name&#x3D;&quot;rainbowbar_hspace&quot; format&#x3D;&quot;dimension&quot;&gt;&lt;&#x2F;attr&gt;</span><br><span class="line">    &lt;attr name&#x3D;&quot;rainbowbar_vspace&quot; format&#x3D;&quot;dimension&quot;&gt;&lt;&#x2F;attr&gt;</span><br><span class="line">    &lt;attr name&#x3D;&quot;rainbowbar_color&quot; format&#x3D;&quot;color&quot;&gt;&lt;&#x2F;attr&gt;</span><br><span class="line">&lt;&#x2F;declare-styleable&gt;</span><br></pre></td></tr></table></figure></li>
-<li> 3.在构造方法中获取自定义属性的值。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">TypedArray t &#x3D; context.obtainStyledAttributes(attrs, R.styleable.rainbowbar, 0, 0);</span><br><span class="line">hSpace &#x3D; t.getDimensionPixelSize(R.styleable.rainbowbar_rainbowbar_hspace, hSpace);</span><br><span class="line">vSpace &#x3D; t.getDimensionPixelOffset(R.styleable.rainbowbar_rainbowbar_vspace, vSpace);</span><br><span class="line">barColor &#x3D; t.getColor(R.styleable.rainbowbar_rainbowbar_color, barColor);</span><br><span class="line">t.recycle();   &#x2F;&#x2F; we should always recycle after used</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h4 id="Gradle将依赖库的proguard-rules-pro文件打包进aar"><a href="#Gradle将依赖库的proguard-rules-pro文件打包进aar" class="headerlink" title="Gradle将依赖库的proguard-rules.pro文件打包进aar"></a>Gradle将依赖库的proguard-rules.pro文件打包进aar</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">     minSdkVersion <span class="number">19</span></span><br><span class="line">     targetSdkVersion <span class="number">26</span></span><br><span class="line">     versionCode <span class="number">1</span></span><br><span class="line">     versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line">     <span class="comment">// 配置此参数，方可将混淆文件打包进aar</span></span><br><span class="line">     consumerProguardFiles <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Android-查看第三方库引用关系"><a href="#Android-查看第三方库引用关系" class="headerlink" title="Android 查看第三方库引用关系"></a>Android 查看第三方库引用关系</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gradlew -q MAIN:dependencies</span><br><span class="line">MAIN指module名称</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -536,7 +446,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">View</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Gradle</a>
         		</li>
       		
 		</ul>
@@ -557,7 +467,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E8%87%AA%E5%AE%9A%E4%B9%89View/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/04/26/Gradle/">展开全文 >></a>
         </p>
       
 
@@ -587,276 +497,46 @@
 
 
   
-    <article id="post-符号大全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-FFmpeg编译" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E7%AC%A6%E5%8F%B7%E5%A4%A7%E5%85%A8/">符号大全</a>
+      <a class="article-title" href="/2021/01/01/FFmpeg%E7%BC%96%E8%AF%91/">FFmpeg编译</a>
     </h1>
   
 
         
-        <a href="/2021/%E7%AC%A6%E5%8F%B7%E5%A4%A7%E5%85%A8/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.473Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2021/01/01/FFmpeg%E7%BC%96%E8%AF%91/" class="archive-article-date">
+  	<time datetime="2020-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>特殊符号 编号序号 数学符号 爱心符号 标点符号 单位符号 货币符号 箭头符号 符号图案 希腊字母 俄语字母<br>汉语拼音 中文字符 日语字符 制表符 皇冠符号 emoji符号<br>❤❥웃유♋☮✌☏☢☠✔☑♚▲♪✈✞÷↑↓◆◇⊙■□△▽¿─│♥❣♂♀☿Ⓐ✍✉☣☤✘☒♛▼♫⌘☪≈←→◈◎☉★☆⊿※¡━┃♡ღツ☼☁❅♒✎©®™Σ✪✯☭➳卐√↖↗●◐Θ◤◥︻〖〗┄┆℃℉°✿ϟ☃☂✄¢€£∞✫★½✡×↙↘○◑⊕◣◢︼【】┅┇☽☾✚〓▂▃▄▅▆▇█▉▊▋▌▍▎▏↔↕☽☾の•▸◂▴▾┈┊①②③④⑤⑥⑦⑧⑨⑩ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ㍿▓♨♛❖♓☪✙┉┋☹☺☻تヅツッシÜϡﭢ™℠℗©®♥❤❥❣❦❧♡۵웃유ღ♋♂♀☿☼☀☁☂☄☾☽❄☃☈⊙☉℃℉❅✺ϟ☇♤♧♡♢♠♣♥♦☜☞☝✍☚☛☟✌✽✾✿❁❃❋❀⚘☑✓✔√☐☒✗✘ㄨ✕✖✖⋆✢✣✤✥❋✦✧✩✰✪✫✬✭✮✯❂✡★✱✲✳✴✵✶✷✸✹✺✻✼❄❅❆❇❈❉❊†☨✞✝☥☦☓☩☯☧☬☸✡♁✙♆。，、＇：∶；?‘’“”〝〞ˆˇ﹕︰﹔﹖﹑•¨….¸;！´？！～—ˉ｜‖＂〃｀@﹫¡¿﹏﹋﹌︴々﹟#﹩$﹠&amp;﹪%*﹡﹢﹦﹤‐￣¯―﹨ˆ˜﹍﹎+=&lt;＿_-\ˇ<del>﹉﹊（）〈〉‹›﹛﹜『』〖〗［］《》〔〕{}「」【】︵︷︿︹︽<em>﹁﹃︻︶︸﹀︺︾ˉ﹂﹄︼☩☨☦✞✛✜✝✙✠✚†‡◉○◌◍◎●◐◑◒◓◔◕◖◗❂☢⊗⊙◘◙◍⅟½⅓⅕⅙⅛⅔⅖⅚⅜¾⅗⅝⅞⅘≂≃≄≅≆≇≈≉≊≋≌≍≎≏≐≑≒≓≔≕≖≗≘≙≚≛≜≝≞≟≠≡≢≣≤≥≦≧≨≩⊰⊱⋛⋚∫∬∭∮∯∰∱∲∳%℅‰‱㊣㊎㊍㊌㊋㊏㊐㊊㊚㊛㊤㊥㊦㊧㊨㊒㊞㊑㊒㊓㊔㊕㊖㊗㊘㊜㊝㊟㊠㊡㊢㊩㊪㊫㊬㊭㊮㊯㊰㊙㉿囍♔♕♖♗♘♙♚♛♜♝♞♟ℂℍℕℙℚℝℤℬℰℯℱℊℋℎℐℒℓℳℴ℘ℛℭ℮ℌℑℜℨ♪♫♩♬♭♮♯°øⒶ☮✌☪✡☭✯卐✐✎✏✑✒✍✉✁✂✃✄✆✉☎☏➟➡➢➣➤➥➦➧➨➚➘➙➛➜➝➞➸♐➲➳⏎➴➵➶➷➸➹➺➻➼➽←↑→↓↔↕↖↗↘↙↚↛↜↝↞↟↠↡↢↣↤↥↦↧↨➫➬➩➪➭➮➯➱↩↪↫↬↭↮↯↰↱↲↳↴↵↶↷↸↹↺↻↼↽↾↿⇀⇁⇂⇃⇄⇅⇆⇇⇈⇉⇊⇋⇌⇍⇎⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇚⇛⇜⇝⇞⇟⇠⇡⇢⇣⇤⇥⇦⇧⇨⇩⇪➀➁➂➃➄➅➆➇➈➉➊➋➌➍➎➏➐➑➒➓㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫┬┭┮┯┰┱┲┳┴┵┶┷┸┹┺┻┼┽┾┿╀╁╂╃╄╅╆╇╈╉╊╋╌╍╎╏═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬◤◥◄►▶◀◣◢▲▼◥▸◂▴▾△▽▷◁⊿▻◅▵▿▹◃❏❐❑❒▀▁▂▃▄▅▆▇▉▊▋█▌▍▎▏▐░▒▓▔▕■□▢▣▤▥▦▧▨▩▪▫▬▭▮▯㋀㋁㋂㋃㋄㋅㋆㋇㋈㋉㋊㋋㏠㏡㏢㏣㏤㏥㏦㏧㏨㏩㏪㏫㏬㏭㏮㏯㏰㏱㏲㏳㏴㏵㏶㏷㏸㏹㏺㏻㏼㏽㏾㍙㍚㍛㍜㍝㍞㍟㍠㍡㍢㍣㍤㍥㍦㍧㍨㍩㍪㍫㍬㍭㍮㍯㍰㍘☰☲☱☴☵☶☳☷☯<br>特殊符号↑返回顶部<br>♠♣♧♡♥❤❥❣♂♀✲☀☼☾☽◐◑☺☻☎☏✿❀№↑↓←→√×÷★℃℉°◆◇⊙■□△▽¿½☯✡㍿卍卐♂♀✚〓㎡♪♫♩♬㊚㊛囍㊒㊖Φ♀♂‖$@*&amp;#※卍卐Ψ♫♬♭♩♪♯♮⌒¶∮‖€￡¥$<br>编号序号↑返回顶部<br>①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳⓪❶❷❸❹❺❻❼❽❾❿⓫⓬⓭⓮⓯⓰⓱⓲⓳⓴㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇⒈⒉⒊⒋⒌⒍⒎⒏⒐⒑⒒⒓⒔⒕⒖⒗⒘⒙⒚⒛ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵<br>数学符号↑返回顶部<br>﹢﹣×÷±/=≌∽≦≧≒﹤﹥≈≡≠=≤≥&lt;&gt;≮≯∷∶∫∮∝∞∧∨∑∏∪∩∈∵∴⊥∥∠⌒⊙√∟⊿㏒㏑%‰⅟½⅓⅕⅙⅛⅔⅖⅚⅜¾⅗⅝⅞⅘≂≃≄≅≆≇≈≉≊≋≌≍≎≏≐≑≒≓≔≕≖≗≘≙≚≛≜≝≞≟≠≡≢≣≤≥≦≧≨≩⊰⊱⋛⋚∫∬∭∮∯∰∱∲∳%℅‰‱øØπ<br>爱心符号↑返回顶部<br>♥❣ღ♠♡♤❤❥<br>标点符号↑返回顶部<br>。，、＇：∶；?‘’“”〝〞ˆˇ﹕︰﹔﹖﹑•¨….¸;！´？！～—ˉ｜‖＂〃｀@﹫¡¿﹏﹋﹌︴々﹟#﹩$﹠&amp;﹪%*﹡﹢﹦﹤‐￣¯―﹨ˆ˜﹍﹎+=&lt;＿</em>-\ˇ</del>﹉﹊（）〈〉‹›﹛﹜『』〖〗［］《》〔〕{}「」【】︵︷︿︹︽_﹁﹃︻︶︸﹀︺︾ˉ﹂﹄︼❝❞<br>单位符号↑返回顶部<br>°′″＄￥〒￠￡％＠℃℉﹩﹪‰﹫㎡㏕㎜㎝㎞㏎m³㎎㎏㏄º○¤%$º¹²³<br>货币符号↑返回顶部<br>€£Ұ₴$₰¢₤¥₳₲₪₵元₣₱฿¤₡₮₭₩ރ円₢₥₫₦zł﷼₠₧₯₨Kčर₹ƒ₸￠<br>箭头符号↑返回顶部<br>↑↓←→↖↗↘↙↔↕➻➼➽➸➳➺➻➴➵➶➷➹▶►▷◁◀◄«»➩➪➫➬➭➮➯➱⏎➲➾➔➘➙➚➛➜➝➞➟➠➡➢➣➤➥➦➧➨↚↛↜↝↞↟↠↠↡↢↣↤↤↥↦↧↨⇄⇅⇆⇇⇈⇉⇊⇋⇌⇍⇎⇏⇐⇑⇒⇓⇔⇖⇗⇘⇙⇜↩↪↫↬↭↮↯↰↱↲↳↴↵↶↷↸↹☇☈↼↽↾↿⇀⇁⇂⇃⇞⇟⇠⇡⇢⇣⇤⇥⇦⇧⇨⇩⇪↺↻⇚⇛♐<br>符号图案↑返回顶部<br>✐✎✏✑✒✍✉✁✂✃✄✆✉☎☏☑✓✔√☐☒✗✘ㄨ✕✖✖☢☠☣✈★☆✡囍㍿☯☰☲☱☴☵☶☳☷☜☞☝✍☚☛☟✌♤♧♡♢♠♣♥♦☀☁☂❄☃♨웃유❖☽☾☪✿♂♀✪✯☭➳卍卐√×■◆●○◐◑✙☺☻❀⚘♔♕♖♗♘♙♚♛♜♝♞♟♧♡♂♀♠♣♥❤☜☞☎☏⊙◎☺☻☼▧▨♨◐◑↔↕▪▒◊◦▣▤▥▦▩◘◈◇♬♪♩♭♪の★☆→あぃ￡Ю〓§♤♥▶¤✲❈✿✲❈➹☀☂☁【】┱┲❣✚✪✣✤✥✦❉❥❦❧❃❂❁❀✄☪☣☢☠☭ღ▶▷◀◁☀☁☂☃☄★☆☇☈⊙☊☋☌☍ⓛⓞⓥⓔ╬『』∴☀♫♬♩♭♪☆∷﹌の★◎▶☺☻►◄▧▨♨◐◑↔↕↘▀▄█▌◦☼♪の☆→♧ぃ￡❤▒▬♦◊◦♠♣▣۰•❤•۰►◄▧▨♨◐◑↔↕▪▫☼♦⊙●○①⊕◎Θ⊙¤㊣★☆♀◆◇◣◢◥▲▼△▽⊿◤◥✐✌✍✡✓✔✕✖♂♀♥♡☜☞☎☏⊙◎☺☻►◄▧▨♨◐◑↔↕♥♡▪▫☼♦▀▄█▌▐░▒▬♦◊◘◙◦☼♠♣▣▤▥▦▩◘◙◈♫♬♪♩♭♪✄☪☣☢☠♯♩♪♫♬♭♮☎☏☪♈ºº₪¤큐«»™♂✿♥　◕‿-｡　｡◕‿◕｡<br>希腊字母↑返回顶部<br>ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζνξοπρσηθικλμτυφχψω<br>俄语字母↑返回顶部<br>АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя<br>汉语拼音↑返回顶部<br>āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜüêɑńňɡㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ<br>中文字符↑返回顶部<br>零壹贰叁肆伍陆柒捌玖拾佰仟万亿吉太拍艾分厘毫微卍卐卄巜弍弎弐朤氺曱甴囍兀々〆のぁ〡〢〣〤〥〦〧〨〩㊎㊍㊌㊋㊏㊚㊛㊐㊊㊣㊤㊥㊦㊧㊨㊒㊫㊑㊓㊔㊕㊖㊗㊘㊜㊝㊞㊟㊠㊡㊢㊩㊪㊬㊭㊮㊯㊰㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉<br>日文平假名片假名↑返回顶部<br>ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺ・ーヽヾヿ゠ㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ<br>制表符↑返回顶部<br>─ ━│┃╌╍╎╏┄ ┅┆┇┈ ┉┊┋┌┍┎┏┐┑┒┓└ ┕┖┗ ┘┙┚┛├┝┞┟┠┡┢┣ ┤┥┦┧┨┩┪┫┬ ┭ ┮ ┯ ┰ ┱ ┲ ┳ ┴ ┵ ┶ ┷ ┸ ┹ ┺ ┻┼ ┽ ┾ ┿ ╀ ╁ ╂ ╃ ╄ ╅ ╆ ╇ ╈ ╉ ╊ ╋ ╪ ╫ ╬═║╒╓╔ ╕╖╗╘╙╚ ╛╜╝╞╟╠ ╡╢╣╤ ╥ ╦ ╧ ╨ ╩ ╳╔ ╗╝╚ ╬ ═ ╓ ╩ ┠ ┨┯ ┷┏ ┓┗ ┛┳ ⊥ ﹃ ﹄┌ ╮ ╭ ╯╰<br>皇冠符号↑返回顶部<br>♚　♛　♝　♞　♜　♟　♔　♕　♗　♘　♖　♟</p>
+        <h2 id="1、Window下FFmpeg编译环境搭建"><a href="#1、Window下FFmpeg编译环境搭建" class="headerlink" title="1、Window下FFmpeg编译环境搭建"></a>1、Window下FFmpeg编译环境搭建</h2><p>1、下载软件MinGW<br>下载地址：链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1lLtqaED9ud-IDul4cx3PhQ">https://pan.baidu.com/s/1lLtqaED9ud-IDul4cx3PhQ</a> 提取码: pefd<br>解压minGW、环境变量添加D:\MinGW\MinGW\bin和D:\MinGW\MinGW\msys\1.0\bin<br>检查环境变量配置是否成功 gcc –version  make –version</p>
+<p>2、NDK 下载地址<br><a target="_blank" rel="noopener" href="https://developer.android.google.cn/ndk/downloads/">https://developer.android.google.cn/ndk/downloads/</a></p>
+<p>3、FFMpeg下载地址<br><a target="_blank" rel="noopener" href="https://gitee.com/mirrors/ffmpeg/">https://gitee.com/mirrors/ffmpeg/</a></p>
+<p>解压源码，切换到源码目录D:\ffmpeg-release-4.4\ffmpeg</p>
+<p>创建build_android.sh脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line"># ndk环境</span><br><span class="line">NDK&#x3D;d:&#x2F;android-ndk-r17c-windows-x86_64&#x2F;android-ndk-r17c</span><br><span class="line">SYSROOT&#x3D;$NDK&#x2F;platforms&#x2F;android-16&#x2F;arch-arm</span><br><span class="line">TOOLCHAIN&#x3D;$NDK&#x2F;toolchains&#x2F;arm-linux-androideabi-4.9&#x2F;prebuilt&#x2F;windows-x86_64</span><br><span class="line">CPU&#x3D;armv7-a</span><br><span class="line"></span><br><span class="line">ISYSROOT&#x3D;$NDK&#x2F;sysroot</span><br><span class="line">ASM&#x3D;$ISYSROOT&#x2F;usr&#x2F;include&#x2F;arm-linux-androideabi</span><br><span class="line"></span><br><span class="line"># 要保存动态库的目录，这里保存在源码根目录下的android&#x2F;armv7-a</span><br><span class="line">export PREFIX&#x3D;$(pwd)&#x2F;android&#x2F;$CPU</span><br><span class="line">ADDI_CFLAGS&#x3D;&quot;-marm&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 编译配置详解答</span><br><span class="line"># 设置编译针对的系统，网上查到很多资料说编译前需要修改configure文件，设置这项后就不用修改了，系统会自动修改，效果一样。</span><br><span class="line">#--target-os&#x3D;android \</span><br><span class="line"></span><br><span class="line"># 编译后文件的输出目录</span><br><span class="line">#--prefix&#x3D;$PREFIX \</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 编译动态库，shared和static的开关是相对的。</span><br><span class="line">#--enable-static \</span><br><span class="line">#--disable-shared \</span><br><span class="line"></span><br><span class="line"># 生成文档，以及相关的功能模块</span><br><span class="line">#--disable-doc \</span><br><span class="line"></span><br><span class="line"># 禁止编译可执行文件</span><br><span class="line">#--disable-programs</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 设置交叉编译器，按照实际路径修改就可以了。</span><br><span class="line">#--cross-prefix&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi- \</span><br><span class="line"># 设置编译器，不然会报错，系统默认会使用arm-linux-androideabi-clang，但是此编译器在NDK不存在，导致编译失败</span><br><span class="line">#--cc&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-gcc \</span><br><span class="line">#--nm&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-nm \</span><br><span class="line"></span><br><span class="line"># 设置编译so库的架构，当前设置为arm，可以根据实际需求修改</span><br><span class="line">#--arch&#x3D;arm \</span><br><span class="line"></span><br><span class="line"># 设置编译针对的平台，可以根据实际需求进行设置，当前设置为最低支持android-16版本，arm架构。</span><br><span class="line">#--sysroot&#x3D;$SYSROOT \</span><br><span class="line">#--extra-cflags&#x3D;&quot;-I$ASM -isysroot $ISYSROOT -D__ANDROID_API__&#x3D;16 -U_FILE_OFFSET_BITS -Os -fPIC -DANDROID -Wno-deprecated -mfloat-abi&#x3D;softfp -marm&quot; \</span><br><span class="line"></span><br><span class="line">#--extra-ldflags&#x3D;&quot;$ADDI_LDFLAGS&quot; \</span><br><span class="line"></span><br><span class="line">$ADDITIONAL_CONFIGURE_FLAG</span><br><span class="line"></span><br><span class="line">function build_android</span><br><span class="line">&#123;</span><br><span class="line">   echo -e &quot;\033[32m build start \033[0m&quot;</span><br><span class="line"></span><br><span class="line">   .&#x2F;configure \</span><br><span class="line">       --target-os&#x3D;android \</span><br><span class="line">       --prefix&#x3D;$PREFIX \</span><br><span class="line">       --enable-cross-compile \</span><br><span class="line">       --enable-static \</span><br><span class="line">       --disable-shared \</span><br><span class="line">       --enable-small \</span><br><span class="line">       --disable-programs \</span><br><span class="line">       --disable-encoders \</span><br><span class="line">       --disable-muxers \</span><br><span class="line">       --disable-filters \</span><br><span class="line">       --disable-avdevice \</span><br><span class="line">       --cross-prefix&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi- \</span><br><span class="line">       --cc&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-gcc \</span><br><span class="line">       --nm&#x3D;$TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-nm \</span><br><span class="line">       --arch&#x3D;arm \</span><br><span class="line">       --sysroot&#x3D;$SYSROOT \</span><br><span class="line">       --extra-cflags&#x3D;&quot;-I$ASM -isysroot $ISYSROOT -D__ANDROID_API__&#x3D;16 -U_FILE_OFFSET_BITS -Os -fPIC -DANDROID -Wno-deprecated -mfloat-abi&#x3D;softfp -marm&quot; \</span><br><span class="line">       --extra-ldflags&#x3D;&quot;$ADDI_LDFLAGS&quot; \</span><br><span class="line">       $ADDITIONAL_CONFIGURE_FLAG</span><br><span class="line"></span><br><span class="line">   make clean</span><br><span class="line"></span><br><span class="line">   make -j4</span><br><span class="line">   make install</span><br><span class="line"></span><br><span class="line">   echo -e &quot;\033[32m build successful \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function merge</span><br><span class="line">&#123;</span><br><span class="line">   echo -e &quot;\033[32m package start \033[0m&quot;</span><br><span class="line"></span><br><span class="line">   # 打包</span><br><span class="line">   $TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-ld \</span><br><span class="line">       -rpath-link&#x3D;$SYSROOT&#x2F;usr&#x2F;lib \</span><br><span class="line">       -L$SYSROOT&#x2F;usr&#x2F;lib \</span><br><span class="line">       -L$PREFIX&#x2F;lib \</span><br><span class="line">       -soname libffmpeg.so -shared -nostdlib -Bsymbolic --whole-archive --no-undefined -o \</span><br><span class="line">       $PREFIX&#x2F;libffmpeg.so \</span><br><span class="line">       libavcodec&#x2F;libavcodec.a \</span><br><span class="line">       libavfilter&#x2F;libavfilter.a \</span><br><span class="line">       libavformat&#x2F;libavformat.a \</span><br><span class="line">       libavutil&#x2F;libavutil.a \</span><br><span class="line">       libswresample&#x2F;libswresample.a \</span><br><span class="line">       libswscale&#x2F;libswscale.a \</span><br><span class="line">       -lc -lm -lz -ldl -llog --dynamic-linker&#x3D;&#x2F;system&#x2F;bin&#x2F;linker \</span><br><span class="line">       $TOOLCHAIN&#x2F;lib&#x2F;gcc&#x2F;arm-linux-androideabi&#x2F;4.9.x&#x2F;libgcc.a</span><br><span class="line"></span><br><span class="line">   # strip 精简文件</span><br><span class="line">   $TOOLCHAIN&#x2F;bin&#x2F;arm-linux-androideabi-strip  $PREFIX&#x2F;libffmpeg.so</span><br><span class="line"></span><br><span class="line">   echo -e &quot;\033[32m package successful \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">build_android</span><br><span class="line">merge</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Other//" class="article-tag-list-link color1">Other</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E7%AC%A6%E5%8F%B7%E5%A4%A7%E5%85%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<p>执行脚本./build_android.sh</p>
+<h2 id="2、集成到Android项目中"><a href="#2、集成到Android项目中" class="headerlink" title="2、集成到Android项目中"></a>2、集成到Android项目中</h2><p>undefined reference to `av_register_all’</p>
+<p>ffmpeg是C语言写的,所以在引入C头文件时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">extern &quot;C&quot;</span><br><span class="line">&#123;</span><br><span class="line">#include &lt;libavcodec&#x2F;avcodec.h&gt;</span><br><span class="line">#include &lt;libavformat&#x2F;avformat.h&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 
-  
-    <article id="post-Ubuntu添加环境变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/Ubuntu%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">ubuntu三种添加环境变量的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/Ubuntu%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.465Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一、临时设置"><a href="#一、临时设置" class="headerlink" title="一、临时设置"></a>一、临时设置</h4><p>用export指令,如在$PATH中增加JAVA文件夹:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;lib&#x2F;jdk1.6.0_25 &#x2F;&#x2F;添加到后面</span><br></pre></td></tr></table></figure>
-
-<h4 id="二、用于当前用户"><a href="#二、用于当前用户" class="headerlink" title="二、用于当前用户"></a>二、用于当前用户</h4><p>在用户主目录下有一个 .bashrc 隐藏文件，可以在此文件中加入 PATH 的设置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit .bashrc</span><br></pre></td></tr></table></figure>
-<p>加入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;&lt;你的要加入的路径&gt;:$PATH</span><br><span class="line">export PATH&#x3D;&#x2F;home&#x2F;wanghao&#x2F;Develop&#x2F;Android&#x2F;Flutter&#x2F;flutter&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
-
-<h4 id="三、用于所有用户"><a href="#三、用于所有用户" class="headerlink" title="三、用于所有用户"></a>三、用于所有用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi &#x2F;etc&#x2F;profile </span><br></pre></td></tr></table></figure>
-<p>加入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;&lt;你要加入的路径&gt;:$PATH</span><br><span class="line">export PATH&#x3D;&#x2F;home&#x2F;wanghao&#x2F;Develop&#x2F;Android&#x2F;Flutter&#x2F;flutter&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
-
-<p>注意，修改环境变量后，除了第一种方法立即生效外，第二第三种方法要立即生效，可以source ~/.bashrc或者注销再次登录后就可以了！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/Ubuntu%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-Ubuntu 创建桌面快捷方式和sh文件点击运行" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/Ubuntu%20%E5%88%9B%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%92%8Csh%E6%96%87%E4%BB%B6%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8C/">Ubuntu 创建桌面快捷方式和sh文件点击运行</a>
-    </h1>
-  
 
-        
-        <a href="/2021/Ubuntu%20%E5%88%9B%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%92%8Csh%E6%96%87%E4%BB%B6%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8C/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.463Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="创建桌面快捷方式"><a href="#创建桌面快捷方式" class="headerlink" title="创建桌面快捷方式"></a>创建桌面快捷方式</h2><p>复制一下内存保存到/usr/share/application目录下 filezilla.desktop文件下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name&#x3D;FileZilla</span><br><span class="line">Exec&#x3D;&#x2F;home&#x2F;wanghao&#x2F;software&#x2F;FileZilla_3.40.0_x86_64-linux-gnu&#x2F;FileZilla3&#x2F;bin&#x2F;filezilla</span><br><span class="line">Comment&#x3D;FileZilla</span><br><span class="line">Icon&#x3D;&#x2F;home&#x2F;wanghao&#x2F;software&#x2F;FileZilla_3.40.0_x86_64-linux-gnu&#x2F;FileZilla3&#x2F;share&#x2F;icons&#x2F;hicolor&#x2F;scalable&#x2F;apps&#x2F;filezilla.svg</span><br><span class="line">Type&#x3D;Application</span><br><span class="line">Terminal&#x3D;false</span><br><span class="line">Encoding&#x3D;UTF-8</span><br><span class="line">Name[zh_CN]&#x3D;FileZilla</span><br></pre></td></tr></table></figure>
-
-<h2 id="ubuntu-1804下双击运行可执行shell脚本"><a href="#ubuntu-1804下双击运行可执行shell脚本" class="headerlink" title="ubuntu 1804下双击运行可执行shell脚本"></a>ubuntu 1804下双击运行可执行shell脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、安装 dconf-editor</span><br><span class="line">sudo apt-get install dconf-editor</span><br><span class="line">2、安装完成后直接输入dconf-editor打开dconf-editor</span><br><span class="line">dconf-editor</span><br><span class="line">3、org-&gt;gnome-&gt;natuilus-&gt;preferences-&gt;executable-text-activation</span><br><span class="line">关闭使用默认值   自定义值改为ask </span><br><span class="line">4、对脚本加上可执行权限，双击后会出现询问窗口</span><br></pre></td></tr></table></figure>
-
-<h2 id="ubuntu-sh文件点击运行后不关闭"><a href="#ubuntu-sh文件点击运行后不关闭" class="headerlink" title="ubuntu sh文件点击运行后不关闭"></a>ubuntu sh文件点击运行后不关闭</h2><p>在文件最后添加 <code>exec /bin/bash</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn status</span><br><span class="line">exec &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
-<p>##ubuntu桌面上给文件夹创建快捷方式<br><code>sudo ln -sT [文件夹路径] [桌面文件夹路径]</code><br>例如 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sT &#x2F;home&#x2F;user_name&#x2F;文件夹&#x2F; &#x2F;home&#x2F;user_name&#x2F;桌面&#x2F;文件夹</span><br></pre></td></tr></table></figure>
-<p>注意：如果路径含有空格用英文单引号包括path</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sT &#39;&#x2F;home&#x2F;user name&#x2F;文件夹&#x2F;&#39; &#x2F;home&#x2F;user_name&#x2F;桌面&#x2F;文件夹</span><br></pre></td></tr></table></figure>
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/Ubuntu%20%E5%88%9B%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%92%8Csh%E6%96%87%E4%BB%B6%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Toolbar" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/Toolbar/">Toolbar</a>
-    </h1>
-  
-
-        
-        <a href="/2021/Toolbar/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.460Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、设置Toolbar"><a href="#1、设置Toolbar" class="headerlink" title="1、设置Toolbar"></a>1、设置Toolbar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置为ActionBar</span><br><span class="line">setSupportActionBar((Toolbar)findViewById(R.id.tool_bar));</span><br><span class="line">&#x2F;&#x2F;显示左边箭头</span><br><span class="line">getSupportActionBar().setDisplayHomeAsUpEnabled(true);</span><br></pre></td></tr></table></figure>
-<h2 id="2、主题要使用NoActionBar"><a href="#2、主题要使用NoActionBar" class="headerlink" title="2、主题要使用NoActionBar"></a>2、主题要使用NoActionBar</h2><p>这里要使用NoActionBar的，不然就会给你挂了：</p>
-<h2 id="3、修改Toolbar左边箭头颜色"><a href="#3、修改Toolbar左边箭头颜色" class="headerlink" title="3、修改Toolbar左边箭头颜色"></a>3、修改Toolbar左边箭头颜色</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--设置Toolbar左侧箭头颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;colorControlNormal&quot;&gt;@color&#x2F;colorAccent&lt;&#x2F;item&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="4、设置Toolbar菜单样式设置"><a href="#4、设置Toolbar菜单样式设置" class="headerlink" title="4、设置Toolbar菜单样式设置"></a>4、设置Toolbar菜单样式设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style name&#x3D;&quot;PopupTheme&quot; parent&#x3D;&quot;Widget.AppCompat.Toolbar&quot;&gt;</span><br><span class="line">&lt;!--设置pop菜单背景颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:colorBackground&quot;&gt;@color&#x2F;c17b4ed&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单是否在浮在Toorbar上，默认true, false时在Toolbar下面显示--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;overlapAnchor&quot;&gt;true&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单字体颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:textColorPrimary&quot;&gt;@color&#x2F;cff0000&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单字体大小--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:textSize&quot;&gt;30sp&lt;&#x2F;item&gt;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -870,7 +550,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Toolbar</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">FFmpeg</a>
         		</li>
       		
 		</ul>
@@ -891,7 +571,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/Toolbar/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/01/01/FFmpeg%E7%BC%96%E8%AF%91/">展开全文 >></a>
         </p>
       
 
@@ -921,27 +601,170 @@
 
 
   
-    <article id="post-SVN 删除脚本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-NDK开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/SVN%20%E5%88%A0%E9%99%A4%E8%84%9A%E6%9C%AC/">SVN 删除脚本</a>
+      <a class="article-title" href="/2021/01/01/NDK%E5%BC%80%E5%8F%91/">NDK开发</a>
     </h1>
   
 
         
-        <a href="/2021/SVN%20%E5%88%A0%E9%99%A4%E8%84%9A%E6%9C%AC/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.452Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2021/01/01/NDK%E5%BC%80%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2020-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@echo on</span><br><span class="line">color 2f</span><br><span class="line">mode con: cols&#x3D;80 lines&#x3D;25</span><br><span class="line">@REM </span><br><span class="line">@echo 正在清理SVN文件，请稍候......</span><br><span class="line">@rem 循环删除当前目录及子目录下所有的SVN文件</span><br><span class="line">@rem for &#x2F;r . %%a in (.) do @if exist &quot;%%a\.svn&quot; @echo &quot;%%a\.svn&quot;</span><br><span class="line">@for &#x2F;r . %%a in (.) do @if exist &quot;%%a\.svn&quot; rd &#x2F;s &#x2F;q &quot;%%a\.svn&quot;</span><br><span class="line">@echo 清理完毕！！！</span><br><span class="line">@pause</span><br></pre></td></tr></table></figure>
+        <h4 id="1、创建java类和native方法"><a href="#1、创建java类和native方法" class="headerlink" title="1、创建java类和native方法"></a>1、创建java类和native方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.jnitest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NativeUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">native</span> String <span class="title">doSomething</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、执行javah命令生成头文件"><a href="#2、执行javah命令生成头文件" class="headerlink" title="2、执行javah命令生成头文件"></a>2、执行javah命令生成头文件</h4><p>打开命令行切换到java目录、执行javah命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javah com.example.jnitest.NativeUtil</span><br></pre></td></tr></table></figure>
+<h4 id="创建native文件"><a href="#创建native文件" class="headerlink" title="创建native文件"></a>创建native文件</h4><p>1、在main目录下创建jni文件夹，并在jni文件夹下创建model1文件夹。<br>2、复制命令生成的头文件到model目录下。<br>3、创建cpp文件，并引入上面的头文件。<br>4、复制方法到cpp文件并重写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;NativeUtil.h&quot;</span><br><span class="line">JNIEXPORT jstring JNICALL Java_com_example_jnitest_NativeUtil_doSomething(JNIEnv *env, jobject)&#123;</span><br><span class="line">    return env-&gt;NewStringUTF(&quot;hello java&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建Android-mk文件"><a href="#创建Android-mk文件" class="headerlink" title="创建Android.mk文件"></a>创建Android.mk文件</h4><p>在jni目录下创建Android.mk文件,并设置库名称和相关的cpp文件<br>LOCAL_MODULE 生成库的名称<br>LOCAL_SRC_FILES 模块中的cpp文件 多文件以空格分割</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LOCAL_PATH :&#x3D; $(call my-dir)</span><br><span class="line"></span><br><span class="line">include $(CLEAR_VARS)</span><br><span class="line"></span><br><span class="line">LOCAL_MODULE                  :&#x3D; NativeUtil-v3</span><br><span class="line">LOCAL_SRC_FILES               :&#x3D; model1&#x2F;NativeUtil.cpp</span><br><span class="line">LOCAL_LDLIBS                  :&#x3D; -lz</span><br><span class="line"></span><br><span class="line">include $(BUILD_SHARED_LIBRARY)</span><br></pre></td></tr></table></figure>
+<h4 id="创建Application-mk文件"><a href="#创建Application-mk文件" class="headerlink" title="创建Application.mk文件"></a>创建Application.mk文件</h4><p>在jni目录下创建Application.mk文件<br>APP_ABI 用来指定编译平台<br>APP_STL C++ 库支持</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">APP_ABI :&#x3D; arm64-v8a armeabi-v7a</span><br><span class="line">APP_STL :&#x3D; c++_static</span><br><span class="line">APP_PLATFORM :&#x3D; android-16</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改manifest文件，添加minSdkVersion"><a href="#修改manifest文件，添加minSdkVersion" class="headerlink" title="修改manifest文件，添加minSdkVersion"></a>修改manifest文件，添加minSdkVersion</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-sdk android:minSdkVersion&#x3D;&quot;23&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用ndk-build命令生成so库"><a href="#使用ndk-build命令生成so库" class="headerlink" title="使用ndk-build命令生成so库"></a>使用ndk-build命令生成so库</h4><p>命令行切换到jni目录下,执行ndk-build命令</p>
+<h4 id="把生成的so库复制到jniLibs目录下"><a href="#把生成的so库复制到jniLibs目录下" class="headerlink" title="把生成的so库复制到jniLibs目录下"></a>把生成的so库复制到jniLibs目录下</h4><p>在main目录下创建jniLibs目录，然后复制arm64-v8a等相关文件</p>
+<h4 id="Java代码中调用c-方法。"><a href="#Java代码中调用c-方法。" class="headerlink" title="Java代码中调用c++方法。"></a>Java代码中调用c++方法。</h4><p>1、加载库System.loadLibrary(“NativeUtil-v3”)；<br>注意：库的名称。例如：libNativeUtil-v3.so，要去了文件开始lib和文件后缀。<br>2、Java代码中调用native方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class NativeUtil &#123;</span><br><span class="line">    static &#123;</span><br><span class="line">        System.loadLibrary(&quot;NativeUtil-v3&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    static native String doSomething();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tv.setText(NativeUtil.doSomething());</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置ndk目录"><a href="#配置ndk目录" class="headerlink" title="配置ndk目录"></a>配置ndk目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ndk.dir&#x3D;C\:\\Users\\wanghao\\AppData\\Local\\Android\\Sdk\\ndk\\23.0.7196353</span><br></pre></td></tr></table></figure>
+
+<h4 id="JNI类型映射"><a href="#JNI类型映射" class="headerlink" title="JNI类型映射"></a>JNI类型映射</h4><table>
+<thead>
+<tr>
+<th align="left">Java类型</th>
+<th align="left">本地类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">boolean</td>
+<td align="left">jboolean</td>
+<td align="left">C/C++8位整型</td>
+</tr>
+<tr>
+<td align="left">byte</td>
+<td align="left">jbyte</td>
+<td align="left">C/C++带符号的8位整型</td>
+</tr>
+<tr>
+<td align="left">char</td>
+<td align="left">jchar</td>
+<td align="left">C/C++无符号的16位整型</td>
+</tr>
+<tr>
+<td align="left">short</td>
+<td align="left">jshort</td>
+<td align="left">C/C++带符号的16位整型</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">jint</td>
+<td align="left">C/C++带符号的32位整型</td>
+</tr>
+<tr>
+<td align="left">long</td>
+<td align="left">jlong</td>
+<td align="left">C/C++带符号的64位整型e</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">jfloat</td>
+<td align="left">C/C++32位浮点型</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">jdouble</td>
+<td align="left">C/C++64位浮点型</td>
+</tr>
+<tr>
+<td align="left">Object</td>
+<td align="left">jobject</td>
+<td align="left">任何Java对象，或者没有对应java类型的对象</td>
+</tr>
+<tr>
+<td align="left">Class</td>
+<td align="left">jclass</td>
+<td align="left">Class对象</td>
+</tr>
+<tr>
+<td align="left">String</td>
+<td align="left">jstring</td>
+<td align="left">字符串对象</td>
+</tr>
+<tr>
+<td align="left">Object[]</td>
+<td align="left">jobjectArray</td>
+<td align="left">任何对象的数组</td>
+</tr>
+<tr>
+<td align="left">boolean[]</td>
+<td align="left">jbooleanArray</td>
+<td align="left">布尔型数组</td>
+</tr>
+<tr>
+<td align="left">byte[]</td>
+<td align="left">jbyteArray</td>
+<td align="left">比特型数组</td>
+</tr>
+<tr>
+<td align="left">char[]</td>
+<td align="left">jcharArray</td>
+<td align="left">字符型数组</td>
+</tr>
+<tr>
+<td align="left">short[]</td>
+<td align="left">jshortArray</td>
+<td align="left">短整型数组</td>
+</tr>
+<tr>
+<td align="left">int[]</td>
+<td align="left">jintArray</td>
+<td align="left">整型数组</td>
+</tr>
+<tr>
+<td align="left">long[]</td>
+<td align="left">jlongArray</td>
+<td align="left">长整型数组</td>
+</tr>
+<tr>
+<td align="left">float[]</td>
+<td align="left">jfloatArray</td>
+<td align="left">浮点型数组</td>
+</tr>
+<tr>
+<td align="left">double[]</td>
+<td align="left">jdoubleArray</td>
+<td align="left">双浮点型数组</td>
+</tr>
+</tbody></table>
+<h4 id="Native方法常见问题"><a href="#Native方法常见问题" class="headerlink" title="Native方法常见问题"></a>Native方法常见问题</h4><p>打印日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;android&#x2F;log.h&gt;</span><br><span class="line"></span><br><span class="line"> __android_log_print(ANDROID_LOG_INFO,&quot;myTag&quot;,&quot;info:\n%s&quot;,info);</span><br></pre></td></tr></table></figure>
+
+<p>创建字符串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env-&gt;NewStringUTF(&quot;hello java&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>获取字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取字符串</span><br><span class="line">const char* str &#x3D; env-&gt;GetStringUTFChars(jstr, 0);</span><br><span class="line">...</span><br><span class="line">&#x2F;&#x2F;释放内存</span><br><span class="line">env-&gt;ReleaseStringUTFChars(jstr, str);</span><br></pre></td></tr></table></figure>
+
+<p>获取Java中的byte[]数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取数组指针和长度</span><br><span class="line">jbyte *c_array &#x3D; env-&gt;GetByteArrayElements(j_array, 0);</span><br><span class="line">int len_arr &#x3D; env-&gt;GetArrayLength(j_array);</span><br><span class="line"></span><br><span class="line">jbyte buf[len_arr];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;释放内存</span><br><span class="line">env-&gt;ReleaseByteArrayElements(j_array, c_array, 0);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;赋值</span><br><span class="line">jbyteArray c_result &#x3D; env-&gt;NewByteArray(len_arr);</span><br><span class="line">env-&gt;SetByteArrayRegion(c_result, 0, len_arr, buf);</span><br><span class="line"></span><br><span class="line">return c_result;</span><br></pre></td></tr></table></figure>
+
+
+
+
 
       
 
@@ -950,13 +773,24 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">NDK</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
@@ -965,7 +799,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/SVN%20%E5%88%A0%E9%99%A4%E8%84%9A%E6%9C%AC/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/01/01/NDK%E5%BC%80%E5%8F%91/">展开全文 >></a>
         </p>
       
 
@@ -995,27 +829,34 @@
 
 
   
-    <article id="post-Sqlite" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Activity Uri解析问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/Sqlite/">Sqlite</a>
+      <a class="article-title" href="/2019/01/01/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">Activity Uri 解析问题</a>
     </h1>
   
 
         
-        <a href="/2021/Sqlite/" class="archive-article-date">
-  	<time datetime="2021-03-05T07:15:35.450Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2019/01/01/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1、删除自增索引"><a href="#1、删除自增索引" class="headerlink" title="1、删除自增索引"></a>1、删除自增索引</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">当SQLite数据库中包含自增列时，会自动建立一个名为sqlite_sequence的表。</span><br><span class="line">这个表包含两个列：name和seq。name记录自增列所在的表，seq记录当前序号（下一条记录的编号就是当前序号加1）。</span><br><span class="line">如果想把某个自增列的序号归零，只需要修改sqlite_sequence表就可以了。</span><br><span class="line">UPDATE sqlite_sequence SET seq&#x3D;0 WHERE name&#x3D;&#39;TableName&#39;;</span><br><span class="line">也可以直接把该记录删掉：</span><br><span class="line">DELETE FROM sqlite_sequence WHERE name&#x3D;&#39;TableName&#39;;</span><br><span class="line">要想将所有表的自增列都归零，直接清空sqlite_sequence表就可以了：</span><br><span class="line">DELETE FROM sqlite_sequence;</span><br></pre></td></tr></table></figure>
+        <p>今天遇到客户端Uri解析出内容中汉字展示乱码，Uri格式如下：app://cnki.net?code=bb4&amp;title=50%的人口&amp;作者=中国知网。</p>
+<h4 id="查看读取代码，未发现什么问题："><a href="#查看读取代码，未发现什么问题：" class="headerlink" title="查看读取代码，未发现什么问题："></a>查看读取代码，未发现什么问题：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Uri uri &#x3D; Uri.parse(&quot;app:&#x2F;&#x2F;cnki.net?code&#x3D;bb4&amp;title&#x3D;50%的人口&amp;作者&#x3D;中国知网&quot;);</span><br><span class="line">String code &#x3D; uri.getQueryParameter(&quot;code&quot;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="进一步查看源码"><a href="#进一步查看源码" class="headerlink" title="进一步查看源码"></a>进一步查看源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public String getQueryParameter(String key) &#123;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;传入的uri参数信息，内部没有再编码，需要传入时编码</span><br><span class="line">    final String query &#x3D; getEncodedQuery();</span><br><span class="line">	&#x2F;&#x2F;注意：内部方法对key进行编码查询</span><br><span class="line">    final String encodedKey &#x3D; encode(key, null);</span><br><span class="line">    final int length &#x3D; query.length();</span><br><span class="line">    int start &#x3D; 0;</span><br><span class="line">    do &#123;</span><br><span class="line">        int nextAmpersand &#x3D; query.indexOf(&#39;&amp;&#39;, start);</span><br><span class="line">        int end &#x3D; nextAmpersand !&#x3D; -1 ? nextAmpersand : length;</span><br><span class="line">        int separator &#x3D; query.indexOf(&#39;&#x3D;&#39;, start);</span><br><span class="line">        if (separator &gt; end || separator &#x3D;&#x3D; -1) &#123;</span><br><span class="line">            separator &#x3D; end;</span><br><span class="line">        &#125;</span><br><span class="line">        if (separator - start &#x3D;&#x3D; encodedKey.length()</span><br><span class="line">            &amp;&amp; query.regionMatches(start, encodedKey, 0, encodedKey.length())) &#123;</span><br><span class="line">            if (separator &#x3D;&#x3D; end) &#123;</span><br><span class="line">                return &quot;&quot;;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                String encodedValue &#x3D; query.substring(separator + 1, end);</span><br><span class="line">				&#x2F;&#x2F;乱码原因，对传入未编码的内容进行了解码</span><br><span class="line">                return UriCodec.decode(encodedValue, true, StandardCharsets.UTF_8, false);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (nextAmpersand !&#x3D; -1) &#123;</span><br><span class="line">            start &#x3D; nextAmpersand + 1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; while (true);</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="乱码原因："><a href="#乱码原因：" class="headerlink" title="乱码原因："></a>乱码原因：</h4><p>在调用Uri.parse方法时传入数据格式不对，经查看源码发现这里接收的uri参数部门需要进行编码，查询到内容后再解码返回，由于传入内容没有进行编码导致解码出来的内容出现乱码。</p>
+<h4 id="解决办法，对参数内容进行编码"><a href="#解决办法，对参数内容进行编码" class="headerlink" title="解决办法，对参数内容进行编码"></a>解决办法，对参数内容进行编码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String url &#x3D; &quot;app:&#x2F;&#x2F;cnki.net?&quot; +</span><br><span class="line">            Uri.encode(&quot;code&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;123&quot;) + &quot;&amp;&quot; +</span><br><span class="line">            Uri.encode(&quot;title&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;50%笔记&quot;) + &quot;&amp;&quot; +</span><br><span class="line">            Uri.encode(&quot;姓名&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;王豪hhhh&quot;);</span><br><span class="line">Uri uri &#x3D; Uri.parse(url);</span><br><span class="line">String code &#x3D; uri.getQueryParameter(&quot;code&quot;);			</span><br></pre></td></tr></table></figure>
+
+
 
       
 
@@ -1024,6 +865,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Uri</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -1039,7 +891,337 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/Sqlite/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/01/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Activity生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Activity生命周期</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、Activity生命周期"><a href="#1、Activity生命周期" class="headerlink" title="1、Activity生命周期"></a>1、Activity生命周期</h2><p><strong>启动ActivityA</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityA: onCreate</span><br><span class="line">activityA: onStart</span><br><span class="line">activityA: onResume</span><br></pre></td></tr></table></figure>
+
+<p><strong>再启动ActivityB</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityA: onPause</span><br><span class="line">activityB: onCreate</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br><span class="line">activityA: onSaveInstanceState</span><br><span class="line">activityA: onStop</span><br></pre></td></tr></table></figure>
+
+<p><strong>再启动ActivityC</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityB: onPause</span><br><span class="line">activityC: onCreate</span><br><span class="line">activityC: onStart</span><br><span class="line">activityC: onResume</span><br><span class="line">activityB: onSaveInstanceState</span><br><span class="line">activityB: onStop</span><br></pre></td></tr></table></figure>
+
+<p><strong>退出ActivityC</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityC: onPause</span><br><span class="line">activityB: onRestart</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br><span class="line">activityC: onStop</span><br><span class="line">activityC: onDestroy</span><br></pre></td></tr></table></figure>
+<p><strong>点击Home键</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityB: onPause</span><br><span class="line">activityB: onSaveInstanceState</span><br><span class="line">activityB: onStop</span><br></pre></td></tr></table></figure>
+
+<p><strong>重新返回应用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityB: onRestart</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、Activity的四种启动方式"><a href="#2、Activity的四种启动方式" class="headerlink" title="2、Activity的四种启动方式"></a>2、Activity的四种启动方式</h2><p><strong>standard</strong><br>standard启动模式是默认的启动模式，每次启动一个Activity都会新建一个实例不管栈中是否已有该Activity的实例。</p>
+<p><strong>singleTop</strong><br>singleTop模式分3种情况<br>当前栈中已有该Activity的实例并且该实例位于栈顶时，不会新建实例，而是复用栈顶的实例，并且会将Intent对象传入，回调onNewIntent方法。<br>当前栈中已有该Activity的实例但是该实例不在栈顶时，其行为和standard启动模式一样，依然会创建一个新的实例。<br>当前栈中不存在该Activity的实例时，其行为同standard启动模式。<br><strong>singleTask</strong><br>singleTask启动模式启动Activity时，首先会根据taskAffinity去寻找当前是否存在一个对应名字的任务栈。<br>如果不存在，则会创建一个新的Task，并创建新的Activity实例入栈到新创建的Task中去。<br>如果存在，则得到该任务栈，查找该任务栈中是否存在该Activity实例。<br>如果存在实例，则将它上面的Activity实例都出栈，然后回调启动的Activity实例的onNewIntent方法。<br>如果不存在该实例，则新建Activity，并入栈<br>此外，我们可以将两个不同App中的Activity设置为相同的taskAffinity，这样虽然在不同的应用中，但是Activity会被分配到同一个Task中去。<br><strong>singleInstance</strong><br>该模式具备singleTask模式的所有特性外，与它的区别就是，这种模式下的Activity会单独占用一个Task栈，具有全局唯一性，即整个系统中就这么一个实例，由于栈内复用的特性，后续的请求均不会创建新的Activity实例，除非这个特殊的任务栈被销毁了。以singleInstance模式启动的Activity在整个系统中是单例的，如果在启动这样的Activiyt时，已经存在了一个实例，那么会把它所在的任务调度到前台，重用这个实例。</p>
+<h2 id="3、Android多线程的通信方式"><a href="#3、Android多线程的通信方式" class="headerlink" title="3、Android多线程的通信方式"></a>3、Android多线程的通信方式</h2><p><strong>1.安卓线程间通信的方式有以下几种</strong></p>
+<p>1）共享变量（内存）</p>
+<p>2）管道</p>
+<p>3）handle机制</p>
+<p>runOnUiThread(Runnable)</p>
+<p>view.post(Runnable)</p>
+<p>android进程内的消息驱动机制—Handler,<br>MessageQueue,<br>Runnable,<br>Looper</p>
+<p>Looper和Message的处理机制: 首先在主线程中创建了一个handler对象,<br>目的是为了处理从子线程发送过来的消息,<br>然后当子线程有发送消息的需求时会使用Message对象,<br>消息首先会被存储在Messagequeue消息队列中,<br>主线程还有一个Looper消息轮询器,<br>会循环遍历消息队列中的消息,<br>当发现消息的时候会发送消息给handler处理(更新ui等操作),<br>handler调用handleMessage处理完后将Message置为null以便回收.</p>
+<p><strong>2进程间的通信</strong></p>
+<p>进程间的通信：</p>
+<p>bind机制（IPC-&gt;AIDL)</p>
+<p>linux级共享内存</p>
+<p>boradcast</p>
+<p>Activity之间可以通过intent来传递数据</p>
+<h2 id="4、Android中的消息机制"><a href="#4、Android中的消息机制" class="headerlink" title="4、Android中的消息机制"></a>4、Android中的消息机制</h2><p>http: //<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/02962454adf7">www.jianshu.com/p/02962454adf7</a></p>
+<h2 id="5、HandlerThread的原理"><a href="#5、HandlerThread的原理" class="headerlink" title="5、HandlerThread的原理"></a>5、HandlerThread的原理</h2><p>http: //<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/4a57de01c8f5">www.jianshu.com/p/4a57de01c8f5</a></p>
+<h2 id="6、Window的工作原理和作用"><a href="#6、Window的工作原理和作用" class="headerlink" title="6、Window的工作原理和作用"></a>6、Window的工作原理和作用</h2><p>http: //blog.csdn.net/xieqibao/article/details/6567814</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Activity</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Android 8.0启动前台服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Android%208.0%E5%90%AF%E5%8A%A8%E5%89%8D%E5%8F%B0%E6%9C%8D%E5%8A%A1/">Android 8.0启动服务</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Android%208.0%E5%90%AF%E5%8A%A8%E5%89%8D%E5%8F%B0%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android 8.0不允许创建后台服务，启动服务可以使用系统兼容方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ContextCompat.startForegroundService(context, intent);</span><br></pre></td></tr></table></figure>
+
+<p>应用必须在创建服务后的五秒内调用该服务的 startForeground() 函数，否则会出现ANR。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">super</span>.onCreate();</span><br><span class="line">      <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) &#123;</span><br><span class="line">          NotificationChannel channel = <span class="keyword">new</span> NotificationChannel(<span class="string">&quot;PLAYER&quot;</span>, <span class="string">&quot;播放器&quot;</span>, NotificationManager.IMPORTANCE_MIN);</span><br><span class="line">          NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);</span><br><span class="line">          manager.createNotificationChannel(channel);</span><br><span class="line">          NotificationCompat.Builder builder = <span class="keyword">new</span> NotificationCompat.Builder(<span class="keyword">this</span>, <span class="string">&quot;PLAYER&quot;</span>);</span><br><span class="line">          startForeground(<span class="number">1</span>, builder.build());</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意通知的级别</p>
+<table>
+<thead>
+<tr>
+<th>用户通知级别</th>
+<th>Android8.0及以上</th>
+<th>Android7.0及以下</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>紧急级别（发出通知声音并显示为提示通知）</td>
+<td>IMPORTANCE_HIGH</td>
+<td>PRIORITY_HIGH或者PRIORITY_MAX</td>
+</tr>
+<tr>
+<td>高级别（发出通知声音并且通知栏有通知）</td>
+<td>IMPORTANCE_DEFAULT</td>
+<td>PRIORITY_DEFAULT</td>
+</tr>
+<tr>
+<td>中等级别（没有通知声音但通知栏有通知）</td>
+<td>IMPORTANCE_LOW</td>
+<td>PRIORITY_LOW</td>
+</tr>
+<tr>
+<td>低级别（没有通知声音也不会出现在状态栏上）</td>
+<td>IMPORTANCE_MIN</td>
+<td>PRIORITY_MIN</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">服务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Android%208.0%E5%90%AF%E5%8A%A8%E5%89%8D%E5%8F%B0%E6%9C%8D%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Android Drawable 文件设置分割线高度和左右边距" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Android%20Drawable%20%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%88%86%E5%89%B2%E7%BA%BF%E9%AB%98%E5%BA%A6%E5%92%8C%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D/">Android Drawable 文件设置分割线高度和左右边距</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Android%20Drawable%20%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%88%86%E5%89%B2%E7%BA%BF%E9%AB%98%E5%BA%A6%E5%92%8C%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.在shape里设置padding无效代码如下。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">    &lt;padding</span><br><span class="line">        android:left=&quot;10dp&quot;</span><br><span class="line">        android:right=&quot;10dp&quot; /&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;1dp&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">&quot;@color/CF1F0F0&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2.解决办法<br>使用layer-list</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">layer-list</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:left</span>=<span class="string">&quot;10dp&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">shape</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;1px&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">&quot;@color/CF1F0F0&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用inset</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">inset</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:insetLeft</span>=<span class="string">&quot;10dp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:insetRight</span>=<span class="string">&quot;10dp&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">shape</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">&quot;10dp&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">&quot;@color/CF1F0F0&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">inset</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Drawable</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Android%20Drawable%20%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%88%86%E5%89%B2%E7%BA%BF%E9%AB%98%E5%BA%A6%E5%92%8C%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D/">展开全文 >></a>
         </p>
       
 

@@ -152,28 +152,81 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-adb 查看当前页面的Activity名称" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Markdown语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">adb 查看当前页面的Activity名称</a>
+      <a class="article-title" href="/2019/01/01/Markdown%E8%AF%AD%E6%B3%95/">Markdown语法</a>
     </h1>
   
 
         
-        <a href="/2021/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:19:27.282Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2019/01/01/Markdown%E8%AF%AD%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br><span class="line">mCurrentFocus&#x3D;Window&#123;d7e0c6e u0 com.xunmeng.pinduoduo&#x2F;com.xunmeng.pinduoduo.ui.activity.HomeActivity&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#一级标题</span><br><span class="line">##二级标题</span><br><span class="line">###三级标题</span><br><span class="line">####四级标题</span><br><span class="line">#####五级标题</span><br><span class="line">######六级标题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>*文本1<br>*文本2<br>*文本3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-文本1</span><br><span class="line">-文本2</span><br><span class="line">-文本3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><p>1.文本1<br>2.文本2<br>3.文本3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.文本1</span><br><span class="line">2.文本2</span><br><span class="line">3.文本3</span><br></pre></td></tr></table></figure>
+
+<h2 id="链接和图片"><a href="#链接和图片" class="headerlink" title="链接和图片"></a>链接和图片</h2><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p><a target="_blank" rel="noopener" href="http://www.baidu.com/">链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接](http:&#x2F;&#x2F;www.baidu.com)</span><br></pre></td></tr></table></figure>
+
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https:&#x2F;&#x2F;ss0.bdstatic.com&#x2F;5aV1bjqh_Q23odCf&#x2F;static&#x2F;superman&#x2F;img&#x2F;logo&#x2F;bd_logo1_31bdc765.png)</span><br></pre></td></tr></table></figure>
+
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table>
+<thead>
+<tr>
+<th>Header1</th>
+<th>Header2</th>
+<th align="right">Header3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>col1</td>
+<td>col1</td>
+<td align="right">col1</td>
+</tr>
+<tr>
+<td>col1</td>
+<td>col1</td>
+<td align="right">col1</td>
+</tr>
+<tr>
+<td>col1</td>
+<td>col1</td>
+<td align="right">col1</td>
+</tr>
+<tr>
+<td>col1</td>
+<td>col1</td>
+<td align="right">col1</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|Header1|Header2|Header3|</span><br><span class="line">|-------------|: -------------: |-----: |</span><br><span class="line">|col1|col1|col1|</span><br><span class="line">|col1|col1|col1|</span><br><span class="line">|col1|col1|col1|</span><br><span class="line">|col1|col1|col1|</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>以&gt;开头</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是引用的内容</span><br></pre></td></tr></table></figure>
+
+<h2 id="斜体、加粗和斜体并加粗"><a href="#斜体、加粗和斜体并加粗" class="headerlink" title="斜体、加粗和斜体并加粗"></a>斜体、加粗和斜体并加粗</h2><ul>
+<li>以一个星号包裹的内容是斜体 * ，** 两个星号包裹的内容是粗体 **, *** 以三个星号包裹的内容是斜体并加粗 ***</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 以一个星号包裹的内容是斜体 * ，** 两个星号包裹的内容是粗体 **, *** 以三个星号包裹的内容是斜体并加粗 ***</span><br></pre></td></tr></table></figure>
+
 
 
       
@@ -188,7 +241,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">命令</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MarkDown</a>
         		</li>
       		
 		</ul>
@@ -209,7 +262,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/01/Markdown%E8%AF%AD%E6%B3%95/">展开全文 >></a>
         </p>
       
 
@@ -239,64 +292,38 @@
 
 
   
-    <article id="post-Activity生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Retrofit使用简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Activity生命周期</a>
+      <a class="article-title" href="/2019/01/01/Retrofit%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">Retrofit使用简介</a>
     </h1>
   
 
         
-        <a href="/2021/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:19:27.280Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2019/01/01/Retrofit%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##1、Activity生命周期</p>
-<p><strong>启动ActivityA</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityA: onCreate</span><br><span class="line">activityA: onStart</span><br><span class="line">activityA: onResume</span><br></pre></td></tr></table></figure>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Retrofit与okhttp共同出自于Square公司，retrofit就是对okhttp做了一层封装。把网络请求都交给给了Okhttp，我们只需要通过简单的配置就能使用retrofit来进行网络请求。<br>github地址：<a target="_blank" rel="noopener" href="https://github.com/square/retrofit">https://github.com/square/retrofit</a></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h4 id="1-引入库"><a href="#1-引入库" class="headerlink" title="1.引入库"></a>1.引入库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compile&#39;com.squareup.retrofit2: retrofit: 2.3.0&#39;&#x2F;&#x2F;Retrofit库</span><br><span class="line">compile&#39;com.squareup.retrofit2: converter-scalars: 2.1.0&#39;</span><br><span class="line">compile&#39;com.squareup.retrofit2: converter-gson: 2.1.0&#39;</span><br></pre></td></tr></table></figure>
 
-<p><strong>再启动ActivityB</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityA: onPause</span><br><span class="line">activityB: onCreate</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br><span class="line">activityA: onSaveInstanceState</span><br><span class="line">activityA: onStop</span><br></pre></td></tr></table></figure>
+<h4 id="2-接口定义"><a href="#2-接口定义" class="headerlink" title="2.接口定义"></a>2.接口定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface BlogService&#123;</span><br><span class="line">    @GET(&quot;blog&#x2F;&#123;id&#125;&quot;)</span><br><span class="line">    Call&lt;Result&lt;Blog&gt;&gt; getBlog(@Path(&quot;id&quot;) int id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-创建Retrofit实例"><a href="#3-创建Retrofit实例" class="headerlink" title="3.创建Retrofit实例"></a>3.创建Retrofit实例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Retrofit retrofit &#x3D; new Retrofit.Builder()</span><br><span class="line">  .baseUrl(&quot;http:&#x2F;&#x2F;baidu.com&#x2F;&quot;) &#x2F;&#x2F;设置网络请求的Url地址</span><br><span class="line">  .addConverterFactory(GsonConverterFactory.create()) &#x2F;&#x2F;增加返回值为String等基本类型的支持</span><br><span class="line">  .addConverterFactory(ScalarsConverterFactory.create()) &#x2F;&#x2F;增加返回值为Gson的支持(以实体类返回)</span><br><span class="line">  .build();</span><br></pre></td></tr></table></figure>
 
-<p><strong>再启动ActivityC</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityB: onPause</span><br><span class="line">activityC: onCreate</span><br><span class="line">activityC: onStart</span><br><span class="line">activityC: onResume</span><br><span class="line">activityB: onSaveInstanceState</span><br><span class="line">activityB: onStop</span><br></pre></td></tr></table></figure>
-
-<p><strong>退出ActivityC</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">activityC: onPause</span><br><span class="line">activityB: onRestart</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br><span class="line">activityC: onStop</span><br><span class="line">activityC: onDestroy</span><br></pre></td></tr></table></figure>
-<p><strong>点击Home键</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityB: onPause</span><br><span class="line">activityB: onSaveInstanceState</span><br><span class="line">activityB: onStop</span><br></pre></td></tr></table></figure>
-
-<p><strong>重新返回应用</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">activityB: onRestart</span><br><span class="line">activityB: onStart</span><br><span class="line">activityB: onResume</span><br></pre></td></tr></table></figure>
-
-<p>##2、Activity的四种启动方式<br><strong>standard</strong><br>standard启动模式是默认的启动模式，每次启动一个Activity都会新建一个实例不管栈中是否已有该Activity的实例。</p>
-<p><strong>singleTop</strong><br>singleTop模式分3种情况<br>当前栈中已有该Activity的实例并且该实例位于栈顶时，不会新建实例，而是复用栈顶的实例，并且会将Intent对象传入，回调onNewIntent方法。<br>当前栈中已有该Activity的实例但是该实例不在栈顶时，其行为和standard启动模式一样，依然会创建一个新的实例。<br>当前栈中不存在该Activity的实例时，其行为同standard启动模式。<br><strong>singleTask</strong><br>singleTask启动模式启动Activity时，首先会根据taskAffinity去寻找当前是否存在一个对应名字的任务栈。<br>如果不存在，则会创建一个新的Task，并创建新的Activity实例入栈到新创建的Task中去。<br>如果存在，则得到该任务栈，查找该任务栈中是否存在该Activity实例。<br>如果存在实例，则将它上面的Activity实例都出栈，然后回调启动的Activity实例的onNewIntent方法。<br>如果不存在该实例，则新建Activity，并入栈<br>此外，我们可以将两个不同App中的Activity设置为相同的taskAffinity，这样虽然在不同的应用中，但是Activity会被分配到同一个Task中去。<br><strong>singleInstance</strong><br>该模式具备singleTask模式的所有特性外，与它的区别就是，这种模式下的Activity会单独占用一个Task栈，具有全局唯一性，即整个系统中就这么一个实例，由于栈内复用的特性，后续的请求均不会创建新的Activity实例，除非这个特殊的任务栈被销毁了。以singleInstance模式启动的Activity在整个系统中是单例的，如果在启动这样的Activiyt时，已经存在了一个实例，那么会把它所在的任务调度到前台，重用这个实例。</p>
-<p>##3、Android多线程的通信方式</p>
-<p><strong>1.安卓线程间通信的方式有以下几种</strong></p>
-<p>1）共享变量（内存）</p>
-<p>2）管道</p>
-<p>3）handle机制</p>
-<p>runOnUiThread(Runnable)</p>
-<p>view.post(Runnable)</p>
-<p>android进程内的消息驱动机制—Handler,<br>MessageQueue,<br>Runnable,<br>Looper</p>
-<p>Looper和Message的处理机制: 首先在主线程中创建了一个handler对象,<br>目的是为了处理从子线程发送过来的消息,<br>然后当子线程有发送消息的需求时会使用Message对象,<br>消息首先会被存储在Messagequeue消息队列中,<br>主线程还有一个Looper消息轮询器,<br>会循环遍历消息队列中的消息,<br>当发现消息的时候会发送消息给handler处理(更新ui等操作),<br>handler调用handleMessage处理完后将Message置为null以便回收.</p>
-<p><strong>2进程间的通信</strong></p>
-<p>进程间的通信：</p>
-<p>bind机制（IPC-&gt;AIDL)</p>
-<p>linux级共享内存</p>
-<p>boradcast</p>
-<p>Activity之间可以通过intent来传递数据</p>
-<p>##4、Android中的消息机制</p>
-<p>http: //<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/02962454adf7">www.jianshu.com/p/02962454adf7</a><br>##5、HandlerThread的原理</p>
-<p>http: //<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/4a57de01c8f5">www.jianshu.com/p/4a57de01c8f5</a><br>##5、Window的工作原理和作用<br>http: //blog.csdn.net/xieqibao/article/details/6567814</p>
+<h4 id="4-接口调用"><a href="#4-接口调用" class="headerlink" title="4.接口调用"></a>4.接口调用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">RequestService service &#x3D; retrofit.create(RequestService.class);</span><br><span class="line">service.search(&quot;好&quot;, 70).enqueue(new Callback() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onResponse(Call call, Response response) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void onFailure(Call call, Throwable t) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="注解详解"><a href="#注解详解" class="headerlink" title="注解详解"></a>注解详解</h2><h4 id="第一类：请求方法"><a href="#第一类：请求方法" class="headerlink" title="第一类：请求方法"></a>第一类：请求方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@GET(&quot;RussianDictionaryServer&#x2F;word&#x2F;api&#x2F;search&quot;)</span><br><span class="line">Call search(@Query(&quot;key&quot;) String key, @Query(&quot;v&quot;) int v);</span><br><span class="line">@POST(&quot;RussianDictionaryServer&#x2F;word&#x2F;api&#x2F;search&quot;)</span><br><span class="line">Call search(@Query(&quot;key&quot;) String key, @Query(&quot;v&quot;) int v);</span><br></pre></td></tr></table></figure>
+<h4 id="第二类：标记类"><a href="#第二类：标记类" class="headerlink" title="第二类：标记类"></a>第二类：标记类</h4><p><img src="/images/201710241705001.png"></p>
+<h4 id="第三类：参数类"><a href="#第三类：参数类" class="headerlink" title="第三类：参数类"></a>第三类：参数类</h4><p><img src="/images/201710241705002.png"></p>
+<h2 id="遇到的错误"><a href="#遇到的错误" class="headerlink" title="遇到的错误"></a>遇到的错误</h2><p>java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 2 path $<br><code>addConverterFactory(ScalarsConverterFactory.create())</code></p>
+<p>java.lang.IllegalArgumentException: Could not locate ResponseBody converter for class java.lang.String.<br><code>addConverterFactory(ScalarsConverterFactory.create())</code></p>
 
       
 
@@ -310,7 +337,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Activity</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Retrofit</a>
         		</li>
       		
 		</ul>
@@ -331,7 +358,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/01/Retrofit%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">展开全文 >></a>
         </p>
       
 
@@ -361,34 +388,27 @@
 
 
   
-    <article id="post-Activity Uri解析问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SVN 删除脚本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">Activity Uri 解析问题</a>
+      <a class="article-title" href="/2019/01/01/SVN%20%E5%88%A0%E9%99%A4%E8%84%9A%E6%9C%AC/">SVN 删除脚本</a>
     </h1>
   
 
         
-        <a href="/2021/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:19:27.278Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2019/01/01/SVN%20%E5%88%A0%E9%99%A4%E8%84%9A%E6%9C%AC/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天遇到客户端Uri解析出内容中汉字展示乱码，Uri格式如下：app://cnki.net?code=bb4&amp;title=50%的人口&amp;作者=中国知网。</p>
-<h4 id="查看读取代码，未发现什么问题："><a href="#查看读取代码，未发现什么问题：" class="headerlink" title="查看读取代码，未发现什么问题："></a>查看读取代码，未发现什么问题：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Uri uri &#x3D; Uri.parse(&quot;app:&#x2F;&#x2F;cnki.net?code&#x3D;bb4&amp;title&#x3D;50%的人口&amp;作者&#x3D;中国知网&quot;);</span><br><span class="line">String code &#x3D; uri.getQueryParameter(&quot;code&quot;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="进一步查看源码"><a href="#进一步查看源码" class="headerlink" title="进一步查看源码"></a>进一步查看源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public String getQueryParameter(String key) &#123;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;传入的uri参数信息，内部没有再编码，需要传入时编码</span><br><span class="line">    final String query &#x3D; getEncodedQuery();</span><br><span class="line">	&#x2F;&#x2F;注意：内部方法对key进行编码查询</span><br><span class="line">    final String encodedKey &#x3D; encode(key, null);</span><br><span class="line">    final int length &#x3D; query.length();</span><br><span class="line">    int start &#x3D; 0;</span><br><span class="line">    do &#123;</span><br><span class="line">        int nextAmpersand &#x3D; query.indexOf(&#39;&amp;&#39;, start);</span><br><span class="line">        int end &#x3D; nextAmpersand !&#x3D; -1 ? nextAmpersand : length;</span><br><span class="line">        int separator &#x3D; query.indexOf(&#39;&#x3D;&#39;, start);</span><br><span class="line">        if (separator &gt; end || separator &#x3D;&#x3D; -1) &#123;</span><br><span class="line">            separator &#x3D; end;</span><br><span class="line">        &#125;</span><br><span class="line">        if (separator - start &#x3D;&#x3D; encodedKey.length()</span><br><span class="line">            &amp;&amp; query.regionMatches(start, encodedKey, 0, encodedKey.length())) &#123;</span><br><span class="line">            if (separator &#x3D;&#x3D; end) &#123;</span><br><span class="line">                return &quot;&quot;;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                String encodedValue &#x3D; query.substring(separator + 1, end);</span><br><span class="line">				&#x2F;&#x2F;乱码原因，对传入未编码的内容进行了解码</span><br><span class="line">                return UriCodec.decode(encodedValue, true, StandardCharsets.UTF_8, false);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (nextAmpersand !&#x3D; -1) &#123;</span><br><span class="line">            start &#x3D; nextAmpersand + 1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; while (true);</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="乱码原因："><a href="#乱码原因：" class="headerlink" title="乱码原因："></a>乱码原因：</h4><p>在调用Uri.parse方法时传入数据格式不对，经查看源码发现这里接收的uri参数部门需要进行编码，查询到内容后再解码返回，由于传入内容没有进行编码导致解码出来的内容出现乱码。</p>
-<h4 id="解决办法，对参数内容进行编码"><a href="#解决办法，对参数内容进行编码" class="headerlink" title="解决办法，对参数内容进行编码"></a>解决办法，对参数内容进行编码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String url &#x3D; &quot;app:&#x2F;&#x2F;cnki.net?&quot; +</span><br><span class="line">            Uri.encode(&quot;code&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;123&quot;) + &quot;&amp;&quot; +</span><br><span class="line">            Uri.encode(&quot;title&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;50%笔记&quot;) + &quot;&amp;&quot; +</span><br><span class="line">            Uri.encode(&quot;姓名&quot;) + &quot;&#x3D;&quot; + Uri.encode(&quot;王豪hhhh&quot;);</span><br><span class="line">Uri uri &#x3D; Uri.parse(url);</span><br><span class="line">String code &#x3D; uri.getQueryParameter(&quot;code&quot;);			</span><br></pre></td></tr></table></figure>
-
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@echo on</span><br><span class="line">color 2f</span><br><span class="line">mode con: cols&#x3D;80 lines&#x3D;25</span><br><span class="line">@REM </span><br><span class="line">@echo 正在清理SVN文件，请稍候......</span><br><span class="line">@rem 循环删除当前目录及子目录下所有的SVN文件</span><br><span class="line">@rem for &#x2F;r . %%a in (.) do @if exist &quot;%%a\.svn&quot; @echo &quot;%%a\.svn&quot;</span><br><span class="line">@for &#x2F;r . %%a in (.) do @if exist &quot;%%a\.svn&quot; rd &#x2F;s &#x2F;q &quot;%%a\.svn&quot;</span><br><span class="line">@echo 清理完毕！！！</span><br><span class="line">@pause</span><br></pre></td></tr></table></figure>
 
       
 
@@ -397,24 +417,13 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Uri</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -423,7 +432,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/Activity%20Uri%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/01/SVN%20%E5%88%A0%E9%99%A4%E8%84%9A%E6%9C%AC/">展开全文 >></a>
         </p>
       
 
@@ -460,13 +469,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/SVN%E3%80%81Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">SVN,Git 常用命令</a>
+      <a class="article-title" href="/2019/01/01/SVN%E3%80%81Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">SVN,Git 常用命令</a>
     </h1>
   
 
         
-        <a href="/2021/SVN%E3%80%81Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.823Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2019/01/01/SVN%E3%80%81Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
@@ -595,7 +604,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/SVN%E3%80%81Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/01/SVN%E3%80%81Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
         </p>
       
 
@@ -625,264 +634,46 @@
 
 
   
-    <article id="post-搭建github.io博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ScrollView嵌套ListView默认位置不是最顶部的解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2/">搭建github.io博客</a>
+      <a class="article-title" href="/2019/01/01/ScrollView%E5%B5%8C%E5%A5%97ListView%E9%BB%98%E8%AE%A4%E4%BD%8D%E7%BD%AE%E4%B8%8D%E6%98%AF%E6%9C%80%E9%A1%B6%E9%83%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">ScrollView嵌套ListView默认位置不是最顶部的解决方案</a>
     </h1>
   
 
         
-        <a href="/2021/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.823Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2019/01/01/ScrollView%E5%B5%8C%E5%A5%97ListView%E9%BB%98%E8%AE%A4%E4%BD%8D%E7%BD%AE%E4%B8%8D%E6%98%AF%E6%9C%80%E9%A1%B6%E9%83%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、Create-a-github-Repository-username-github-io"><a href="#一、Create-a-github-Repository-username-github-io" class="headerlink" title="一、Create a github Repository username.github.io"></a>一、Create a github Repository username.github.io</h3><h3 id="二、搭建Hexo"><a href="#二、搭建Hexo" class="headerlink" title="二、搭建Hexo"></a>二、搭建Hexo</h3><h4 id="1、安装Node-js和Git"><a href="#1、安装Node-js和Git" class="headerlink" title="1、安装Node.js和Git"></a>1、安装Node.js和Git</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y nodejs npm</span><br><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
-<h4 id="2、安装Hexo"><a href="#2、安装Hexo" class="headerlink" title="2、安装Hexo"></a>2、安装Hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<h4 id="3、创建hexo"><a href="#3、创建hexo" class="headerlink" title="3、创建hexo"></a>3、创建hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h4 id="4、换个主题"><a href="#4、换个主题" class="headerlink" title="4、换个主题"></a>4、换个主题</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment">#如果是安装第2个主题就不要写这句</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line"><span class="comment">#现在找到_config.yml中的theme属性，改成yilia</span></span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="三、将Hexo部署到github"><a href="#三、将Hexo部署到github" class="headerlink" title="三、将Hexo部署到github"></a>三、将Hexo部署到github</h3><p>找到根目录下一个叫“_config.yml ”的文件并打开它，翻到最后，添加以下代码并保存</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git <span class="comment">#到&quot;type&quot;都是原来有的，添加后面的即可</span></span><br><span class="line">  repo: git@github.com:name/name.github.io.git  <span class="comment">#这里的&quot;name&quot;填你自己的</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>在Git Bash输入以下代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">ls <span class="comment">#此时会显示一些文件,如果不存在id_rsa*之类的文件就不用备份</span></span><br><span class="line">mkdir key_backup</span><br><span class="line">cp id_rsa* key_backup</span><br><span class="line">rm id_rsa* <span class="comment">#以上三步为备份和移除原来的SSH key设置</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮件地址@youremail.com&quot;</span> <span class="comment">#生成新的key文件,邮箱地址填你的Github地址</span></span><br><span class="line"><span class="comment">#Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好，当然也可以输入自己喜欢的名字&gt;</span></span><br><span class="line"><span class="comment">#接下来会让你输入密码，然后会确认一遍，如果是Linux可能是隐形字</span></span><br><span class="line"><span class="comment">#上面的操作都成功之后会出现一个图，画的很拙劣，是表示OK了</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>进入Github首页，右上角头像旁边有个三角形，打开，里面有个“Settings”，点击“SSH and GPG keys”，再点击“New SSH key”<br>打开id_rsa.pub文件并复制里面的内容(删除末尾的邮箱)粘贴到github的key输入框内</p>
-<p>测试下是否成功连接</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>设置账号和密码，输入以下代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span> <span class="comment">#自己的名字，不一定非要是用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;mail@mail.com&quot;</span> <span class="comment">#github注册使用的邮箱</span></span><br></pre></td></tr></table></figure>
-
-<p>发布</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>写文章<br>在source/_posts文件夹下创建md文件编写内容，执行命令生成静态文件并发布</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Other//" class="article-tag-list-link color1">Other</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/%E6%90%AD%E5%BB%BAgithub.io%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Java正则表达式</a>
-    </h1>
-  
-
-        
-        <a href="/2021/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.822Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <table>
-<thead>
-<tr>
-<th>特别字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$</td>
-<td>匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。</td>
-</tr>
-<tr>
-<td>( )</td>
-<td>标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。</td>
-</tr>
-<tr>
-<td>*</td>
-<td>匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。</td>
-</tr>
-<tr>
-<td>.</td>
-<td>匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 . 。</td>
-</tr>
-<tr>
-<td>[</td>
-<td>标记一个中括号表达式的开始。要匹配 [，请使用 [。</td>
-</tr>
-<tr>
-<td>?</td>
-<td>匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。</td>
-</tr>
-<tr>
-<td>\</td>
-<td>将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\‘ 匹配 “&quot;，而 ‘(‘ 则匹配 “(“。</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配输入字符串的开始位置，除非在方括号表达式中使用，当该符号在方括号表达式中使用时，表示不接受该方括号表达式中的字符集合。要匹配 ^ 字符本身，请使用 ^。</td>
-</tr>
-<tr>
-<td>{</td>
-<td>标记限定符表达式的开始。要匹配 {，请使用 {。</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字。</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母或数字或下划线或汉字 等价于 ‘[^A-Za-z0-9_]’。</td>
-</tr>
-</tbody></table>
-<h4 id="匹配-及其中的内容"><a href="#匹配-及其中的内容" class="headerlink" title="匹配{}及其中的内容"></a>匹配{}及其中的内容</h4><p>видеть на три {}аршина под землю{ (землёй)}</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.replaceAll(<span class="string">&quot;(\\&#123;.*?&#125;)&quot;</span>,<span class="string">&quot;&quot;</span>);</span><br><span class="line">видеть на три аршина под землю</span><br></pre></td></tr></table></figure>
-<h4 id="Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏"><a href="#Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏" class="headerlink" title="Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏"></a>Java手机号隐藏中间4位和邮箱隐藏，身份证隐藏</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//隐藏手机号码中间四位</span></span><br><span class="line">String phoneNumber = <span class="string">&quot;13234567890&quot;</span>;</span><br><span class="line">String resultPhone= phoneNumber.replaceAll(<span class="string">&quot;(\\d&#123;3&#125;)\\d&#123;4&#125;(\\d&#123;4&#125;)&quot;</span>,<span class="string">&quot;$1****$2&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的手机号：&quot;</span> + resultPhone);</span><br><span class="line"><span class="comment">//隐藏邮箱</span></span><br><span class="line">String email = <span class="string">&quot;1234567@qq.com&quot;</span>;</span><br><span class="line">String resultEmail = email.replaceAll(<span class="string">&quot;(\\w?)(\\w+)(\\w)(@\\w+\\.[a-z]+(\\.[a-z]+)?)&quot;</span>, <span class="string">&quot;$1****$3$4&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的邮箱：&quot;</span> + resultEmail);</span><br><span class="line"><span class="comment">//隐藏身份证</span></span><br><span class="line">String idCard = <span class="string">&quot;420116199302220456&quot;</span>;</span><br><span class="line">String resultIdCard = idCard.replaceAll(<span class="string">&quot;(\\d&#123;4&#125;)\\d&#123;10&#125;(\\w&#123;4&#125;)&quot;</span>,<span class="string">&quot;$1*****$2&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;隐藏后的身份证号：&quot;</span> + resultIdCard);</span><br></pre></td></tr></table></figure>
-
-<h4 id="匹配xxxx年xx期"><a href="#匹配xxxx年xx期" class="headerlink" title="匹配xxxx年xx期"></a>匹配xxxx年xx期</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name.replaceAll(<span class="string">&quot;(\\d&#123;4&#125;年\\w&#123;2&#125;期)$&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/Java%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Gradle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/Gradle/">Gradle</a>
-    </h1>
-  
-
-        
-        <a href="/2021/Gradle/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.821Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Gradle将依赖库的proguard-rules-pro文件打包进aar"><a href="#Gradle将依赖库的proguard-rules-pro文件打包进aar" class="headerlink" title="Gradle将依赖库的proguard-rules.pro文件打包进aar"></a>Gradle将依赖库的proguard-rules.pro文件打包进aar</h4><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;</span><br><span class="line">     minSdkVersion <span class="number">19</span></span><br><span class="line">     targetSdkVersion <span class="number">26</span></span><br><span class="line">     versionCode <span class="number">1</span></span><br><span class="line">     versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line">     <span class="comment">// 配置此参数，方可将混淆文件打包进aar</span></span><br><span class="line">     consumerProguardFiles <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Android-查看第三方库引用关系"><a href="#Android-查看第三方库引用关系" class="headerlink" title="Android 查看第三方库引用关系"></a>Android 查看第三方库引用关系</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gradlew -q MAIN:dependencies</span><br><span class="line">MAIN指module名称</span><br></pre></td></tr></table></figure>
-
+        <h2 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h2><p>Scrollview里面嵌套了一个listview，这是开发中最寻常的一种布局，遇到的问题是：在这个Scrollview页面默认的起始位置不是最顶部，而是listview的底部。</p>
+<h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>1.在Activity计算窗口的高度时，是在listview没有填充数据时候就完成的，由于ScrollView嵌套listview时没有指定高度，所以ScrollView就会按照layout中定义的默认高度计算。</p>
+<p>2.因为listview获取了焦点。</p>
+<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><p>1.myScrollView.smoothScrollTo(0,20);</p>
+<blockquote>
+<p>需在listview数据加载完成后调用</p>
+</blockquote>
+<p>2.在代码里去掉listview的焦点</p>
+<blockquote>
+<p>lv.setFocusable(false);</p>
+</blockquote>
+<p>3.Listview外套一层LinearLayout</p>
+<p>4.跟EditText一样，在父元素的属性下面下下面这两行即可</p>
+<blockquote>
+<p>android: focusableInTouchMode=”true”<br>android: focusable=”true”</p>
+</blockquote>
+<p>5.最开始的时候让最上面其中一个控件获得焦点，滚动条自然就到顶部去了，如下：</p>
+<blockquote>
+<p>txtBaseMsg.setFocusable(true);<br>txtBaseMsg.setFocusableInTouchMode(true);<br>txtBaseMsg.requestFocus();</p>
+</blockquote>
 
       
 
@@ -896,7 +687,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Gradle</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ScrollView</a>
         		</li>
       		
 		</ul>
@@ -917,7 +708,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/Gradle/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/01/ScrollView%E5%B5%8C%E5%A5%97ListView%E9%BB%98%E8%AE%A4%E4%BD%8D%E7%BD%AE%E4%B8%8D%E6%98%AF%E6%9C%80%E9%A1%B6%E9%83%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
         </p>
       
 
@@ -947,28 +738,104 @@
 
 
   
-    <article id="post-FastJson" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Sqlite" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/FastJson/">FastJson常用问题</a>
+      <a class="article-title" href="/2019/01/01/Sqlite/">Sqlite</a>
     </h1>
   
 
         
-        <a href="/2021/FastJson/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.820Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2019/01/01/Sqlite/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、JSON-TypeReference-复杂类型转换"><a href="#1、JSON-TypeReference-复杂类型转换" class="headerlink" title="1、JSON TypeReference 复杂类型转换"></a>1、JSON TypeReference 复杂类型转换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;T&gt; list = JSON.parseObject(json, <span class="keyword">new</span> TypeReference&lt;List&lt;T&gt;&gt;() &#123;&#125;);</span><br><span class="line">String[] array = JSON.parseObject(json, <span class="keyword">new</span> TypeReference&lt;String[]&gt;() &#123;&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="2、不同字段名映射到同一字段"><a href="#2、不同字段名映射到同一字段" class="headerlink" title="2、不同字段名映射到同一字段"></a>2、不同字段名映射到同一字段</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JSONField(alternateNames = &#123;&quot;Code&quot;,&quot;XXCode&quot;&#125;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCode</span><span class="params">(String code)</span> </span>&#123;</span><br><span class="line">    Code = code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="1、删除自增索引"><a href="#1、删除自增索引" class="headerlink" title="1、删除自增索引"></a>1、删除自增索引</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">当SQLite数据库中包含自增列时，会自动建立一个名为sqlite_sequence的表。</span><br><span class="line">这个表包含两个列：name和seq。name记录自增列所在的表，seq记录当前序号（下一条记录的编号就是当前序号加1）。</span><br><span class="line">如果想把某个自增列的序号归零，只需要修改sqlite_sequence表就可以了。</span><br><span class="line">UPDATE sqlite_sequence SET seq&#x3D;0 WHERE name&#x3D;&#39;TableName&#39;;</span><br><span class="line">也可以直接把该记录删掉：</span><br><span class="line">DELETE FROM sqlite_sequence WHERE name&#x3D;&#39;TableName&#39;;</span><br><span class="line">要想将所有表的自增列都归零，直接清空sqlite_sequence表就可以了：</span><br><span class="line">DELETE FROM sqlite_sequence;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Sqlite/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Toolbar" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Toolbar/">Toolbar</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Toolbar/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、设置Toolbar"><a href="#1、设置Toolbar" class="headerlink" title="1、设置Toolbar"></a>1、设置Toolbar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置为ActionBar</span><br><span class="line">setSupportActionBar((Toolbar)findViewById(R.id.tool_bar));</span><br><span class="line">&#x2F;&#x2F;显示左边箭头</span><br><span class="line">getSupportActionBar().setDisplayHomeAsUpEnabled(true);</span><br></pre></td></tr></table></figure>
+<h2 id="2、主题要使用NoActionBar"><a href="#2、主题要使用NoActionBar" class="headerlink" title="2、主题要使用NoActionBar"></a>2、主题要使用NoActionBar</h2><p>这里要使用NoActionBar的，不然就会给你挂了：</p>
+<h2 id="3、修改Toolbar左边箭头颜色"><a href="#3、修改Toolbar左边箭头颜色" class="headerlink" title="3、修改Toolbar左边箭头颜色"></a>3、修改Toolbar左边箭头颜色</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--设置Toolbar左侧箭头颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;colorControlNormal&quot;&gt;@color&#x2F;colorAccent&lt;&#x2F;item&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="4、设置Toolbar菜单样式设置"><a href="#4、设置Toolbar菜单样式设置" class="headerlink" title="4、设置Toolbar菜单样式设置"></a>4、设置Toolbar菜单样式设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style name&#x3D;&quot;PopupTheme&quot; parent&#x3D;&quot;Widget.AppCompat.Toolbar&quot;&gt;</span><br><span class="line">&lt;!--设置pop菜单背景颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:colorBackground&quot;&gt;@color&#x2F;c17b4ed&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单是否在浮在Toorbar上，默认true, false时在Toolbar下面显示--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;overlapAnchor&quot;&gt;true&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单字体颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:textColorPrimary&quot;&gt;@color&#x2F;cff0000&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单字体大小--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:textSize&quot;&gt;30sp&lt;&#x2F;item&gt;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -982,7 +849,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JSON</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Toolbar</a>
         		</li>
       		
 		</ul>
@@ -1003,7 +870,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/FastJson/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/01/Toolbar/">展开全文 >></a>
         </p>
       
 
@@ -1033,127 +900,39 @@
 
 
   
-    <article id="post-CNKI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Ubuntu 创建桌面快捷方式和sh文件点击运行" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/CNKI/">CNKI</a>
+      <a class="article-title" href="/2019/01/01/Ubuntu%20%E5%88%9B%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%92%8Csh%E6%96%87%E4%BB%B6%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8C/">Ubuntu 创建桌面快捷方式和sh文件点击运行</a>
     </h1>
   
 
         
-        <a href="/2021/CNKI/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.819Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+        <a href="/2019/01/01/Ubuntu%20%E5%88%9B%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%92%8Csh%E6%96%87%E4%BB%B6%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8C/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="看典接口地址"><a href="#看典接口地址" class="headerlink" title="看典接口地址"></a>看典接口地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.107.112:8080/project.do<span class="comment">#/155547110897007000003/front/interfaceDetail/156083644829112000008</span></span><br></pre></td></tr></table></figure>
-<h4 id="手机知网接口地址"><a href="#手机知网接口地址" class="headerlink" title="手机知网接口地址"></a>手机知网接口地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.107.112:8888/index.php?s=/1&amp;page_id=363</span><br></pre></td></tr></table></figure>
-<h4 id="手机知网UI地址"><a href="#手机知网UI地址" class="headerlink" title="手机知网UI地址"></a>手机知网UI地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.107.113:8550/!/<span class="comment">#DZMeiGongPicture/</span></span><br></pre></td></tr></table></figure>
-<h4 id="看典UI地址"><a href="#看典UI地址" class="headerlink" title="看典UI地址"></a>看典UI地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.107.113:8550/!/<span class="comment">#KDOC/view/head/trunk</span></span><br></pre></td></tr></table></figure>
-<h4 id="辞书大点UI"><a href="#辞书大点UI" class="headerlink" title="辞书大点UI"></a>辞书大点UI</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.107.113:8550/!/<span class="comment">#DDOC/view/head/trunk</span></span><br></pre></td></tr></table></figure>
-<h4 id="手机知网SVN地址"><a href="#手机知网SVN地址" class="headerlink" title="手机知网SVN地址"></a>手机知网SVN地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.107.113:8550/svn/CNKIAPP_NEW/trunk</span><br></pre></td></tr></table></figure>
-<h4 id="看典SVN地址"><a href="#看典SVN地址" class="headerlink" title="看典SVN地址"></a>看典SVN地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.107.113:8550/svn/KanDian/trunk</span><br></pre></td></tr></table></figure>
-<h4 id="看典Bug地址"><a href="#看典Bug地址" class="headerlink" title="看典Bug地址"></a>看典Bug地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.100.8:88/zentao/my/</span><br></pre></td></tr></table></figure>
-<h4 id="日志地址"><a href="#日志地址" class="headerlink" title="日志地址"></a>日志地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://qn.wangqinglan.cn/logformat.html</span><br></pre></td></tr></table></figure>
-<h4 id="Android-Debug-Database-地址"><a href="#Android-Debug-Database-地址" class="headerlink" title="Android Debug Database 地址"></a>Android Debug Database 地址</h4><pre><code class="bash">http://192.168.1.101:8080/
+        <h2 id="创建桌面快捷方式"><a href="#创建桌面快捷方式" class="headerlink" title="创建桌面快捷方式"></a>创建桌面快捷方式</h2><p>复制一下内存保存到/usr/share/application目录下 filezilla.desktop文件下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name&#x3D;FileZilla</span><br><span class="line">Exec&#x3D;&#x2F;home&#x2F;wanghao&#x2F;software&#x2F;FileZilla_3.40.0_x86_64-linux-gnu&#x2F;FileZilla3&#x2F;bin&#x2F;filezilla</span><br><span class="line">Comment&#x3D;FileZilla</span><br><span class="line">Icon&#x3D;&#x2F;home&#x2F;wanghao&#x2F;software&#x2F;FileZilla_3.40.0_x86_64-linux-gnu&#x2F;FileZilla3&#x2F;share&#x2F;icons&#x2F;hicolor&#x2F;scalable&#x2F;apps&#x2F;filezilla.svg</span><br><span class="line">Type&#x3D;Application</span><br><span class="line">Terminal&#x3D;false</span><br><span class="line">Encoding&#x3D;UTF-8</span><br><span class="line">Name[zh_CN]&#x3D;FileZilla</span><br></pre></td></tr></table></figure>
 
-https://ru.wiktionary.org/wiki/%D0%B2%D1%8B%D1%82%D1%8C
+<h2 id="ubuntu-1804下双击运行可执行shell脚本"><a href="#ubuntu-1804下双击运行可执行shell脚本" class="headerlink" title="ubuntu 1804下双击运行可执行shell脚本"></a>ubuntu 1804下双击运行可执行shell脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、安装 dconf-editor</span><br><span class="line">sudo apt-get install dconf-editor</span><br><span class="line">2、安装完成后直接输入dconf-editor打开dconf-editor</span><br><span class="line">dconf-editor</span><br><span class="line">3、org-&gt;gnome-&gt;natuilus-&gt;preferences-&gt;executable-text-activation</span><br><span class="line">关闭使用默认值   自定义值改为ask </span><br><span class="line">4、对脚本加上可执行权限，双击后会出现询问窗口</span><br></pre></td></tr></table></figure>
 
-https://developers.google.cn/
-
-http://mobile.jd.com/
-
-http://blog.cgsdream.org/tag/androidkai-fa/page/5/#blog
-
-968438x512331
-192.168.21.109 192.168.21.1 114.114.114.114
-
-线下账号密码manager@cnki.net 密码 MTIzNDU2
-summer10123 NjI3OTAzMDc=
-</code></pre>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/CNKI//" class="article-tag-list-link color5">CNKI</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<h2 id="ubuntu-sh文件点击运行后不关闭"><a href="#ubuntu-sh文件点击运行后不关闭" class="headerlink" title="ubuntu sh文件点击运行后不关闭"></a>ubuntu sh文件点击运行后不关闭</h2><p>在文件最后添加 <code>exec /bin/bash</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn status</span><br><span class="line">exec &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+<h2 id="ubuntu桌面上给文件夹创建快捷方式"><a href="#ubuntu桌面上给文件夹创建快捷方式" class="headerlink" title="ubuntu桌面上给文件夹创建快捷方式"></a>ubuntu桌面上给文件夹创建快捷方式</h2><p><code>sudo ln -sT [文件夹路径] [桌面文件夹路径]</code><br>例如 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sT &#x2F;home&#x2F;user_name&#x2F;文件夹&#x2F; &#x2F;home&#x2F;user_name&#x2F;桌面&#x2F;文件夹</span><br></pre></td></tr></table></figure>
+<p>注意：如果路径含有空格用英文单引号包括path</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sT &#39;&#x2F;home&#x2F;user name&#x2F;文件夹&#x2F;&#39; &#x2F;home&#x2F;user_name&#x2F;桌面&#x2F;文件夹</span><br></pre></td></tr></table></figure>
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/CNKI/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CrossOver无线试用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/CrossOver%E6%97%A0%E7%BA%BF%E8%AF%95%E7%94%A8/">CrossOver无线试用</a>
-    </h1>
-  
-
-        
-        <a href="/2021/CrossOver%E6%97%A0%E7%BA%BF%E8%AF%95%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-03-05T06:10:08.819Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.进入.cxoffice文件夹 打开cxoffice.conf配置文件并修改NextUpdateHookDate</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[CrossOver]</span><br><span class="line">&quot;FirstRunVersion&quot; = &quot;18.5.5.31755&quot;</span><br><span class="line">&quot;NextUpdateHookDate&quot; = &quot;1569887775&quot;</span><br><span class="line">&quot;ReportWineUsage&quot; = &quot;0&quot;</span><br><span class="line"></span><br><span class="line">[OfficeSetup]</span><br><span class="line">&quot;BottleManagerSize&quot; = &quot;734x438&quot;</span><br><span class="line">&quot;ShowBottleSidebar&quot; = &quot;&quot;</span><br><span class="line">&quot;MainWindowView&quot; = &quot;TREE_VIEW&quot;</span><br><span class="line">&quot;AutoUpdate&quot; = &quot;0&quot;</span><br></pre></td></tr></table></figure>
-<p>2.进入安装应用的目录下如.cxoffice/TIM,删除.eval文件可重置15天试用期。</p>
 
       
 
@@ -1177,7 +956,180 @@ summer10123 NjI3OTAzMDc=
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/CrossOver%E6%97%A0%E7%BA%BF%E8%AF%95%E7%94%A8/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/01/Ubuntu%20%E5%88%9B%E5%BB%BA%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%92%8Csh%E6%96%87%E4%BB%B6%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ubuntu添加环境变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Ubuntu%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">ubuntu三种添加环境变量的方法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Ubuntu%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、临时设置"><a href="#一、临时设置" class="headerlink" title="一、临时设置"></a>一、临时设置</h4><p>用export指令,如在$PATH中增加JAVA文件夹:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;lib&#x2F;jdk1.6.0_25 &#x2F;&#x2F;添加到后面</span><br></pre></td></tr></table></figure>
+
+<h4 id="二、用于当前用户"><a href="#二、用于当前用户" class="headerlink" title="二、用于当前用户"></a>二、用于当前用户</h4><p>在用户主目录下有一个 .bashrc 隐藏文件，可以在此文件中加入 PATH 的设置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit .bashrc</span><br></pre></td></tr></table></figure>
+<p>加入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;&lt;你的要加入的路径&gt;:$PATH</span><br><span class="line">export PATH&#x3D;&#x2F;home&#x2F;wanghao&#x2F;Develop&#x2F;Android&#x2F;Flutter&#x2F;flutter&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<h4 id="三、用于所有用户"><a href="#三、用于所有用户" class="headerlink" title="三、用于所有用户"></a>三、用于所有用户</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi &#x2F;etc&#x2F;profile </span><br></pre></td></tr></table></figure>
+<p>加入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;&lt;你要加入的路径&gt;:$PATH</span><br><span class="line">export PATH&#x3D;&#x2F;home&#x2F;wanghao&#x2F;Develop&#x2F;Android&#x2F;Flutter&#x2F;flutter&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>注意，修改环境变量后，除了第一种方法立即生效外，第二第三种方法要立即生效，可以source ~/.bashrc或者注销再次登录后就可以了！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Ubuntu%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-adb 查看当前页面的Activity名称" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">adb 查看当前页面的Activity名称</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br><span class="line">mCurrentFocus&#x3D;Window&#123;d7e0c6e u0 com.xunmeng.pinduoduo&#x2F;com.xunmeng.pinduoduo.ui.activity.HomeActivity&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">命令</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">展开全文 >></a>
         </p>
       
 
