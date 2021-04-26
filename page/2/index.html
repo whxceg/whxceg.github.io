@@ -172,13 +172,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##描述：</p>
-<p>Scrollview里面嵌套了一个listview，这是开发中最寻常的一种布局，遇到的问题是：在这个Scrollview页面默认的起始位置不是最顶部，而是listview的底部。</p>
-<p>##原因：</p>
-<p>1.在Activity计算窗口的高度时，是在listview没有填充数据时候就完成的，由于ScrollView嵌套listview时没有指定高度，所以ScrollView就会按照layout中定义的默认高度计算。</p>
+        <h2 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h2><p>Scrollview里面嵌套了一个listview，这是开发中最寻常的一种布局，遇到的问题是：在这个Scrollview页面默认的起始位置不是最顶部，而是listview的底部。</p>
+<h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>1.在Activity计算窗口的高度时，是在listview没有填充数据时候就完成的，由于ScrollView嵌套listview时没有指定高度，所以ScrollView就会按照layout中定义的默认高度计算。</p>
 <p>2.因为listview获取了焦点。</p>
-<p>##解决：</p>
-<p>1.myScrollView.smoothScrollTo(0,20);</p>
+<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><p>1.myScrollView.smoothScrollTo(0,20);</p>
 <blockquote>
 <p>需在listview数据加载完成后调用</p>
 </blockquote>
@@ -279,17 +276,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###RxJava引入<br>RxJava github地址：<a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxJava">https://github.com/ReactiveX/RxJava</a><br><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxAndroid">https://github.com/ReactiveX/RxAndroid</a><br>Android引入依赖：</p>
+        <h3 id="RxJava引入"><a href="#RxJava引入" class="headerlink" title="RxJava引入"></a>RxJava引入</h3><p>RxJava github地址：<a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxJava">https://github.com/ReactiveX/RxJava</a><br><a target="_blank" rel="noopener" href="https://github.com/ReactiveX/RxAndroid">https://github.com/ReactiveX/RxAndroid</a><br>Android引入依赖：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">compile&#39;io.reactivex.rxjava2: rxandroid: 2.0.1&#39;</span><br><span class="line">compile&#39;io.reactivex.rxjava2: rxjava: 2.1.5&#39;</span><br></pre></td></tr></table></figure>
-<p>###RxJava到底是什么</p>
-<p>一个词：<strong>异步</strong>。</p>
+<h3 id="RxJava到底是什么"><a href="#RxJava到底是什么" class="headerlink" title="RxJava到底是什么"></a>RxJava到底是什么</h3><p>一个词：<strong>异步</strong>。</p>
 <p>RxJava在GitHub主页上的自我介绍是”a library for composing asynchronous and event-based programs using observable sequences for the Java VM”（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）。这就是 RxJava ，概括得非常精准。</p>
 <p>然而，对于初学者来说，这太难看懂了。因为它是一个『总结』，而初学者更需要一个『引言』。</p>
 <p>其实， RxJava 的本质可以压缩为异步这一个词。说到根上，它就是一个实现异步操作的库，而别的定语都是基于这之上的。</p>
 <h3 id="RxJava-好在哪"><a href="#RxJava-好在哪" class="headerlink" title="RxJava 好在哪"></a>RxJava 好在哪</h3><p>换句话说，『同样是做异步，为什么人们用它，而不用现成的 AsyncTask / Handler / XXX / … ？』</p>
 <p>一个词：<strong>简洁</strong>。</p>
 <p>异步操作很关键的一点是程序的简洁性，因为在调度过程比较复杂的情况下，异步代码经常会既难写也难被读懂。 Android 创造的 <code>AsyncTask</code> 和<code>Handler</code> ，其实都是为了让异步代码更加简洁。RxJava 的优势也是简洁，但它的简洁的与众不同之处在于，<strong>随着程序逻辑变得越来越复杂，它依然能够保持简洁。</strong></p>
-<p><img src="http://qn.wangqinglan.cn/20181217142201.jpg"></p>
+<p><img src="/images/20181217142201.jpg"></p>
 <p>假设有这样一个需求：界面上有一个自定义的视图 <code>imageCollectorView</code> ，它的作用是显示多张图片，并能使用 <code>addImage(Bitmap)</code> 方法来任意增加显示的图片。现在需要程序将一个给出的目录数组 <code>File[] folders</code> 中每个目录下的 png 图片都加载出来并显示在 <code>imageCollectorView</code> 中。需要注意的是，由于读取图片的这一过程较为耗时，需要放在后台执行，而图片的显示则必须在 UI 线程执行。常用的实现方式有多种，我这里贴出其中一种：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">new Thread() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        super.run();</span><br><span class="line">        for (File folder : folders) &#123;</span><br><span class="line">            File[] files &#x3D; folder.listFiles();</span><br><span class="line">            for (File file : files) &#123;</span><br><span class="line">                if (file.getName().endsWith(&quot;.png&quot;)) &#123;</span><br><span class="line">                    final Bitmap bitmap &#x3D; getBitmapFromFile(file);</span><br><span class="line">                    getActivity().runOnUiThread(new Runnable() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void run() &#123;</span><br><span class="line">                            imageCollectorView.addImage(bitmap);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;.start();</span><br></pre></td></tr></table></figure>
 
@@ -310,9 +306,9 @@
 <h5 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h5><p>先简述一下观察者模式，已经熟悉的可以跳过这一段。</p>
 <p>观察者模式面向的需求是：A 对象（观察者）对 B 对象（被观察者）的某种变化高度敏感，需要在 B 变化的一瞬间做出反应。举个例子，新闻里喜闻乐见的警察抓小偷，警察需要在小偷伸手作案的时候实施抓捕。在这个例子里，警察是观察者，小偷是被观察者，警察需要时刻盯着小偷的一举一动，才能保证不会漏过任何瞬间。程序的观察者模式和这种真正的『观察』略有不同，观察者不需要时刻盯着被观察者（例如 A 不需要每过 2ms 就检查一次 B 的状态），而是采用<strong>注册</strong>(Register)<strong>或者称为</strong>订阅**(Subscribe)**的方式，告诉被观察者：我需要你的某某状态，你要在它变化的时候通知我。 Android 开发中一个比较典型的例子是点击监听器 <code>OnClickListener</code> 。对设置 <code>OnClickListener</code> 来说， <code>View</code> 是被观察者， <code>OnClickListener</code> 是观察者，二者通过 <code>setOnClickListener()</code> 方法达成订阅关系。订阅之后用户点击按钮的瞬间，Android Framework 就会将点击事件发送给已经注册的 <code>OnClickListener</code> 。采取这样被动的观察方式，既省去了反复检索状态的资源消耗，也能够得到最高的反馈速度。当然，这也得益于我们可以随意定制自己程序中的观察者和被观察者，而警察叔叔明显无法要求小偷『你在作案的时候务必通知我』。</p>
 <p>OnClickListener 的模式大致如下图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142201.jpg"></p>
+<p><img src="/images/20181217142201.jpg"></p>
 <p>如图所示，通过 <code>setOnClickListener()</code> 方法，<code>Button</code> 持有 <code>OnClickListener</code> 的引用（这一过程没有在图上画出）；当用户点击时，<code>Button</code> 自动调用 <code>OnClickListener</code> 的 <code>onClick()</code> 方法。另外，如果把这张图中的概念抽象出来（<code>Button</code> -&gt; 被观察者、<code>OnClickListener</code> -&gt; 观察者、<code>setOnClickListener()</code> -&gt; 订阅，<code>onClick()</code> -&gt; 事件），就由专用的观察者模式（例如只用于监听控件点击）转变成了通用的观察者模式。如下图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142203.jpg"></p>
+<p><img src="/images/20181217142203.jpg"></p>
 <p>而 RxJava 作为一个工具库，使用的就是通用形式的观察者模式。</p>
 <h5 id="RxJava-的观察者模式"><a href="#RxJava-的观察者模式" class="headerlink" title="RxJava 的观察者模式"></a>RxJava 的观察者模式</h5><p>RxJava 有四个基本概念：<code>Observable</code> (可观察者，即被观察者)、 <code>Observer</code> (观察者)、 <code>subscribe</code> (订阅)、事件。<code>Observable</code> 和 <code>Observer</code> 通过 <code>subscribe()</code> 方法实现订阅关系，从而 <code>Observable</code> 可以在需要的时候发出事件来通知 <code>Observer</code>。</p>
 <p>与传统观察者模式不同， RxJava 的事件回调方法除了普通事件 <code>onNext()</code> （相当于 <code>onClick()</code> / <code>onEvent()</code>）之外，还定义了两个特殊的事件：<code>onCompleted()</code> 和 <code>onError()</code>。</p>
@@ -322,7 +318,7 @@
 <li>  在一个正确运行的事件序列中, <code>onCompleted()</code> 和 <code>onError()</code> 有且只有一个，并且是事件序列中的最后一个。需要注意的是，<code>onCompleted()</code> 和 <code>onError()</code> 二者也是互斥的，即在队列中调用了其中一个，就不应该再调用另一个。</li>
 </ul>
 <p>RxJava 的观察者模式大致如下图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142204.jpg"></p>
+<p><img src="/images/20181217142204.jpg"></p>
 <h4 id="2-基本实现"><a href="#2-基本实现" class="headerlink" title="2. 基本实现"></a>2. 基本实现</h4><p>基于以上的概念， RxJava 的基本实现主要有三点：</p>
 <h5 id="1-创建-Observer"><a href="#1-创建-Observer" class="headerlink" title="1) 创建 Observer"></a>1) 创建 Observer</h5><p>Observer 即观察者，它决定事件触发的时候将有怎样的行为。 RxJava 中的 <code>Observer</code> 接口的实现方式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Observer&lt;String&gt; observer &#x3D; new Observer&lt;String&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onNext(String s) &#123;</span><br><span class="line">        Log.d(tag, &quot;Item: &quot; + s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onCompleted() &#123;</span><br><span class="line">        Log.d(tag, &quot;Completed!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onError(Throwable e) &#123;</span><br><span class="line">        Log.d(tag, &quot;Error!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -370,9 +366,9 @@
 <li> 将传入的 <code>Subscriber</code> 作为 <code>Subscription</code> 返回。这是为了方便 <code>unsubscribe()</code>.</li>
 </ol>
 <p>整个过程中对象间的关系如下图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142205.jpg"></p>
+<p><img src="/images/20181217142205.jpg"></p>
 <p>或者可以看动图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142206.gif"></p>
+<p><img src="/images/20181217142206.gif"></p>
 <p>除了 <code>subscribe(Observer)</code> 和 <code>subscribe(Subscriber)</code> ，<code>subscribe()</code> 还支持不完整定义的回调，RxJava 会自动根据定义创建出 <code>Subscriber</code> 。形式如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Action1&lt;String&gt; onNextAction &#x3D; new Action1&lt;String&gt;() &#123;</span><br><span class="line">    &#x2F;&#x2F; onNext()</span><br><span class="line">    @Override</span><br><span class="line">    public void call(String s) &#123;</span><br><span class="line">        Log.d(tag, s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Action1&lt;Throwable&gt; onErrorAction &#x3D; new Action1&lt;Throwable&gt;() &#123;</span><br><span class="line">    &#x2F;&#x2F; onError()</span><br><span class="line">    @Override</span><br><span class="line">    public void call(Throwable throwable) &#123;</span><br><span class="line">        &#x2F;&#x2F; Error handling</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Action0 onCompletedAction &#x3D; new Action0() &#123;</span><br><span class="line">    &#x2F;&#x2F; onCompleted()</span><br><span class="line">    @Override</span><br><span class="line">    public void call() &#123;</span><br><span class="line">        Log.d(tag, &quot;completed&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 自动创建 Subscriber ，并使用 onNextAction 来定义 onNext()</span><br><span class="line">observable.subscribe(onNextAction);</span><br><span class="line">&#x2F;&#x2F; 自动创建 Subscriber ，并使用 onNextAction 和 onErrorAction 来定义 onNext() 和 onError()</span><br><span class="line">observable.subscribe(onNextAction, onErrorAction);</span><br><span class="line">&#x2F;&#x2F; 自动创建 Subscriber ，并使用 onNextAction、 onErrorAction 和 onCompletedAction 来定义 onNext()、 onError() 和 onCompleted()</span><br><span class="line">observable.subscribe(onNextAction, onErrorAction, onCompletedAction);</span><br></pre></td></tr></table></figure>
 
@@ -420,7 +416,7 @@
 <p>这里出现了一个叫做 <code>Func1</code> 的类。它和 <code>Action1</code> 非常相似，也是 RxJava 的一个接口，用于包装含有一个参数的方法。 <code>Func1</code> 和 <code>Action</code>的区别在于， <code>Func1</code> 包装的是有返回值的方法。另外，和 <code>ActionX</code> 一样， <code>FuncX</code> 也有多个，用于不同参数个数的方法。<code>FuncX</code> 和 <code>ActionX</code> 的区别在 <code>FuncX</code> 包装的是有返回值的方法。</p>
 <p>可以看到，<code>map()</code> 方法将参数中的 <code>String</code> 对象转换成一个 <code>Bitmap</code> 对象后返回，而在经过 <code>map()</code> 方法后，事件的参数类型也由 <code>String</code>转为了 <code>Bitmap</code>。这种直接变换对象并返回的，是最常见的也最容易理解的变换。不过 RxJava 的变换远不止这样，它不仅可以针对事件对象，还可以针对整个事件队列，这使得 RxJava 变得非常灵活。我列举几个常用的变换：</p>
 <ul>
-<li><p>  <code>map()</code>: 事件对象的直接变换，具体功能上面已经介绍过。它是 RxJava 最常用的变换。 <code>map()</code> 的示意图：<img src="http://qn.wangqinglan.cn/20181217142207.jpg"></p>
+<li><p>  <code>map()</code>: 事件对象的直接变换，具体功能上面已经介绍过。它是 RxJava 最常用的变换。 <code>map()</code> 的示意图：<img src="/images/20181217142207.jpg"></p>
 </li>
 <li><p>  <code>flatMap()</code>: 这是一个很有用但<strong>非常难理解</strong>的变换，因此我决定花多些篇幅来介绍它。 首先假设这么一种需求：假设有一个数据结构『学生』，现在需要打印出一组学生的名字。实现方式很简单：</p>
 </li>
@@ -436,7 +432,7 @@
 
 <p>从上面的代码可以看出， <code>flatMap()</code> 和 <code>map()</code> 有一个相同点：它也是把传入的参数转化之后返回另一个对象。但需要注意，和 <code>map()</code> 不同的是， <code>flatMap()</code> 中返回的是个 <code>Observable</code> 对象，并且这个 <code>Observable</code> 对象并不是被直接发送到了 <code>Subscriber</code> 的回调方法中。 <code>flatMap()</code> 的原理是这样的：1. 使用传入的事件对象创建一个 <code>Observable</code> 对象；2. 并不发送这个 <code>Observable</code>, 而是将它激活，于是它开始发送事件；3. 每一个创建出来的 <code>Observable</code> 发送的事件，都被汇入同一个 <code>Observable</code> ，而这个 <code>Observable</code> 负责将这些事件统一交给 <code>Subscriber</code> 的回调方法。这三个步骤，把事件拆成了两级，通过一组新创建的 <code>Observable</code> 将初始的对象『铺平』之后通过统一路径分发了下去。而这个『铺平』就是 <code>flatMap()</code> 所谓的 flat。</p>
 <p><code>flatMap()</code> 示意图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142208.jpg"></p>
+<p><img src="/images/20181217142208.jpg"></p>
 <p>扩展：由于可以在嵌套的 <code>Observable</code> 中添加异步代码， <code>flatMap()</code> 也常用于嵌套的异步操作，例如嵌套的网络请求。示例代码（Retrofit + RxJava）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">networkClient.token() &#x2F;&#x2F; 返回 Observable&lt;String&gt;，在订阅时请求 token，并在响应后发送 token</span><br><span class="line">    .flatMap(new Func1&lt;String, Observable&lt;Messages&gt;&gt;() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public Observable&lt;Messages&gt; call(String token) &#123;</span><br><span class="line">            &#x2F;&#x2F; 返回 Observable&lt;Messages&gt;，在订阅时请求消息列表，并在响应后发送请求到的消息列表</span><br><span class="line">            return networkClient.messages();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .subscribe(new Action1&lt;Messages&gt;() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void call(Messages messages) &#123;</span><br><span class="line">            &#x2F;&#x2F; 处理显示消息列表</span><br><span class="line">            showMessages(messages);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 
@@ -455,11 +451,11 @@
 </ul>
 <p>精简掉细节的话，也可以这么说：在 <code>Observable</code> 执行了 <code>lift(Operator)</code> 方法之后，会返回一个新的 <code>Observable</code>，这个新的 <code>Observable</code> 会像一个代理一样，负责接收原始的 <code>Observable</code> 发出的事件，并在处理后发送给 <code>Subscriber</code>。</p>
 <p>如果你更喜欢具象思维，可以看图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142209.jpg"></p>
+<p><img src="/images/20181217142209.jpg"></p>
 <p>或者可以看动图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142210.gif"></p>
+<p><img src="/images/20181217142210.gif"></p>
 <p>两次和多次的 <code>lift()</code> 同理，如下图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142211.jpg"></p>
+<p><img src="/images/20181217142211.jpg"></p>
 <p>举一个具体的 <code>Operator</code> 的实现。下面这是一个将事件中的 <code>Integer</code> 对象转换成 <code>String</code> 的例子，仅供参考：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">observable.lift(new Observable.Operator&lt;String, Integer&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public Subscriber&lt;? super Integer&gt; call(final Subscriber&lt;? super String&gt; subscriber) &#123;</span><br><span class="line">        &#x2F;&#x2F; 将事件序列中的 Integer 对象转换为 String 对象</span><br><span class="line">        return new Subscriber&lt;Integer&gt;() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onNext(Integer integer) &#123;</span><br><span class="line">                subscriber.onNext(&quot;&quot; + integer);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onCompleted() &#123;</span><br><span class="line">                subscriber.onCompleted();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onError(Throwable e) &#123;</span><br><span class="line">                subscriber.onError(e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -488,12 +484,12 @@
 <p>这个问题先放着，我们还是从 RxJava 线程控制的原理说起吧。</p>
 <h5 id="2-Scheduler-的原理（二）"><a href="#2-Scheduler-的原理（二）" class="headerlink" title="2) Scheduler 的原理（二）"></a>2) Scheduler 的原理（二）</h5><p>其实， <code>subscribeOn()</code> 和 <code>observeOn()</code> 的内部实现，也是用的 <code>lift()</code>。具体看图（不同颜色的箭头表示不同的线程）：</p>
 <p><code>subscribeOn()</code> 原理图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142212.jpg"></p>
+<p><img src="/images/20181217142212.jpg"></p>
 <p><code>observeOn()</code> 原理图：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142213.jpg"></p>
+<p><img src="/images/20181217142213.jpg"></p>
 <p>从图中可以看出，<code>subscribeOn()</code> 和 <code>observeOn()</code> 都做了线程切换的工作（图中的 “schedule…” 部位）。不同的是， <code>subscribeOn()</code> 的线程切换发生在 <code>OnSubscribe</code> 中，即在它通知上一级 <code>OnSubscribe</code> 时，这时事件还没有开始发送，因此 <code>subscribeOn()</code> 的线程控制可以从事件发出的开端就造成影响；而 <code>observeOn()</code> 的线程切换则发生在它内建的 <code>Subscriber</code> 中，即发生在它即将给下一级 <code>Subscriber</code> 发送事件时，因此 <code>observeOn()</code> 控制的是它后面的线程。</p>
 <p>最后，我用一张图来解释当多个 <code>subscribeOn()</code> 和 <code>observeOn()</code> 混合使用时，线程调度是怎么发生的（由于图中对象较多，相对于上面的图对结构做了一些简化调整）：</p>
-<p><img src="http://qn.wangqinglan.cn/20181217142214.jpg"></p>
+<p><img src="/images/20181217142214.jpg"></p>
 <p>图中共有 5 处含有对事件的操作。由图中可以看出，①和②两处受第一个 <code>subscribeOn()</code> 影响，运行在红色线程；③和④处受第一个 <code>observeOn()</code> 的影响，运行在绿色线程；⑤处受第二个 <code>onserveOn()</code> 影响，运行在紫色线程；而第二个 <code>subscribeOn()</code> ，由于在通知过程中线程就被第一个 <code>subscribeOn()</code> 截断，因此对整个流程并没有任何影响。这里也就回答了前面的问题：当使用了多个 <code>subscribeOn()</code> 的时候，只有第一个 <code>subscribeOn()</code> 起作用。</p>
 <h5 id="3-延伸：doOnSubscribe"><a href="#3-延伸：doOnSubscribe" class="headerlink" title="3) 延伸：doOnSubscribe()"></a>3) 延伸：doOnSubscribe()</h5><p>然而，虽然超过一个的 <code>subscribeOn()</code> 对事件处理的流程没有影响，但在流程之前却是可以利用的。</p>
 <p>在前面讲 <code>Subscriber</code> 的时候，提到过 <code>Subscriber</code> 的 <code>onStart()</code> 可以用作流程开始前的初始化。然而 <code>onStart()</code> 由于在 <code>subscribe()</code> 发生时就被调用了，因此不能指定线程，而是只能执行在 <code>subscribe()</code> 被调用时的线程。这就导致如果 <code>onStart()</code> 中含有对线程有要求的代码（例如在界面上显示一个 ProgressBar，这必须在主线程执行），将会有线程非法的风险，因为有时你无法预测 <code>subscribe()</code> 将会在什么线程执行。</p>
@@ -637,8 +633,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##简介</p>
-<p>Retrofit与okhttp共同出自于Square公司，retrofit就是对okhttp做了一层封装。把网络请求都交给给了Okhttp，我们只需要通过简单的配置就能使用retrofit来进行网络请求。<br>github地址：<a target="_blank" rel="noopener" href="https://github.com/square/retrofit">https://github.com/square/retrofit</a></p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Retrofit与okhttp共同出自于Square公司，retrofit就是对okhttp做了一层封装。把网络请求都交给给了Okhttp，我们只需要通过简单的配置就能使用retrofit来进行网络请求。<br>github地址：<a target="_blank" rel="noopener" href="https://github.com/square/retrofit">https://github.com/square/retrofit</a></p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h4 id="1-引入库"><a href="#1-引入库" class="headerlink" title="1.引入库"></a>1.引入库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compile&#39;com.squareup.retrofit2: retrofit: 2.3.0&#39;&#x2F;&#x2F;Retrofit库</span><br><span class="line">compile&#39;com.squareup.retrofit2: converter-scalars: 2.1.0&#39;</span><br><span class="line">compile&#39;com.squareup.retrofit2: converter-gson: 2.1.0&#39;</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-接口定义"><a href="#2-接口定义" class="headerlink" title="2.接口定义"></a>2.接口定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface BlogService&#123;</span><br><span class="line">    @GET(&quot;blog&#x2F;&#123;id&#125;&quot;)</span><br><span class="line">    Call&lt;Result&lt;Blog&gt;&gt; getBlog(@Path(&quot;id&quot;) int id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -646,8 +641,8 @@
 
 <h4 id="4-接口调用"><a href="#4-接口调用" class="headerlink" title="4.接口调用"></a>4.接口调用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">RequestService service &#x3D; retrofit.create(RequestService.class);</span><br><span class="line">service.search(&quot;好&quot;, 70).enqueue(new Callback() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onResponse(Call call, Response response) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void onFailure(Call call, Throwable t) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="注解详解"><a href="#注解详解" class="headerlink" title="注解详解"></a>注解详解</h2><h4 id="第一类：请求方法"><a href="#第一类：请求方法" class="headerlink" title="第一类：请求方法"></a>第一类：请求方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@GET(&quot;RussianDictionaryServer&#x2F;word&#x2F;api&#x2F;search&quot;)</span><br><span class="line">Call search(@Query(&quot;key&quot;) String key, @Query(&quot;v&quot;) int v);</span><br><span class="line">@POST(&quot;RussianDictionaryServer&#x2F;word&#x2F;api&#x2F;search&quot;)</span><br><span class="line">Call search(@Query(&quot;key&quot;) String key, @Query(&quot;v&quot;) int v);</span><br></pre></td></tr></table></figure>
-<h4 id="第二类：标记类"><a href="#第二类：标记类" class="headerlink" title="第二类：标记类"></a>第二类：标记类</h4><p><img src="http://ru.wangqinglan.cn/blog/imgs/201710241705001.png"></p>
-<h4 id="第三类：参数类"><a href="#第三类：参数类" class="headerlink" title="第三类：参数类"></a>第三类：参数类</h4><p><img src="http://ru.wangqinglan.cn/blog/imgs/201710241705002.png"></p>
+<h4 id="第二类：标记类"><a href="#第二类：标记类" class="headerlink" title="第二类：标记类"></a>第二类：标记类</h4><p><img src="/images/201710241705001.png"></p>
+<h4 id="第三类：参数类"><a href="#第三类：参数类" class="headerlink" title="第三类：参数类"></a>第三类：参数类</h4><p><img src="/images/201710241705002.png"></p>
 <h2 id="遇到的错误"><a href="#遇到的错误" class="headerlink" title="遇到的错误"></a>遇到的错误</h2><p>java.lang.IllegalStateException: Expected a string but was BEGIN_OBJECT at line 1 column 2 path $<br><code>addConverterFactory(ScalarsConverterFactory.create())</code></p>
 <p>java.lang.IllegalArgumentException: Could not locate ResponseBody converter for class java.lang.String.<br><code>addConverterFactory(ScalarsConverterFactory.create())</code></p>
 

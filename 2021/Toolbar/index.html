@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Toolbar | 有个瓜哥哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##1、设置Toolbar 1234&#x2F;&#x2F;设置为ActionBarsetSupportActionBar((Toolbar)findViewById(R.id.tool_bar));&#x2F;&#x2F;显示左边箭头getSupportActionBar().setDisplayHomeAsUpEnabled(true); ##2、主题要使用NoActionBar这里要使用No">
+  <meta name="description" content="1、设置Toolbar1234&#x2F;&#x2F;设置为ActionBarsetSupportActionBar((Toolbar)findViewById(R.id.tool_bar));&#x2F;&#x2F;显示左边箭头getSupportActionBar().setDisplayHomeAsUpEnabled(true); 2、主题要使用NoActionBar这里要使用NoActio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Toolbar">
 <meta property="og:url" content="http://example.com/2021/Toolbar/index.html">
 <meta property="og:site_name" content="有个瓜哥哥">
-<meta property="og:description" content="##1、设置Toolbar 1234&#x2F;&#x2F;设置为ActionBarsetSupportActionBar((Toolbar)findViewById(R.id.tool_bar));&#x2F;&#x2F;显示左边箭头getSupportActionBar().setDisplayHomeAsUpEnabled(true); ##2、主题要使用NoActionBar这里要使用No">
+<meta property="og:description" content="1、设置Toolbar1234&#x2F;&#x2F;设置为ActionBarsetSupportActionBar((Toolbar)findViewById(R.id.tool_bar));&#x2F;&#x2F;显示左边箭头getSupportActionBar().setDisplayHomeAsUpEnabled(true); 2、主题要使用NoActionBar这里要使用NoActio">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-05T07:15:35.460Z">
-<meta property="article:modified_time" content="2021-04-25T05:47:06.485Z">
+<meta property="article:modified_time" content="2021-04-26T01:19:57.167Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta property="article:tag" content="Toolbar">
 <meta name="twitter:card" content="summary">
@@ -175,10 +175,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##1、设置Toolbar</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置为ActionBar</span><br><span class="line">setSupportActionBar((Toolbar)findViewById(R.id.tool_bar));</span><br><span class="line">&#x2F;&#x2F;显示左边箭头</span><br><span class="line">getSupportActionBar().setDisplayHomeAsUpEnabled(true);</span><br></pre></td></tr></table></figure>
-<p>##2、主题要使用NoActionBar<br>这里要使用NoActionBar的，不然就会给你挂了：<br>##3、修改Toolbar左边箭头颜色</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--设置Toolbar左侧箭头颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;colorControlNormal&quot;&gt;@color&#x2F;colorAccent&lt;&#x2F;item&gt;</span><br></pre></td></tr></table></figure>
+        <h2 id="1、设置Toolbar"><a href="#1、设置Toolbar" class="headerlink" title="1、设置Toolbar"></a>1、设置Toolbar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置为ActionBar</span><br><span class="line">setSupportActionBar((Toolbar)findViewById(R.id.tool_bar));</span><br><span class="line">&#x2F;&#x2F;显示左边箭头</span><br><span class="line">getSupportActionBar().setDisplayHomeAsUpEnabled(true);</span><br></pre></td></tr></table></figure>
+<h2 id="2、主题要使用NoActionBar"><a href="#2、主题要使用NoActionBar" class="headerlink" title="2、主题要使用NoActionBar"></a>2、主题要使用NoActionBar</h2><p>这里要使用NoActionBar的，不然就会给你挂了：</p>
+<h2 id="3、修改Toolbar左边箭头颜色"><a href="#3、修改Toolbar左边箭头颜色" class="headerlink" title="3、修改Toolbar左边箭头颜色"></a>3、修改Toolbar左边箭头颜色</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--设置Toolbar左侧箭头颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;colorControlNormal&quot;&gt;@color&#x2F;colorAccent&lt;&#x2F;item&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="4、设置Toolbar菜单样式设置"><a href="#4、设置Toolbar菜单样式设置" class="headerlink" title="4、设置Toolbar菜单样式设置"></a>4、设置Toolbar菜单样式设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style name&#x3D;&quot;PopupTheme&quot; parent&#x3D;&quot;Widget.AppCompat.Toolbar&quot;&gt;</span><br><span class="line">&lt;!--设置pop菜单背景颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:colorBackground&quot;&gt;@color&#x2F;c17b4ed&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单是否在浮在Toorbar上，默认true, false时在Toolbar下面显示--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;overlapAnchor&quot;&gt;true&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单字体颜色--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:textColorPrimary&quot;&gt;@color&#x2F;cff0000&lt;&#x2F;item&gt;</span><br><span class="line">&lt;!--设置pop菜单字体大小--&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:textSize&quot;&gt;30sp&lt;&#x2F;item&gt;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
 
       
