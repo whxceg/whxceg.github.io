@@ -152,95 +152,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Centos安装Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/01/Centos%E5%AE%89%E8%A3%85Tomcat/">Centos安装Tomcat</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/01/Centos%E5%AE%89%E8%A3%85Tomcat/" class="archive-article-date">
-  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h2><h4 id="1、下载Tomcat"><a href="#1、下载Tomcat" class="headerlink" title="1、下载Tomcat"></a>1、下载Tomcat</h4><p>下载地址：<a target="_blank" rel="noopener" href="http://tomcat.apache.org/download-70.cgi">http: //tomcat.apache.org/download-70.cgi</a></p>
-<h4 id="2、将apache-tomcat-7-0-29-tar-gz文件上传到-usr-local中执行以下操作："><a href="#2、将apache-tomcat-7-0-29-tar-gz文件上传到-usr-local中执行以下操作：" class="headerlink" title="2、将apache-tomcat-7.0.29.tar.gz文件上传到/usr/local中执行以下操作："></a>2、将apache-tomcat-7.0.29.tar.gz文件上传到/usr/local中执行以下操作：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxv -f apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;解压压缩包</span><br><span class="line">rm -rf apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;删除压缩包</span><br><span class="line">mv apache-tomcat-7.0.29 tomcat</span><br></pre></td></tr></table></figure>
-
-<h4 id="3、启动Tomcat"><a href="#3、启动Tomcat" class="headerlink" title="3、启动Tomcat"></a>3、启动Tomcat</h4><p><code>/usr/local/tomcat/bin/startup.sh</code></p>
-<h4 id="4、防火墙开放8080端口"><a href="#4、防火墙开放8080端口" class="headerlink" title="4、防火墙开放8080端口"></a>4、防火墙开放8080端口</h4><p><strong>增加8080端口到防火墙配置中，执行以下操作：</strong><br>[root@admin ~]# vi + /etc/sysconfig/iptables<br>增加以下代码<br><code>-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT</code><br><strong>重启防火墙</strong><br>[root@admin java]# service iptables restart<br>检验Tomcat安装运行<br>通过以下地址查看tomcat是否运行正常：<br><a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a><br>看到tomcat系统界面，说明安装成功！<br><strong>停止Tomcat</strong><br> [root@admin ~]#/usr/local/tomcat/bin/shutdown.sh</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/01/Centos%E5%AE%89%E8%A3%85Tomcat/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Charles抓包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -802,6 +713,111 @@
 
 
   
+    <article id="post-Linux 文件 压缩 用户相关命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Linux%20%E6%96%87%E4%BB%B6%20%E5%8E%8B%E7%BC%A9%20%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">Linux 文件 压缩 用户相关命令</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Linux%20%E6%96%87%E4%BB%B6%20%E5%8E%8B%E7%BC%A9%20%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><h2 id="文件夹与目录"><a href="#文件夹与目录" class="headerlink" title="文件夹与目录"></a>文件夹与目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;home 进入 &#39;&#x2F; home&#39; 目录 </span><br><span class="line">cd .. 返回上一级目录 </span><br><span class="line">cd ..&#x2F;.. 返回上两级目录 </span><br><span class="line">cd 进入个人的主目录 </span><br><span class="line">cd ~user1 进入个人的主目录 </span><br><span class="line">cd - 返回上次所在的目录 </span><br><span class="line">pwd 显示工作路径 </span><br><span class="line">ls 查看目录中的文件 </span><br><span class="line">ls -F 查看目录中的文件 </span><br><span class="line">ls -l 显示文件和目录的详细资料 </span><br><span class="line">ls -a 显示隐藏文件 </span><br><span class="line">ls *[0-9]* 显示包含数字的文件名和目录名 </span><br><span class="line">tree 显示文件和目录由根目录开始的树形结构(1) </span><br><span class="line">lstree 显示文件和目录由根目录开始的树形结构(2) </span><br><span class="line">mkdir dir1 创建一个叫做 &#39;dir1&#39; 的目录 </span><br><span class="line">mkdir dir1 dir2 同时创建两个目录 </span><br><span class="line">mkdir -p &#x2F;tmp&#x2F;dir1&#x2F;dir2 创建一个目录树 </span><br><span class="line">rm -f file1 删除一个叫做 &#39;file1&#39; 的文件 </span><br><span class="line">rmdir dir1 删除一个叫做 &#39;dir1&#39; 的目录 </span><br><span class="line">rm -rf dir1 删除一个叫做 &#39;dir1&#39; 的目录并同时删除其内容 </span><br><span class="line">rm -rf dir1 dir2 同时删除两个目录及它们的内容 </span><br><span class="line">mv dir1 new_dir 重命名&#x2F;移动 一个目录 </span><br><span class="line">cp file1 file2 复制一个文件 </span><br><span class="line">cp dir&#x2F;* . 复制一个目录下的所有文件到当前工作目录 </span><br><span class="line">cp -a &#x2F;tmp&#x2F;dir1 . 复制一个目录到当前工作目录 </span><br><span class="line">cp -a dir1 dir2 复制一个目录 </span><br><span class="line">ln -s file1 lnk1 创建一个指向文件或目录的软链接 </span><br><span class="line">ln file1 lnk1 创建一个指向文件或目录的物理链接 </span><br><span class="line">touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm) </span><br></pre></td></tr></table></figure>
+<h2 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a>文件搜索</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -name file1 从 &#39;&#x2F;&#39; 开始进入根文件系统搜索文件和目录 </span><br><span class="line">find &#x2F; -user user1 搜索属于用户 &#39;user1&#39; 的文件和目录 </span><br><span class="line">find &#x2F;home&#x2F;user1 -name *.bin 在目录 &#39;&#x2F; home&#x2F;user1&#39; 中搜索带有&#39;.bin&#39; 结尾的文件 </span><br><span class="line">find &#x2F;usr&#x2F;bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件 </span><br><span class="line">find &#x2F;usr&#x2F;bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件 </span><br><span class="line">find &#x2F; -name *.rpm -exec chmod 755 &#39;&#123;&#125;&#39; \; 搜索以 &#39;.rpm&#39; 结尾的文件并定义其权限 </span><br><span class="line">find &#x2F; -xdev -name *.rpm 搜索以 &#39;.rpm&#39; 结尾的文件，忽略光驱、捷盘等可移动设备 </span><br><span class="line">locate *.ps 寻找以 &#39;.ps&#39; 结尾的文件 - 先运行 &#39;updatedb&#39; 命令 </span><br><span class="line">whereis halt 显示一个二进制文件、源码或man的位置 </span><br><span class="line">which halt 显示一个二进制文件或可执行文件的完整路径 </span><br></pre></td></tr></table></figure>
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ls -lh 显示权限 </span><br><span class="line">ls &#x2F;tmp | pr -T5 -W$COLUMNS 将终端划分成5栏显示 </span><br><span class="line">chmod ugo+rwx directory1 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r ）、写(w)和执行(x)的权限 </span><br><span class="line">chmod go-rwx directory1 删除群组(g)与其他人(o)对目录的读写执行权限 </span><br><span class="line">chown user1 file1 改变一个文件的所有人属性 </span><br><span class="line">chown -R user1 directory1 改变一个目录的所有人属性并同时改变改目录下所有文件的属性 </span><br><span class="line">chgrp group1 file1 改变文件的群组 </span><br><span class="line">chown user1:group1 file1 改变一个文件的所有人和群组属性 </span><br><span class="line">find &#x2F; -perm -u+s 罗列一个系统中所有使用了SUID控制的文件 </span><br><span class="line">chmod u+s &#x2F;bin&#x2F;file1 设置一个二进制文件的 SUID 位 - 运行该文件的用户也被赋予和所有者同样的权限 </span><br><span class="line">chmod u-s &#x2F;bin&#x2F;file1 禁用一个二进制文件的 SUID位 </span><br><span class="line">chmod g+s &#x2F;home&#x2F;public 设置一个目录的SGID 位 - 类似SUID ，不过这是针对目录的 </span><br><span class="line">chmod g-s &#x2F;home&#x2F;public 禁用一个目录的 SGID 位 </span><br><span class="line">chmod o+t &#x2F;home&#x2F;public 设置一个文件的 STIKY 位 - 只允许合法所有人删除文件 </span><br><span class="line">chmod o-t &#x2F;home&#x2F;public 禁用一个目录的 STIKY 位 </span><br></pre></td></tr></table></figure>
+<h2 id="压缩与解压"><a href="#压缩与解压" class="headerlink" title="压缩与解压"></a>压缩与解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">.tar 解包 tar xvf filename.tar</span><br><span class="line">.tar 打包 tar cvf filename.tar dirname</span><br><span class="line">.gz 解压1 gunzip filename.gz</span><br><span class="line">.gz 解压2 gzip -d filename.gz</span><br><span class="line">.gz 压缩 gzip filename</span><br><span class="line">.tar.gz 和 .tgz 解压 tar zxvf filename.tar.gz</span><br><span class="line">.tar.gz 和 .tgz 压缩 tar zcvf filename.tar.gz dirname</span><br><span class="line">.bz2 解压1 bzip2 -d filename.bz2</span><br><span class="line">.bz2 解压2 bunzip2 filename.bz2</span><br><span class="line">.bz2 压缩 bzip2 -z filename</span><br><span class="line">.tar.bz2 解压 tar jxvf filename.tar.bz2</span><br><span class="line">.tar.bz2 压缩 tar jcvf filename.tar.bz2 dirname</span><br><span class="line">.bz 解压1 bzip2 -d filename.bz</span><br><span class="line">.bz 解压2 bunzip2 filename.bz</span><br><span class="line">.tar.bz 解压 tar jxvf filename.tar.bz</span><br><span class="line">.z 解压 uncompress filename.z</span><br><span class="line">.z 压缩 compress filename</span><br><span class="line">.tar.z 解压 tar zxvf filename.tar.z</span><br><span class="line">.tar.z 压缩 tar zcvf filename.tar.z dirname</span><br><span class="line">.zip 解压 unzip filename.zip</span><br><span class="line">.zip 压缩 zip filename.zip dirname</span><br><span class="line">.rar 解压 rar x filename.rar</span><br><span class="line">.rar 压缩 rar a filename.rar dirname</span><br></pre></td></tr></table></figure>
+<h1 id="磁盘空间"><a href="#磁盘空间" class="headerlink" title="磁盘空间"></a>磁盘空间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df -h 显示已经挂载的分区列表 </span><br><span class="line">ls -lSr |more 以尺寸大小排列文件和目录 </span><br><span class="line">du -sh dir1 估算目录 &#39;dir1&#39; 已经使用的磁盘空间 </span><br><span class="line">du -sk * | sort -rn 以容量大小为依据依次显示文件和目录的大小 </span><br><span class="line">rpm -q -a --qf &#39;%10&#123;SIZE&#125;t%&#123;NAME&#125;n&#39; | sort -k1,1n 以大小为依据依次显示已安装的rpm包所使用的空间 (fedora, redhat类系统) </span><br><span class="line">dpkg-query -W -f&#x3D;&#39;$&#123;Installed-Size;10&#125;t$&#123;Package&#125;n&#39; | sort -k1,1n 以大小为依据显示已安装的deb包所使用的空间 (ubuntu, debian类系统) </span><br></pre></td></tr></table></figure>
+<h1 id="用户和群组"><a href="#用户和群组" class="headerlink" title="用户和群组"></a>用户和群组</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">groupadd group_name 创建一个新用户组 </span><br><span class="line">groupdel group_name 删除一个用户组 </span><br><span class="line">groupmod -n new_group_name old_group_name 重命名一个用户组 </span><br><span class="line">useradd -c &quot;Name Surname &quot; -g admin -d &#x2F;home&#x2F;user1 -s &#x2F;bin&#x2F;bash user1 创建一个属于 &quot;admin&quot; 用户组的用户 </span><br><span class="line">useradd user1 创建一个新用户 </span><br><span class="line">userdel -r user1 删除一个用户 ( &#39;-r&#39; 排除主目录) </span><br><span class="line">usermod -c &quot;User FTP&quot; -g system -d &#x2F;ftp&#x2F;user1 -s &#x2F;bin&#x2F;nologin user1 修改用户属性 </span><br><span class="line">passwd 修改口令 </span><br><span class="line">passwd user1 修改一个用户的口令 (只允许root执行) </span><br><span class="line">chage -E 2005-12-31 user1 设置用户口令的失效期限 </span><br><span class="line">pwck 检查 &#39;&#x2F;etc&#x2F;passwd&#39; 的文件格式和语法修正以及存在的用户 </span><br><span class="line">grpck 检查 &#39;&#x2F;etc&#x2F;passwd&#39; 的文件格式和语法修正以及存在的群组 </span><br><span class="line">newgrp group_name 登陆进一个新的群组以改变新创建文件的预设群组 </span><br></pre></td></tr></table></figure>
+<h1 id="内存占用查看"><a href="#内存占用查看" class="headerlink" title="内存占用查看"></a>内存占用查看</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">一、free</span><br><span class="line">free命令是一个快速查看内存使用情况的方法，它是对 &#x2F;proc&#x2F;meminfo 收集到的信息的一个概述。</span><br><span class="line">free -h</span><br><span class="line"></span><br><span class="line">二、ps命令</span><br><span class="line">可以实时的显示各个进程的内存使用情况。Reported memory usage information includes %MEM (percent of physical memory used), VSZ (total amount of virtual memory used), and RSS (total amount of physical memory used)。你可以使用 “–sort”选项对进程进行排序，例如按RSS进行排序：</span><br><span class="line">ps aux --sort -rss</span><br></pre></td></tr></table></figure>
+<h1 id="查看、添加环境变量"><a href="#查看、添加环境变量" class="headerlink" title="查看、添加环境变量"></a>查看、添加环境变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、查看环境变量</span><br><span class="line">echo $PATH</span><br><span class="line">2、添加环境变量</span><br><span class="line"># 加到PATH末尾</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;path&#x2F;to&#x2F;your&#x2F;dir</span><br><span class="line"># 加到PATH开头</span><br><span class="line">export PATH&#x3D;&#x2F;path&#x2F;to&#x2F;your&#x2F;dir:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>zip命令可以用来将文件压缩成为常用的zip格式。unzip命令则用来解压缩zip文件。</p>
+<h4 id="linuxzip命令参数列表："><a href="#linuxzip命令参数列表：" class="headerlink" title="linuxzip命令参数列表："></a>linuxzip命令参数列表：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-a将文件转成ASCII模式</span><br><span class="line">-F尝试修复损坏的压缩文件</span><br><span class="line">-h显示帮助界面</span><br><span class="line">-m将文件压缩之后，删除源文件</span><br><span class="line">-n特定字符串不压缩具有特定字尾字符串的文件</span><br><span class="line">-o将压缩文件内的所有文件的最新变动时间设为压缩时候的时间</span><br><span class="line">-q安静模式，在压缩的时候不显示指令的执行过程</span><br><span class="line">-r将指定的目录下的所有子目录以及文件一起处理</span><br><span class="line">-S包含系统文件和隐含文件（S是大写）</span><br><span class="line">-t日期把压缩文件的最后修改日期设为指定的日期，日期格式为mmddyyyy</span><br></pre></td></tr></table></figure>
+<h4 id="1、把某个文件或文件夹压缩成文件"><a href="#1、把某个文件或文件夹压缩成文件" class="headerlink" title="1、把某个文件或文件夹压缩成文件"></a>1、把某个文件或文件夹压缩成文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip –q –r xxx.zip xxx.txt</span><br><span class="line">zip –q –r xxx.zip &#x2F;home&#x2F;dir</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、我想把一个文件abc-txt和一个目录dir1压缩成为yasuo-zip："><a href="#2、我想把一个文件abc-txt和一个目录dir1压缩成为yasuo-zip：" class="headerlink" title="2、我想把一个文件abc.txt和一个目录dir1压缩成为yasuo.zip："></a>2、我想把一个文件abc.txt和一个目录dir1压缩成为yasuo.zip：</h4><p><code>zip -r yasuo.zip abc.txt dir1</code></p>
+<h4 id="3、我下载了一个yasuo-zip文件，想解压缩："><a href="#3、我下载了一个yasuo-zip文件，想解压缩：" class="headerlink" title="3、我下载了一个yasuo.zip文件，想解压缩："></a>3、我下载了一个yasuo.zip文件，想解压缩：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip yasuo.zip</span><br><span class="line">unzip yasuo.zip -d yasuo</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、我当前目录下有abc1-zip，abc2-zip和abc3-zip，我想一起解压缩它们："><a href="#4、我当前目录下有abc1-zip，abc2-zip和abc3-zip，我想一起解压缩它们：" class="headerlink" title="4、我当前目录下有abc1.zip，abc2.zip和abc3.zip，我想一起解压缩它们："></a>4、我当前目录下有abc1.zip，abc2.zip和abc3.zip，我想一起解压缩它们：</h4><p><code>unzip abc\\?.zip</code></p>
+<p>注释：?表示一个字符，如果用*表示任意多个字符。</p>
+<h4 id="5、我有一个很大的压缩文件large-zip，我不想解压缩，只想看看它里面有什么："><a href="#5、我有一个很大的压缩文件large-zip，我不想解压缩，只想看看它里面有什么：" class="headerlink" title="5、我有一个很大的压缩文件large.zip，我不想解压缩，只想看看它里面有什么："></a>5、我有一个很大的压缩文件large.zip，我不想解压缩，只想看看它里面有什么：</h4><p><code>unzip -v large.zip</code></p>
+<h4 id="6、我下载了一个压缩文件large-zip，想验证一下这个压缩文件是否下载完全了"><a href="#6、我下载了一个压缩文件large-zip，想验证一下这个压缩文件是否下载完全了" class="headerlink" title="6、我下载了一个压缩文件large.zip，想验证一下这个压缩文件是否下载完全了"></a>6、我下载了一个压缩文件large.zip，想验证一下这个压缩文件是否下载完全了</h4><p><code>unzip -t large.zip</code></p>
+<h4 id="7、我用-v选项发现music-zip压缩文件里面有很多目录和子目录，并且子目录中其实都是歌曲mp3文件，我想把这些文件都下载到第一级目录，而不是一层一层建目录："><a href="#7、我用-v选项发现music-zip压缩文件里面有很多目录和子目录，并且子目录中其实都是歌曲mp3文件，我想把这些文件都下载到第一级目录，而不是一层一层建目录：" class="headerlink" title="7、我用-v选项发现music.zip压缩文件里面有很多目录和子目录，并且子目录中其实都是歌曲mp3文件，我想把这些文件都下载到第一级目录，而不是一层一层建目录："></a>7、我用-v选项发现music.zip压缩文件里面有很多目录和子目录，并且子目录中其实都是歌曲mp3文件，我想把这些文件都下载到第一级目录，而不是一层一层建目录：</h4><p><code>unzip -j music.zip</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">命令</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Linux%20%E6%96%87%E4%BB%B6%20%E5%8E%8B%E7%BC%A9%20%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Kotlin之let,with,run,apply,also函数区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -909,98 +925,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/01/01/Kotlin%E4%B9%8Blet,with,run,apply,also%E5%87%BD%E6%95%B0%E5%8C%BA%E5%88%AB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux 文件 压缩 用户相关命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/01/Linux%20%E6%96%87%E4%BB%B6%20%E5%8E%8B%E7%BC%A9%20%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">Linux 文件 压缩 用户相关命令</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/01/Linux%20%E6%96%87%E4%BB%B6%20%E5%8E%8B%E7%BC%A9%20%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><h2 id="文件夹与目录"><a href="#文件夹与目录" class="headerlink" title="文件夹与目录"></a>文件夹与目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;home 进入 &#39;&#x2F; home&#39; 目录 </span><br><span class="line">cd .. 返回上一级目录 </span><br><span class="line">cd ..&#x2F;.. 返回上两级目录 </span><br><span class="line">cd 进入个人的主目录 </span><br><span class="line">cd ~user1 进入个人的主目录 </span><br><span class="line">cd - 返回上次所在的目录 </span><br><span class="line">pwd 显示工作路径 </span><br><span class="line">ls 查看目录中的文件 </span><br><span class="line">ls -F 查看目录中的文件 </span><br><span class="line">ls -l 显示文件和目录的详细资料 </span><br><span class="line">ls -a 显示隐藏文件 </span><br><span class="line">ls *[0-9]* 显示包含数字的文件名和目录名 </span><br><span class="line">tree 显示文件和目录由根目录开始的树形结构(1) </span><br><span class="line">lstree 显示文件和目录由根目录开始的树形结构(2) </span><br><span class="line">mkdir dir1 创建一个叫做 &#39;dir1&#39; 的目录 </span><br><span class="line">mkdir dir1 dir2 同时创建两个目录 </span><br><span class="line">mkdir -p &#x2F;tmp&#x2F;dir1&#x2F;dir2 创建一个目录树 </span><br><span class="line">rm -f file1 删除一个叫做 &#39;file1&#39; 的文件 </span><br><span class="line">rmdir dir1 删除一个叫做 &#39;dir1&#39; 的目录 </span><br><span class="line">rm -rf dir1 删除一个叫做 &#39;dir1&#39; 的目录并同时删除其内容 </span><br><span class="line">rm -rf dir1 dir2 同时删除两个目录及它们的内容 </span><br><span class="line">mv dir1 new_dir 重命名&#x2F;移动 一个目录 </span><br><span class="line">cp file1 file2 复制一个文件 </span><br><span class="line">cp dir&#x2F;* . 复制一个目录下的所有文件到当前工作目录 </span><br><span class="line">cp -a &#x2F;tmp&#x2F;dir1 . 复制一个目录到当前工作目录 </span><br><span class="line">cp -a dir1 dir2 复制一个目录 </span><br><span class="line">ln -s file1 lnk1 创建一个指向文件或目录的软链接 </span><br><span class="line">ln file1 lnk1 创建一个指向文件或目录的物理链接 </span><br><span class="line">touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm) </span><br></pre></td></tr></table></figure>
-<h2 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a>文件搜索</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">find &#x2F; -name file1 从 &#39;&#x2F;&#39; 开始进入根文件系统搜索文件和目录 </span><br><span class="line">find &#x2F; -user user1 搜索属于用户 &#39;user1&#39; 的文件和目录 </span><br><span class="line">find &#x2F;home&#x2F;user1 -name *.bin 在目录 &#39;&#x2F; home&#x2F;user1&#39; 中搜索带有&#39;.bin&#39; 结尾的文件 </span><br><span class="line">find &#x2F;usr&#x2F;bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件 </span><br><span class="line">find &#x2F;usr&#x2F;bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件 </span><br><span class="line">find &#x2F; -name *.rpm -exec chmod 755 &#39;&#123;&#125;&#39; \; 搜索以 &#39;.rpm&#39; 结尾的文件并定义其权限 </span><br><span class="line">find &#x2F; -xdev -name *.rpm 搜索以 &#39;.rpm&#39; 结尾的文件，忽略光驱、捷盘等可移动设备 </span><br><span class="line">locate *.ps 寻找以 &#39;.ps&#39; 结尾的文件 - 先运行 &#39;updatedb&#39; 命令 </span><br><span class="line">whereis halt 显示一个二进制文件、源码或man的位置 </span><br><span class="line">which halt 显示一个二进制文件或可执行文件的完整路径 </span><br></pre></td></tr></table></figure>
-<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ls -lh 显示权限 </span><br><span class="line">ls &#x2F;tmp | pr -T5 -W$COLUMNS 将终端划分成5栏显示 </span><br><span class="line">chmod ugo+rwx directory1 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r ）、写(w)和执行(x)的权限 </span><br><span class="line">chmod go-rwx directory1 删除群组(g)与其他人(o)对目录的读写执行权限 </span><br><span class="line">chown user1 file1 改变一个文件的所有人属性 </span><br><span class="line">chown -R user1 directory1 改变一个目录的所有人属性并同时改变改目录下所有文件的属性 </span><br><span class="line">chgrp group1 file1 改变文件的群组 </span><br><span class="line">chown user1:group1 file1 改变一个文件的所有人和群组属性 </span><br><span class="line">find &#x2F; -perm -u+s 罗列一个系统中所有使用了SUID控制的文件 </span><br><span class="line">chmod u+s &#x2F;bin&#x2F;file1 设置一个二进制文件的 SUID 位 - 运行该文件的用户也被赋予和所有者同样的权限 </span><br><span class="line">chmod u-s &#x2F;bin&#x2F;file1 禁用一个二进制文件的 SUID位 </span><br><span class="line">chmod g+s &#x2F;home&#x2F;public 设置一个目录的SGID 位 - 类似SUID ，不过这是针对目录的 </span><br><span class="line">chmod g-s &#x2F;home&#x2F;public 禁用一个目录的 SGID 位 </span><br><span class="line">chmod o+t &#x2F;home&#x2F;public 设置一个文件的 STIKY 位 - 只允许合法所有人删除文件 </span><br><span class="line">chmod o-t &#x2F;home&#x2F;public 禁用一个目录的 STIKY 位 </span><br></pre></td></tr></table></figure>
-<h2 id="压缩与解压"><a href="#压缩与解压" class="headerlink" title="压缩与解压"></a>压缩与解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">.tar 解包 tar xvf filename.tar</span><br><span class="line">.tar 打包 tar cvf filename.tar dirname</span><br><span class="line">.gz 解压1 gunzip filename.gz</span><br><span class="line">.gz 解压2 gzip -d filename.gz</span><br><span class="line">.gz 压缩 gzip filename</span><br><span class="line">.tar.gz 和 .tgz 解压 tar zxvf filename.tar.gz</span><br><span class="line">.tar.gz 和 .tgz 压缩 tar zcvf filename.tar.gz dirname</span><br><span class="line">.bz2 解压1 bzip2 -d filename.bz2</span><br><span class="line">.bz2 解压2 bunzip2 filename.bz2</span><br><span class="line">.bz2 压缩 bzip2 -z filename</span><br><span class="line">.tar.bz2 解压 tar jxvf filename.tar.bz2</span><br><span class="line">.tar.bz2 压缩 tar jcvf filename.tar.bz2 dirname</span><br><span class="line">.bz 解压1 bzip2 -d filename.bz</span><br><span class="line">.bz 解压2 bunzip2 filename.bz</span><br><span class="line">.tar.bz 解压 tar jxvf filename.tar.bz</span><br><span class="line">.z 解压 uncompress filename.z</span><br><span class="line">.z 压缩 compress filename</span><br><span class="line">.tar.z 解压 tar zxvf filename.tar.z</span><br><span class="line">.tar.z 压缩 tar zcvf filename.tar.z dirname</span><br><span class="line">.zip 解压 unzip filename.zip</span><br><span class="line">.zip 压缩 zip filename.zip dirname</span><br><span class="line">.rar 解压 rar x filename.rar</span><br><span class="line">.rar 压缩 rar a filename.rar dirname</span><br></pre></td></tr></table></figure>
-<h1 id="磁盘空间"><a href="#磁盘空间" class="headerlink" title="磁盘空间"></a>磁盘空间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df -h 显示已经挂载的分区列表 </span><br><span class="line">ls -lSr |more 以尺寸大小排列文件和目录 </span><br><span class="line">du -sh dir1 估算目录 &#39;dir1&#39; 已经使用的磁盘空间 </span><br><span class="line">du -sk * | sort -rn 以容量大小为依据依次显示文件和目录的大小 </span><br><span class="line">rpm -q -a --qf &#39;%10&#123;SIZE&#125;t%&#123;NAME&#125;n&#39; | sort -k1,1n 以大小为依据依次显示已安装的rpm包所使用的空间 (fedora, redhat类系统) </span><br><span class="line">dpkg-query -W -f&#x3D;&#39;$&#123;Installed-Size;10&#125;t$&#123;Package&#125;n&#39; | sort -k1,1n 以大小为依据显示已安装的deb包所使用的空间 (ubuntu, debian类系统) </span><br></pre></td></tr></table></figure>
-<h1 id="用户和群组"><a href="#用户和群组" class="headerlink" title="用户和群组"></a>用户和群组</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">groupadd group_name 创建一个新用户组 </span><br><span class="line">groupdel group_name 删除一个用户组 </span><br><span class="line">groupmod -n new_group_name old_group_name 重命名一个用户组 </span><br><span class="line">useradd -c &quot;Name Surname &quot; -g admin -d &#x2F;home&#x2F;user1 -s &#x2F;bin&#x2F;bash user1 创建一个属于 &quot;admin&quot; 用户组的用户 </span><br><span class="line">useradd user1 创建一个新用户 </span><br><span class="line">userdel -r user1 删除一个用户 ( &#39;-r&#39; 排除主目录) </span><br><span class="line">usermod -c &quot;User FTP&quot; -g system -d &#x2F;ftp&#x2F;user1 -s &#x2F;bin&#x2F;nologin user1 修改用户属性 </span><br><span class="line">passwd 修改口令 </span><br><span class="line">passwd user1 修改一个用户的口令 (只允许root执行) </span><br><span class="line">chage -E 2005-12-31 user1 设置用户口令的失效期限 </span><br><span class="line">pwck 检查 &#39;&#x2F;etc&#x2F;passwd&#39; 的文件格式和语法修正以及存在的用户 </span><br><span class="line">grpck 检查 &#39;&#x2F;etc&#x2F;passwd&#39; 的文件格式和语法修正以及存在的群组 </span><br><span class="line">newgrp group_name 登陆进一个新的群组以改变新创建文件的预设群组 </span><br></pre></td></tr></table></figure>
-<h1 id="内存占用查看"><a href="#内存占用查看" class="headerlink" title="内存占用查看"></a>内存占用查看</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">一、free</span><br><span class="line">free命令是一个快速查看内存使用情况的方法，它是对 &#x2F;proc&#x2F;meminfo 收集到的信息的一个概述。</span><br><span class="line">free -h</span><br><span class="line"></span><br><span class="line">二、ps命令</span><br><span class="line">可以实时的显示各个进程的内存使用情况。Reported memory usage information includes %MEM (percent of physical memory used), VSZ (total amount of virtual memory used), and RSS (total amount of physical memory used)。你可以使用 “–sort”选项对进程进行排序，例如按RSS进行排序：</span><br><span class="line">ps aux --sort -rss</span><br></pre></td></tr></table></figure>
-<h1 id="查看、添加环境变量"><a href="#查看、添加环境变量" class="headerlink" title="查看、添加环境变量"></a>查看、添加环境变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、查看环境变量</span><br><span class="line">echo $PATH</span><br><span class="line">2、添加环境变量</span><br><span class="line"># 加到PATH末尾</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;path&#x2F;to&#x2F;your&#x2F;dir</span><br><span class="line"># 加到PATH开头</span><br><span class="line">export PATH&#x3D;&#x2F;path&#x2F;to&#x2F;your&#x2F;dir:$PATH</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">命令</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/01/Linux%20%E6%96%87%E4%BB%B6%20%E5%8E%8B%E7%BC%A9%20%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">展开全文 >></a>
         </p>
       
 
@@ -1170,6 +1094,87 @@
 
 
   
+    <article id="post-MySQL命令行导出数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/MySQL%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93/">MySQL命令行导出数据库</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/MySQL%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MySQL命令行导出数据库：</p>
+<h4 id="1、导出数据库"><a href="#1、导出数据库" class="headerlink" title="1、导出数据库"></a>1、导出数据库</h4><p>导出数据库：mysqldump -u用户名 -p 数据库名&gt;导出的文件名<br>如我输入的命令行: mysqldump -uroot-p news&gt;news.sql(输入后会让你输入进入MySQL的密码)（如果导出单张表的话在数据库名后面输入表名即可）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p news&gt;news.sql</span><br></pre></td></tr></table></figure>
+<h4 id="2、导入数据库"><a href="#2、导入数据库" class="headerlink" title="2、导入数据库"></a>2、导入数据库</h4><ol>
+<li>进入mysql命令行 mysql -u用户名 -p<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure></li>
+<li>使用目标数据库 use 目标数据库名<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use news;</span><br></pre></td></tr></table></figure></li>
+<li>导入文件 source 导入的文件名;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source news.sql;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/MySQL%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
@@ -1267,7 +1272,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1275,11 +1284,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
+                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
+                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1287,19 +1296,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
+                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ViewAnimator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1311,35 +1312,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">View</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1347,15 +1320,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1363,11 +1344,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
+                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RecyclerView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">View</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
             
             <div class="clearfix"></div>

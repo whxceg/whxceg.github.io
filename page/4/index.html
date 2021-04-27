@@ -248,6 +248,100 @@
 
 
   
+    <article id="post-RecyclerView GridLayoutManager 设置左右边距导致Item大小不一样" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/RecyclerView%20GridLayoutManager%20%E8%AE%BE%E7%BD%AE%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D%E5%AF%BC%E8%87%B4Item%E5%A4%A7%E5%B0%8F%E4%B8%8D%E4%B8%80%E6%A0%B7/">RecyclerView GridLayoutManager 设置左右边距导致Item大小不一样</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/RecyclerView%20GridLayoutManager%20%E8%AE%BE%E7%BD%AE%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D%E5%AF%BC%E8%87%B4Item%E5%A4%A7%E5%B0%8F%E4%B8%8D%E4%B8%80%E6%A0%B7/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、-RecyclerView-使用GridLayoutManager添加边距"><a href="#1、-RecyclerView-使用GridLayoutManager添加边距" class="headerlink" title="1、 RecyclerView 使用GridLayoutManager添加边距"></a>1、 RecyclerView 使用GridLayoutManager添加边距</h2><p>添加ItemDecoration重写getItemOffsets方法根据item的位置设置等边距代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) &#123;</span><br><span class="line">               super.getItemOffsets(outRect, view, parent, state)</span><br><span class="line">               val pos &#x3D; parent.getChildAdapterPosition(view)</span><br><span class="line">              when(pos&#x2F;4)&#123;</span><br><span class="line">                   0-&gt;&#123;outRect.left &#x3D; 50; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   1-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   2-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   3-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 50&#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+<p>看起来没有什么问题刚好间距都是50运行后发现中间Item的大小比两边的要大。</p>
+<blockquote>
+<p><strong>问题原因：outRect方法添加边距是占用item的空间</strong>  导致中间占用的比两边少view展示比较大</p>
+</blockquote>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h4 id="给每个Item设置的左右边距之和都一致"><a href="#给每个Item设置的左右边距之和都一致" class="headerlink" title="给每个Item设置的左右边距之和都一致"></a>给每个Item设置的左右边距之和都一致</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val pos &#x3D; parent.getChildAdapterPosition(view)</span><br><span class="line">val col &#x3D; pos % 4</span><br><span class="line">outRect.left &#x3D; mSpace - col * mSpace &#x2F; 4</span><br><span class="line">outRect.right &#x3D; (col + 1) * mSpace &#x2F; 4</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RecyclerView</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/RecyclerView%20GridLayoutManager%20%E8%AE%BE%E7%BD%AE%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D%E5%AF%BC%E8%87%B4Item%E5%A4%A7%E5%B0%8F%E4%B8%8D%E4%B8%80%E6%A0%B7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SVN 删除脚本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -442,6 +536,7 @@
 
 <h3 id="撤销上一次提交"><a href="#撤销上一次提交" class="headerlink" title="撤销上一次提交"></a>撤销上一次提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --soft HEAD^</span><br><span class="line">不删除工作空间改动代码，撤销commit，不撤销git add . </span><br><span class="line"></span><br><span class="line">$ git reset --hard HEAD^</span><br><span class="line">删除工作空间改动代码，撤销commit，撤销git add .</span><br><span class="line">注意完成这个操作后，就恢复到了上一次的commit状态。相当于git checkout files</span><br><span class="line"> git reset --mixed HEAD^</span><br><span class="line">--mixed 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add . 操作</span><br><span class="line">这个为默认参数,git reset --mixed HEAD^ 和 git reset HEAD^ 效果是一样的。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h3 id="git-中文路径显示-unicode-代码的问题"><a href="#git-中文路径显示-unicode-代码的问题" class="headerlink" title="git 中文路径显示 unicode 代码的问题"></a>git 中文路径显示 unicode 代码的问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath false</span><br></pre></td></tr></table></figure>
       
 
       
@@ -932,93 +1027,6 @@
 
 
   
-    <article id="post-adb 查看当前页面的Activity名称" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">adb 查看当前页面的Activity名称</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/" class="archive-article-date">
-  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br><span class="line">mCurrentFocus&#x3D;Window&#123;d7e0c6e u0 com.xunmeng.pinduoduo&#x2F;com.xunmeng.pinduoduo.ui.activity.HomeActivity&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">命令</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-搭建github.io博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1212,7 +1220,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1220,11 +1232,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
+                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
+                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1232,19 +1244,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
+                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ViewAnimator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1256,35 +1260,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">View</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1292,15 +1268,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1308,11 +1292,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
+                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RecyclerView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">View</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
             
             <div class="clearfix"></div>

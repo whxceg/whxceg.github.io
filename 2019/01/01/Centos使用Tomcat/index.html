@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Centos使用Tomcat | 有个瓜哥哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="80端口映射到8080端口iptables -tnat-APREROUTING-ptcp–dport80-jREDIRECT–to-port8080 保存映射避免重启失效iptables-save&gt;&#x2F;etc&#x2F;sysconfig&#x2F;iptables 删除映射iptables-tnat-DPREROUTING1以上那个&#x2F;etc&#x2F;sysconfig&#x2F;iptables文件是随便一个文件名就可以。打开&#x2F;">
+  <meta name="description" content="安装Tomcat1、下载Tomcat下载地址：http: &#x2F;&#x2F;tomcat.apache.org&#x2F;download-70.cgi 2、将apache-tomcat-7.0.29.tar.gz文件上传到&#x2F;usr&#x2F;local中执行以下操作：123tar -zxv -f apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;解压压缩包rm -rf apache-tomcat-7">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos使用Tomcat">
 <meta property="og:url" content="http://example.com/2019/01/01/Centos%E4%BD%BF%E7%94%A8Tomcat/index.html">
 <meta property="og:site_name" content="有个瓜哥哥">
-<meta property="og:description" content="80端口映射到8080端口iptables -tnat-APREROUTING-ptcp–dport80-jREDIRECT–to-port8080 保存映射避免重启失效iptables-save&gt;&#x2F;etc&#x2F;sysconfig&#x2F;iptables 删除映射iptables-tnat-DPREROUTING1以上那个&#x2F;etc&#x2F;sysconfig&#x2F;iptables文件是随便一个文件名就可以。打开&#x2F;">
+<meta property="og:description" content="安装Tomcat1、下载Tomcat下载地址：http: &#x2F;&#x2F;tomcat.apache.org&#x2F;download-70.cgi 2、将apache-tomcat-7.0.29.tar.gz文件上传到&#x2F;usr&#x2F;local中执行以下操作：123tar -zxv -f apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;解压压缩包rm -rf apache-tomcat-7">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-26T02:53:47.068Z">
+<meta property="article:modified_time" content="2021-04-27T02:52:25.667Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta property="article:tag" content="Tomcat">
 <meta name="twitter:card" content="summary">
@@ -175,7 +175,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="80端口映射到8080端口"><a href="#80端口映射到8080端口" class="headerlink" title="80端口映射到8080端口"></a>80端口映射到8080端口</h2><p>iptables -tnat-APREROUTING-ptcp–dport80-jREDIRECT–to-port8080</p>
+        <h2 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h2><h4 id="1、下载Tomcat"><a href="#1、下载Tomcat" class="headerlink" title="1、下载Tomcat"></a>1、下载Tomcat</h4><p>下载地址：<a target="_blank" rel="noopener" href="http://tomcat.apache.org/download-70.cgi">http: //tomcat.apache.org/download-70.cgi</a></p>
+<h4 id="2、将apache-tomcat-7-0-29-tar-gz文件上传到-usr-local中执行以下操作："><a href="#2、将apache-tomcat-7-0-29-tar-gz文件上传到-usr-local中执行以下操作：" class="headerlink" title="2、将apache-tomcat-7.0.29.tar.gz文件上传到/usr/local中执行以下操作："></a>2、将apache-tomcat-7.0.29.tar.gz文件上传到/usr/local中执行以下操作：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxv -f apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;解压压缩包</span><br><span class="line">rm -rf apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;删除压缩包</span><br><span class="line">mv apache-tomcat-7.0.29 tomcat</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、启动Tomcat"><a href="#3、启动Tomcat" class="headerlink" title="3、启动Tomcat"></a>3、启动Tomcat</h4><p><code>/usr/local/tomcat/bin/startup.sh</code></p>
+<h4 id="4、防火墙开放8080端口"><a href="#4、防火墙开放8080端口" class="headerlink" title="4、防火墙开放8080端口"></a>4、防火墙开放8080端口</h4><p><strong>增加8080端口到防火墙配置中，执行以下操作：</strong><br>[root@admin ~]# vi + /etc/sysconfig/iptables<br>增加以下代码<br><code>-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT</code><br><strong>重启防火墙</strong><br>[root@admin java]# service iptables restart<br>检验Tomcat安装运行<br>通过以下地址查看tomcat是否运行正常：<br><a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a><br>看到tomcat系统界面，说明安装成功！<br><strong>停止Tomcat</strong><br> [root@admin ~]#/usr/local/tomcat/bin/shutdown.sh</p>
+<h2 id="80端口映射到8080端口"><a href="#80端口映射到8080端口" class="headerlink" title="80端口映射到8080端口"></a>80端口映射到8080端口</h2><p>iptables -tnat-APREROUTING-ptcp–dport80-jREDIRECT–to-port8080</p>
 <h2 id="保存映射避免重启失效"><a href="#保存映射避免重启失效" class="headerlink" title="保存映射避免重启失效"></a>保存映射避免重启失效</h2><p>iptables-save&gt;/etc/sysconfig/iptables</p>
 <h2 id="删除映射"><a href="#删除映射" class="headerlink" title="删除映射"></a>删除映射</h2><p><strong>iptables-tnat-DPREROUTING1</strong><br>以上那个/etc/sysconfig/iptables文件是随便一个文件名就可以。<br>打开/etc/rc.local文件，这个文件在启动时会自动load的。<br>把以下语句拷贝到rc.local里。主要要把/etc/sysconfig/iptables文件名字写对。<br><strong>iptables-restore&lt;/etc/sysconfig/iptables</strong></p>
 <h2 id="tomcat部署多个项目，通过不同域名解析访问不同的网站"><a href="#tomcat部署多个项目，通过不同域名解析访问不同的网站" class="headerlink" title="tomcat部署多个项目，通过不同域名解析访问不同的网站"></a>tomcat部署多个项目，通过不同域名解析访问不同的网站</h2><p>修改tomcat/conf/server.xml配置文件，新增部分如下：</p>
@@ -298,18 +303,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/01/CentOS7%E5%AE%89%E8%A3%85git%E3%80%81Maven/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/01/Android%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CentOS7安装git、Maven
+          Android问题
         
       </div>
     </a>
   
   
-    <a href="/2019/01/01/Centos%E5%AE%89%E8%A3%85Tomcat/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Centos安装Tomcat</div>
+    <a href="/2019/01/01/Centos%E5%AE%89%E8%A3%85JDK/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Centos下安装JDK</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -435,7 +440,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,11 +452,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
+                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
+                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,19 +464,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
+                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ViewAnimator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,35 +480,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">View</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,15 +488,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,11 +512,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
+                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RecyclerView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">View</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
             
             <div class="clearfix"></div>

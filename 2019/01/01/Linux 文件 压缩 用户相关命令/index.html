@@ -16,7 +16,7 @@
 <meta property="og:description" content="文件文件夹与目录1234567891011121314151617181920212223242526272829cd &#x2F;home 进入 &#39;&#x2F; home&#39; 目录 cd .. 返回上一级目录 cd ..&#x2F;.. 返回上两级目录 cd 进入个人的主目录 cd ~user1 进入个人的主目录 cd - 返回上次所在的目录 pwd 显示工作路径 ls 查看目录中">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-26T02:56:18.854Z">
+<meta property="article:modified_time" content="2021-04-27T02:49:39.321Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta property="article:tag" content="命令">
 <meta name="twitter:card" content="summary">
@@ -184,6 +184,19 @@
 <h1 id="内存占用查看"><a href="#内存占用查看" class="headerlink" title="内存占用查看"></a>内存占用查看</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">一、free</span><br><span class="line">free命令是一个快速查看内存使用情况的方法，它是对 &#x2F;proc&#x2F;meminfo 收集到的信息的一个概述。</span><br><span class="line">free -h</span><br><span class="line"></span><br><span class="line">二、ps命令</span><br><span class="line">可以实时的显示各个进程的内存使用情况。Reported memory usage information includes %MEM (percent of physical memory used), VSZ (total amount of virtual memory used), and RSS (total amount of physical memory used)。你可以使用 “–sort”选项对进程进行排序，例如按RSS进行排序：</span><br><span class="line">ps aux --sort -rss</span><br></pre></td></tr></table></figure>
 <h1 id="查看、添加环境变量"><a href="#查看、添加环境变量" class="headerlink" title="查看、添加环境变量"></a>查看、添加环境变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、查看环境变量</span><br><span class="line">echo $PATH</span><br><span class="line">2、添加环境变量</span><br><span class="line"># 加到PATH末尾</span><br><span class="line">export PATH&#x3D;$PATH:&#x2F;path&#x2F;to&#x2F;your&#x2F;dir</span><br><span class="line"># 加到PATH开头</span><br><span class="line">export PATH&#x3D;&#x2F;path&#x2F;to&#x2F;your&#x2F;dir:$PATH</span><br></pre></td></tr></table></figure>
 
+<p>zip命令可以用来将文件压缩成为常用的zip格式。unzip命令则用来解压缩zip文件。</p>
+<h4 id="linuxzip命令参数列表："><a href="#linuxzip命令参数列表：" class="headerlink" title="linuxzip命令参数列表："></a>linuxzip命令参数列表：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-a将文件转成ASCII模式</span><br><span class="line">-F尝试修复损坏的压缩文件</span><br><span class="line">-h显示帮助界面</span><br><span class="line">-m将文件压缩之后，删除源文件</span><br><span class="line">-n特定字符串不压缩具有特定字尾字符串的文件</span><br><span class="line">-o将压缩文件内的所有文件的最新变动时间设为压缩时候的时间</span><br><span class="line">-q安静模式，在压缩的时候不显示指令的执行过程</span><br><span class="line">-r将指定的目录下的所有子目录以及文件一起处理</span><br><span class="line">-S包含系统文件和隐含文件（S是大写）</span><br><span class="line">-t日期把压缩文件的最后修改日期设为指定的日期，日期格式为mmddyyyy</span><br></pre></td></tr></table></figure>
+<h4 id="1、把某个文件或文件夹压缩成文件"><a href="#1、把某个文件或文件夹压缩成文件" class="headerlink" title="1、把某个文件或文件夹压缩成文件"></a>1、把某个文件或文件夹压缩成文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip –q –r xxx.zip xxx.txt</span><br><span class="line">zip –q –r xxx.zip &#x2F;home&#x2F;dir</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、我想把一个文件abc-txt和一个目录dir1压缩成为yasuo-zip："><a href="#2、我想把一个文件abc-txt和一个目录dir1压缩成为yasuo-zip：" class="headerlink" title="2、我想把一个文件abc.txt和一个目录dir1压缩成为yasuo.zip："></a>2、我想把一个文件abc.txt和一个目录dir1压缩成为yasuo.zip：</h4><p><code>zip -r yasuo.zip abc.txt dir1</code></p>
+<h4 id="3、我下载了一个yasuo-zip文件，想解压缩："><a href="#3、我下载了一个yasuo-zip文件，想解压缩：" class="headerlink" title="3、我下载了一个yasuo.zip文件，想解压缩："></a>3、我下载了一个yasuo.zip文件，想解压缩：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unzip yasuo.zip</span><br><span class="line">unzip yasuo.zip -d yasuo</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、我当前目录下有abc1-zip，abc2-zip和abc3-zip，我想一起解压缩它们："><a href="#4、我当前目录下有abc1-zip，abc2-zip和abc3-zip，我想一起解压缩它们：" class="headerlink" title="4、我当前目录下有abc1.zip，abc2.zip和abc3.zip，我想一起解压缩它们："></a>4、我当前目录下有abc1.zip，abc2.zip和abc3.zip，我想一起解压缩它们：</h4><p><code>unzip abc\\?.zip</code></p>
+<p>注释：?表示一个字符，如果用*表示任意多个字符。</p>
+<h4 id="5、我有一个很大的压缩文件large-zip，我不想解压缩，只想看看它里面有什么："><a href="#5、我有一个很大的压缩文件large-zip，我不想解压缩，只想看看它里面有什么：" class="headerlink" title="5、我有一个很大的压缩文件large.zip，我不想解压缩，只想看看它里面有什么："></a>5、我有一个很大的压缩文件large.zip，我不想解压缩，只想看看它里面有什么：</h4><p><code>unzip -v large.zip</code></p>
+<h4 id="6、我下载了一个压缩文件large-zip，想验证一下这个压缩文件是否下载完全了"><a href="#6、我下载了一个压缩文件large-zip，想验证一下这个压缩文件是否下载完全了" class="headerlink" title="6、我下载了一个压缩文件large.zip，想验证一下这个压缩文件是否下载完全了"></a>6、我下载了一个压缩文件large.zip，想验证一下这个压缩文件是否下载完全了</h4><p><code>unzip -t large.zip</code></p>
+<h4 id="7、我用-v选项发现music-zip压缩文件里面有很多目录和子目录，并且子目录中其实都是歌曲mp3文件，我想把这些文件都下载到第一级目录，而不是一层一层建目录："><a href="#7、我用-v选项发现music-zip压缩文件里面有很多目录和子目录，并且子目录中其实都是歌曲mp3文件，我想把这些文件都下载到第一级目录，而不是一层一层建目录：" class="headerlink" title="7、我用-v选项发现music.zip压缩文件里面有很多目录和子目录，并且子目录中其实都是歌曲mp3文件，我想把这些文件都下载到第一级目录，而不是一层一层建目录："></a>7、我用-v选项发现music.zip压缩文件里面有很多目录和子目录，并且子目录中其实都是歌曲mp3文件，我想把这些文件都下载到第一级目录，而不是一层一层建目录：</h4><p><code>unzip -j music.zip</code></p>
+
       
 
       
@@ -298,18 +311,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/01/Kotlin%E4%B9%8Blet,with,run,apply,also%E5%87%BD%E6%95%B0%E5%8C%BA%E5%88%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/01/Kotlin/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Kotlin之let,with,run,apply,also函数区别
+          kotlin
         
       </div>
     </a>
   
   
-    <a href="/2019/01/01/Markdown%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Markdown语法</div>
+    <a href="/2019/01/01/Kotlin%E4%B9%8Blet,with,run,apply,also%E5%87%BD%E6%95%B0%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Kotlin之let,with,run,apply,also函数区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -435,7 +448,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,11 +460,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
+                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
+                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,19 +472,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
+                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ViewAnimator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -479,35 +488,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">View</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,15 +496,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,11 +520,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
+                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RecyclerView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">View</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
             
             <div class="clearfix"></div>

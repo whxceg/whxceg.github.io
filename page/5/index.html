@@ -226,6 +226,171 @@
 
 
   
+    <article id="post-adb 查看当前页面的Activity名称" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">adb 查看当前页面的Activity名称</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell &quot;dumpsys window | grep mCurrentFocus&quot;</span><br><span class="line">mCurrentFocus&#x3D;Window&#123;d7e0c6e u0 com.xunmeng.pinduoduo&#x2F;com.xunmeng.pinduoduo.ui.activity.HomeActivity&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">命令</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/adb%20%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E7%9A%84Activity%E5%90%8D%E7%A7%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-腾讯云启动tomcat超级慢解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%90%AF%E5%8A%A8tomcat%E8%B6%85%E7%BA%A7%E6%85%A2%E8%A7%A3%E5%86%B3/">腾讯云启动tomcat超级慢解决</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%90%AF%E5%8A%A8tomcat%E8%B6%85%E7%BA%A7%E6%85%A2%E8%A7%A3%E5%86%B3/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="http://bbs.qcloud.com/thread-25271-1-1.html">http://bbs.qcloud.com/thread-25271-1-1.html</a></p>
+<blockquote>
+<p>[0x4]启动巨慢问题分析上面的Tomcat是刚下载解压出来的默认配置(只保留Tomcat自带)，但根据上面的启动日志，竟然花了3分多钟，然后仔细观察日志，主要是卡在初始化Session。开始我以为云服务器的问题，然后我在本地虚拟机上同样操作，问题重现，并且更换了Tomcat7，问题仍然出现，所以。通过搜索和分析，Tomcat的SessionID是通过SHA1PRNG算法计算得到的，SHA1算法需要一个密钥，这个密钥在Tomcat启动的时候随机生成一个，生成是使用了Linux随机函数生成器/dev/random。读取它相当于生成随机数字。搜索/dev/random，大概知道是什么鬼了：/dev/random会根据噪音产生随机数，如果噪音不够它就会阻塞。Linux是通过I/O，键盘终端、内存使用量、CPU利用率等方式来收集噪音的，如果噪音不够生成随机数的时候就会被阻塞。</p>
+</blockquote>
+<h4 id="安装熵服务"><a href="#安装熵服务" class="headerlink" title="安装熵服务"></a>安装熵服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install rng-tools</span><br></pre></td></tr></table></figure>
+<h4 id="启动熵服务"><a href="#启动熵服务" class="headerlink" title="启动熵服务"></a>启动熵服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start rngd</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%90%AF%E5%8A%A8tomcat%E8%B6%85%E7%BA%A7%E6%85%A2%E8%A7%A3%E5%86%B3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-自定义View" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -297,6 +462,338 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/01/01/%E8%87%AA%E5%AE%9A%E4%B9%89View/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Centos安装git、Maven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Centos%E5%AE%89%E8%A3%85git%E3%80%81Maven/">CentOS7安装git、Maven</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Centos%E5%AE%89%E8%A3%85git%E3%80%81Maven/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><h4 id="1-查看系统是否已经安装git"><a href="#1-查看系统是否已经安装git" class="headerlink" title="1.查看系统是否已经安装git"></a>1.查看系统是否已经安装git</h4><p><code>git --version</code></p>
+<h4 id="2-CentOS7-yum安装git"><a href="#2-CentOS7-yum安装git" class="headerlink" title="2.CentOS7 yum安装git"></a>2.CentOS7 yum安装git</h4><p><code>yum install -y git</code></p>
+<h4 id="3-安装成功"><a href="#3-安装成功" class="headerlink" title="3.安装成功"></a>3.安装成功</h4><h4 id="4-卸载git"><a href="#4-卸载git" class="headerlink" title="4.卸载git"></a>4.卸载git</h4><p><code>yum remove git</code></p>
+<h4 id="git-提交"><a href="#git-提交" class="headerlink" title="git 提交"></a>git 提交</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# ShadowLayout&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;whxceg&#x2F;ShadowLayout.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h4 id="本地初始化的项目-与-github-版本不一致-导致无法提交"><a href="#本地初始化的项目-与-github-版本不一致-导致无法提交" class="headerlink" title="本地初始化的项目 与 github 版本不一致, 导致无法提交"></a>本地初始化的项目 与 github 版本不一致, 导致无法提交</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories </span><br></pre></td></tr></table></figure>
+<h2 id="Maven安装"><a href="#Maven安装" class="headerlink" title="Maven安装"></a>Maven安装</h2><h4 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h4><p>wget <a target="_blank" rel="noopener" href="http://repos.fedorapeople.org/repos/dchen/apachemaven/epel-apache-maven.repo-O/etc/yum.repos.d/epel-apache-maven.repo">http://repos.fedorapeople.org/repos/dchen/apachemaven/epel-apache-maven.repo-O/etc/yum.repos.d/epel-apache-maven.repo</a></p>
+<h4 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h4><p><code>yum -y install apache-maven</code></p>
+<h4 id="3、maven安装本地jar包到本地仓库"><a href="#3、maven安装本地jar包到本地仓库" class="headerlink" title="3、maven安装本地jar包到本地仓库"></a>3、maven安装本地jar包到本地仓库</h4><p><code>mvn install:install-file -Dfile=./XingeApp.jar -DgroupId=com.tencent -DartifactId=xinge -Dversion=1.0 -Dpackaging=jar</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file</span><br><span class="line">-Dfile&#x3D;jar包的绝对位置</span><br><span class="line">-DgroupId&#x3D;pom文件依赖的groupId</span><br><span class="line">-DartifactId&#x3D;pom文件依赖的artifactId</span><br><span class="line">-Dversion&#x3D;pom文件依赖的version</span><br><span class="line">-Dpackaging&#x3D;jar</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Centos%E5%AE%89%E8%A3%85git%E3%80%81Maven/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Actiivty转场动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Actiivty%E8%BD%AC%E5%9C%BA%E5%8A%A8%E7%94%BB/">Actiivty转场动画</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Actiivty%E8%BD%AC%E5%9C%BA%E5%8A%A8%E7%94%BB/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ActivityOptionsCompat"><a href="#ActivityOptionsCompat" class="headerlink" title="ActivityOptionsCompat"></a>ActivityOptionsCompat</h1><p>参考:<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/qibin0506/article/details/48129139">你所不知道的Activity转场动画——ActivityOptions</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/qq_23547831/article/details/51821159">Github项目解析（九）–&gt;实现Activity跳转动画的五种方式</a></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Actiivty转场动画可以使用<br><code>overridePendingTransition(intenterAnim,intexitAnim)</code>,<br>但这种方式太老了，接下来介绍另一种方式<code>ActivityOptions</code>，和兼容类（V4）<code>ActivityOptionsCompat</code></p>
+<h2 id="总效果图"><a href="#总效果图" class="headerlink" title="总效果图"></a><strong>总效果图</strong></h2><p><img src="/images/20161203161006740.gif"></p>
+<h2 id="4个静态方法"><a href="#4个静态方法" class="headerlink" title="4个静态方法"></a><strong>4个静态方法</strong></h2><p><img src="/images/20161203153139654.jpg"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">makeCustomAnimation(Context context, int enterResId,int exitResId)</span><br><span class="line">makeScaleUpAnimation(View source, int startX, int startY, int startWidth, int startHeight)</span><br><span class="line">makeSceneTransitionAnimation(Activity activity, View sharedElement, String sharedElementName)</span><br><span class="line">makeThumbnailScaleUpAnimation(View source, Bitmap thumbnail, int startX, int startY)</span><br><span class="line">makeSceneTransitionAnimation(Activity activity, Pair...&lt;View,String&gt; sharedElements)</span><br></pre></td></tr></table></figure>
+<h2 id="1makeCustomAnimation-…"><a href="#1makeCustomAnimation-…" class="headerlink" title="1makeCustomAnimation(…)"></a><strong>1makeCustomAnimation(…)</strong></h2><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a><strong>效果图</strong></h3><p><img src="/images/20161203153326596.gif"></p>
+<h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a><strong>Demo</strong></h3><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompatoptions&#x3D;ActivityOptionsCompat.makeCustomAnimation(context, android.R.anim.slide_in_left, android.R.anim.slide_out_right);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_I.class), options.toBundle());</span><br></pre></td></tr></table></figure>
+
+<h2 id="2makeScaleUpAnimation-…"><a href="#2makeScaleUpAnimation-…" class="headerlink" title="2makeScaleUpAnimation(…)"></a><strong>2makeScaleUpAnimation(…)</strong></h2><h3 id="效果图-1"><a href="#效果图-1" class="headerlink" title="效果图"></a><strong>效果图</strong></h3><p><img src="/images/20161203153411847.gif"></p>
+<h3 id="Demo-1"><a href="#Demo-1" class="headerlink" title="Demo"></a><strong>Demo</strong></h3><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompatoptions2&#x3D;ActivityOptionsCompat.makeScaleUpAnimation(view, view.getWidth()&#x2F;2, view.getHeight()&#x2F;2, 1000, 1000);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_I.class), options2.toBundle());</span><br></pre></td></tr></table></figure>
+<h2 id="3makeThumbnailScaleUpAnimation-…"><a href="#3makeThumbnailScaleUpAnimation-…" class="headerlink" title="3makeThumbnailScaleUpAnimation(…)"></a><strong>3makeThumbnailScaleUpAnimation(…)</strong></h2><h2 id="效果图-2"><a href="#效果图-2" class="headerlink" title="效果图"></a><strong>效果图</strong></h2><p><img src="/images/20161203153446468.gif"></p>
+<h3 id="Demo-2"><a href="#Demo-2" class="headerlink" title="Demo"></a><strong>Demo</strong></h3><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options3&#x3D;ActivityOptionsCompat.makeThumbnailScaleUpAnimation(view, BitmapFactory.decodeResource(getResources(), R.mipmap.b), 0, 0);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_I.class), options3.toBundle());</span><br></pre></td></tr></table></figure>
+
+<h2 id="4makeClipRevealAnimation-…"><a href="#4makeClipRevealAnimation-…" class="headerlink" title="4makeClipRevealAnimation(…)"></a><strong>4makeClipRevealAnimation(…)</strong></h2><h2 id="效果图-3"><a href="#效果图-3" class="headerlink" title="效果图"></a><strong>效果图</strong></h2><p><img src="/images/20150831083845960.gif"></p>
+<h3 id="Demo-3"><a href="#Demo-3" class="headerlink" title="Demo"></a><strong>Demo</strong></h3><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options4 &#x3D; ActivityOptionsCompat.makeClipRevealAnimation(view, view.getWidth()&#x2F;2, view.getHeight()&#x2F;2, 1000, 1000);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_I.class), options4.toBundle());</span><br></pre></td></tr></table></figure>
+
+<h2 id="5transitionName"><a href="#5transitionName" class="headerlink" title="5transitionName"></a><strong>5transitionName</strong></h2><h3 id="效果图-4"><a href="#效果图-4" class="headerlink" title="效果图"></a>效果图</h3><p><img src="/images/20161203153552146.gif"></p>
+<h3 id="Demo-4"><a href="#Demo-4" class="headerlink" title="Demo"></a><strong>Demo</strong></h3><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options5 &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, iv, &quot;options5&quot;);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_A.class), options5.toBundle());</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;多个view</span><br><span class="line">ActivityOptionsCompat activityOptions &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(this, new Pair&lt;View, String&gt;(iv1, &quot;iv1&quot;), new Pair&lt;View, String&gt;(iv2), &quot;iv2&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>在Actiivty_A中设置transitionName</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_a);</span><br><span class="line">    context &#x3D; this;</span><br><span class="line">    iv_a &#x3D; (ImageView) findViewById(R.id.iv_a);</span><br><span class="line">    &#x2F;&#x2F;也可以在xml中配置</span><br><span class="line">    &#x2F;&#x2F;ViewCompat.setTransitionName(iv_a,&quot;options5&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>XML中设置transitionName</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ImageView</span><br><span class="line">    android:id&#x3D;&quot;@+id&#x2F;iv_a&quot;</span><br><span class="line">    android:layout_width&#x3D;&quot;match_parent&quot;</span><br><span class="line">    android:layout_height&#x3D;&quot;match_parent&quot;</span><br><span class="line">    android:transitionName&#x3D;&quot;options5&quot;</span><br><span class="line">    android:src&#x3D;&quot;@mipmap&#x2F;b&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-makeSceneTransitionAnimation-…-Transition"><a href="#6-makeSceneTransitionAnimation-…-Transition" class="headerlink" title="6 makeSceneTransitionAnimation(…) Transition"></a><strong>6 makeSceneTransitionAnimation(…) Transition</strong></h2><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a><strong>注意：</strong></h3><p>API&gt;=21</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;退出时使用</span><br><span class="line">getWindow().setExitTransition(explode);</span><br><span class="line">&#x2F;&#x2F;第一次进入时使用</span><br><span class="line">getWindow().setEnterTransition(explode);</span><br><span class="line">&#x2F;&#x2F;再次进入时使用</span><br><span class="line">getWindow().setReenterTransition(explode);</span><br></pre></td></tr></table></figure>
+
+<p>当然，你也可以在style中配置</p>
+<blockquote>
+<p>当前页是A,点击A页面的Button，打开B,在按back键，回到A.整个过程中，<code>windowEnterTransition</code>是B要执行的动画，<code>windowExitTransition</code>是A要退出的页面的动画。按back键，B退出是有退出动画的，不需要在设置。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;item name&#x3D;&quot;android:windowEnterTransition&quot;&gt;@android:transition&#x2F;slide_left&lt;&#x2F;item&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:windowExitTransition&quot;&gt;@android:transition&#x2F;slide_right&lt;&#x2F;item&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意：是<code>windowEnterTransition</code>，不是<code>windowEnterAnimation</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;item name&#x3D;&quot;android:windowEnterAnimation&quot;&gt;@android:anim&#x2F;slide_in_left&lt;&#x2F;item&gt;</span><br><span class="line">&lt;item name&#x3D;&quot;android:windowExitAnimation&quot;&gt;@android:anim&#x2F;slide_out_right&lt;&#x2F;item&gt;</span><br></pre></td></tr></table></figure>
+
+<p>多个view的都需要这样的效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat activityOptions &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(</span><br><span class="line">        this,</span><br><span class="line">        new Pair&lt;View, String&gt;(view.findViewById(R.id.imageview_item),</span><br><span class="line">                DetailActivity.VIEW_NAME_HEADER_IMAGE),</span><br><span class="line">        new Pair&lt;View, String&gt;(view.findViewById(R.id.textview_name),</span><br><span class="line">                DetailActivity.VIEW_NAME_HEADER_TITLE));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ViewCompat.setTransitionName(mHeaderImageView, VIEW_NAME_HEADER_IMAGE);</span><br><span class="line">ViewCompat.setTransitionName(mHeaderTitle, VIEW_NAME_HEADER_TITLE);</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-1-explode"><a href="#6-1-explode" class="headerlink" title="6-1 explode"></a><strong>6-1 explode</strong></h3><h4 id="效果图-5"><a href="#效果图-5" class="headerlink" title="效果图"></a><strong>效果图</strong></h4><p><img src="/images/20161203153634037.gif"></p>
+<h4 id="Demo-5"><a href="#Demo-5" class="headerlink" title="Demo"></a><strong>Demo</strong></h4><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options6 &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_B.class), options6.toBundle());</span><br></pre></td></tr></table></figure>
+
+<p>需要在被开启的activity中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    &#x2F;&#x2F; 设置contentFeature,可使用切换动画</span><br><span class="line">    &#x2F;&#x2F; getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);  或者</span><br><span class="line">    requestWindowFeature(Window.FEATURE_CONTENT_TRANSITIONS);</span><br><span class="line">    Transition explode &#x3D; TransitionInflater.from(this).inflateTransition(android.R.transition.explode);</span><br><span class="line">    getWindow().setEnterTransition(explode);</span><br><span class="line">    setContentView(R.layout.activity_b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以给transition添加监听</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">explode.addListener(transitionListener);</span><br><span class="line"></span><br><span class="line">private Transition.TransitionListener transitionListener &#x3D; new Transition.TransitionListener() &#123;</span><br><span class="line">   @Override</span><br><span class="line">    public void onTransitionStart(Transition transition) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onTransitionEnd(Transition transition) &#123;</span><br><span class="line">        loginApp();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onTransitionCancel(Transition transition) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onTransitionPause(Transition transition) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onTransitionResume(Transition transition) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-fade"><a href="#6-2-fade" class="headerlink" title="6-2 fade"></a><strong>6-2 fade</strong></h3><h3 id="效果图-6"><a href="#效果图-6" class="headerlink" title="效果图"></a><strong>效果图</strong></h3><p><img src="/images/20161203153747719.gif"></p>
+<h4 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h4><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options6 &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_C.class), options6.toBundle());</span><br></pre></td></tr></table></figure>
+
+<p>需要在被开启的activity中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);</span><br><span class="line">    Transition fade &#x3D; TransitionInflater.from(this).inflateTransition(android.R.transition.fade);</span><br><span class="line">    getWindow().setEnterTransition(fade);</span><br><span class="line"></span><br><span class="line">    setContentView(R.layout.activity_b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-3-move"><a href="#6-3-move" class="headerlink" title="6-3 move"></a>6-3 move</h3><h4 id="效果图-7"><a href="#效果图-7" class="headerlink" title="效果图"></a>效果图</h4><p><img src="/images/20161203153820649.gif"></p>
+<h4 id="Demo-6"><a href="#Demo-6" class="headerlink" title="Demo"></a><strong>Demo</strong></h4><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options6 &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_D.class), options6.toBundle());</span><br></pre></td></tr></table></figure>
+
+<p>需要在被开启的activity中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);</span><br><span class="line">    Transition move &#x3D; TransitionInflater.from(this).inflateTransition(android.R.transition.move);</span><br><span class="line">    getWindow().setEnterTransition(move);</span><br><span class="line"></span><br><span class="line">    setContentView(R.layout.activity_b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-4-slide-bottom"><a href="#6-4-slide-bottom" class="headerlink" title="6-4 slide_bottom"></a><strong>6-4 slide_bottom</strong></h3><h4 id="效果图-8"><a href="#效果图-8" class="headerlink" title="效果图"></a><strong>效果图</strong></h4><p><img src="/images/20161203153856095.gif"></p>
+<h4 id="Demo-7"><a href="#Demo-7" class="headerlink" title="Demo"></a><strong>Demo</strong></h4><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options6 &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_E.class), options6.toBundle());</span><br></pre></td></tr></table></figure>
+
+<p>Activity_E 需要在被开启的activity中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);</span><br><span class="line">    Transition slide_bottom &#x3D; TransitionInflater.from(this).inflateTransition(android.R.transition.slide_bottom);</span><br><span class="line">    getWindow().setEnterTransition(slide_bottom);</span><br><span class="line"></span><br><span class="line">    setContentView(R.layout.activity_b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-5-slide-right"><a href="#6-5-slide-right" class="headerlink" title="6-5 slide_right"></a><strong>6-5 slide_right</strong></h3><h4 id="效果图-9"><a href="#效果图-9" class="headerlink" title="效果图"></a><strong>效果图</strong></h4><p><img src="/images/20161203153926673.gif"></p>
+<h4 id="Demo-8"><a href="#Demo-8" class="headerlink" title="Demo"></a><strong>Demo</strong></h4><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options10 &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_F.class), options10.toBundle());</span><br></pre></td></tr></table></figure>
+
+<p>需要在被开启的activity中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Activity_F extends AppCompatActivity &#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);</span><br><span class="line">        Transition slide_right &#x3D; TransitionInflater.from(this).inflateTransition(android.R.transition.slide_right);</span><br><span class="line">        getWindow().setEnterTransition(slide_right);</span><br><span class="line"></span><br><span class="line">        setContentView(R.layout.activity_b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-6-slide-top"><a href="#6-6-slide-top" class="headerlink" title="6-6 slide_top"></a><strong>6-6 slide_top</strong></h3><h4 id="效果图-10"><a href="#效果图-10" class="headerlink" title="效果图"></a><strong>效果图</strong></h4><p><img src="/images/20161203153955673.gif"></p>
+<h4 id="Demo-9"><a href="#Demo-9" class="headerlink" title="Demo"></a><strong>Demo</strong></h4><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options11 &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_G.class), options11.toBundle());</span><br></pre></td></tr></table></figure>
+
+<p>需要在被开启的activity中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Activity_G extends AppCompatActivity &#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);</span><br><span class="line">        Transition slide_top &#x3D; TransitionInflater.from(this).inflateTransition(android.R.transition.slide_top);</span><br><span class="line">        getWindow().setEnterTransition(slide_top);</span><br><span class="line"></span><br><span class="line">        setContentView(R.layout.activity_b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-7-slide-left"><a href="#6-7-slide-left" class="headerlink" title="6-7 slide_left"></a><strong>6-7 slide_left</strong></h3><h4 id="效果图-11"><a href="#效果图-11" class="headerlink" title="效果图"></a><strong>效果图</strong></h4><p><img src="/images/20161203154102090.gif"></p>
+<h4 id="Demo-10"><a href="#Demo-10" class="headerlink" title="Demo"></a><strong>Demo</strong></h4><p><code>View</code>是Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ActivityOptionsCompat options12 &#x3D; ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this);</span><br><span class="line">ActivityCompat.startActivity(context, new Intent(context, Activity_H.class), options12.toBundle());</span><br></pre></td></tr></table></figure>
+
+<p>需要在被开启的activity中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Activity_H extends AppCompatActivity &#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);</span><br><span class="line">        Transition slide_left &#x3D; TransitionInflater.from(this).inflateTransition(android.R.transition.slide_left);</span><br><span class="line">        getWindow().setEnterTransition(slide_left);</span><br><span class="line"></span><br><span class="line">        setContentView(R.layout.activity_b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="优雅的退出"><a href="#优雅的退出" class="headerlink" title="优雅的退出"></a>优雅的退出</h2><p>由A进到到B，我们使用的是转场动画，在B页面，如果按back键，B页面的退出也是转场动画，但是通常Activity顶部有个Titlte,左侧是返回箭头，那么怎么让B退出的时候像进入时那样使用转场东动画呢？<br>解决方法就是在我们给箭头icon设置点击事件，在点击中调用方法<code>onBackPressed();</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ic_back.setNavigationOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View view) &#123;</span><br><span class="line">        onBackPressed();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a target="_blank" rel="noopener" href="https://git.oschina.net/AndroidUI/ActivityOptionCompat01">点击下载源码：ActivityOptionCompat01</a></p>
+<h1 id="overridePendingTransition-int-enterAnim-int-exitAnim"><a href="#overridePendingTransition-int-enterAnim-int-exitAnim" class="headerlink" title="overridePendingTransition (int enterAnim, int exitAnim)"></a>overridePendingTransition (int enterAnim, int exitAnim)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overridePendingTransition(R.anim.bottom_to_current,R.anim.current_to_top);</span><br></pre></td></tr></table></figure>
+
+<h2 id="当前页向上退出"><a href="#当前页向上退出" class="headerlink" title="当前页向上退出"></a>当前页向上退出</h2><p>current_to_top.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate</span><br><span class="line">    xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:duration&#x3D;&quot;500&quot;</span><br><span class="line">    android:fromYDelta&#x3D;&quot;0&quot;</span><br><span class="line">    android:toYDelta&#x3D;&quot;-100%&quot;&gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br></pre></td></tr></table></figure>
+
+<p>bottom_to_current.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate</span><br><span class="line">    xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:fromYDelta&#x3D;&quot;100%&quot;</span><br><span class="line">    android:duration&#x3D;&quot;500&quot;</span><br><span class="line">    android:toYDelta&#x3D;&quot;0&quot;&gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="当前页向下退出"><a href="#当前页向下退出" class="headerlink" title="当前页向下退出"></a>当前页向下退出</h2><p><img src="/images/20170218020339900.gif"><br>current_to_bottom.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate</span><br><span class="line">    xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:duration&#x3D;&quot;500&quot;</span><br><span class="line">    android:fromYDelta&#x3D;&quot;0&quot;</span><br><span class="line">    android:toYDelta&#x3D;&quot;100%&quot;&gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br></pre></td></tr></table></figure>
+
+<p>top_to_current.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate</span><br><span class="line">    xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:duration&#x3D;&quot;500&quot;</span><br><span class="line">    android:fromYDelta&#x3D;&quot;-100%&quot;</span><br><span class="line">    android:toYDelta&#x3D;&quot;0&quot;&gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="当前页向右退出"><a href="#当前页向右退出" class="headerlink" title="当前页向右退出"></a>当前页向右退出</h2><p>current_to_right.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:fromXDelta&#x3D;&quot;0&quot;</span><br><span class="line">    android:toXDelta&#x3D;&quot;100%&quot;</span><br><span class="line">    android:duration&#x3D;&quot;500&quot; &gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br><span class="line">&lt;!-- 要使用%，这样才有效果，反则没有效果，500ms不起作用 --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>left_to_current.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:fromXDelta&#x3D;&quot;-100%&quot;</span><br><span class="line">    android:toXDelta&#x3D;&quot;0&quot;</span><br><span class="line">    android:duration&#x3D;&quot;500&quot; &gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br><span class="line">&lt;!-- 要使用%，这样才有效果，反则没有效果，500ms不起作用 --&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="当前页向左退出"><a href="#当前页向左退出" class="headerlink" title="当前页向左退出"></a>当前页向左退出</h2><p>current_to_left.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:fromXDelta&#x3D;&quot;0&quot;</span><br><span class="line">    android:toXDelta&#x3D;&quot;-100%&quot;</span><br><span class="line">    android:duration&#x3D;&quot;500&quot; &gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br></pre></td></tr></table></figure>
+
+<p>right_to_current.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:fromXDelta&#x3D;&quot;100%&quot;</span><br><span class="line">    android:toXDelta&#x3D;&quot;0&quot;</span><br><span class="line">    android:duration&#x3D;&quot;500&quot; &gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="当前页从右边进入，退出时回到右边"><a href="#当前页从右边进入，退出时回到右边" class="headerlink" title="当前页从右边进入，退出时回到右边"></a>当前页从右边进入，退出时回到右边</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">startActivity(new Intent(getActivity(), CommonQuestionActivity.class));</span><br><span class="line">overridePendingTransition(R.anim.right_to_current,R.anim.current_to_left);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onBackPressed() &#123;</span><br><span class="line">    super.onBackPressed();</span><br><span class="line">    overridePendingTransition(R.anim.alpha_1_1,R.anim.current_to_right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Activity切换时黑屏"><a href="#Activity切换时黑屏" class="headerlink" title="Activity切换时黑屏"></a>Activity切换时黑屏</h2><p>如果我们采用这种方式那么会导致当前页黑屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">startActivity(new Intent(Activity_A.this,Activity_C.class));</span><br><span class="line">overridePendingTransition(R.anim.right_to_current,0);</span><br></pre></td></tr></table></figure>
+<p>解决方法：不实用0，仍然使用动画，将退出动画设置透明度从1到1.<br><code>current_stay_alpha.xml</code></p>
+<h3 id="R-anim-current-stay-alpha"><a href="#R-anim-current-stay-alpha" class="headerlink" title="R.anim.current_stay_alpha"></a>R.anim.current_stay_alpha</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overridePendingTransition(R.anim.right_to_current,R.anim.current_stay_alpha);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;alpha xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">       android:duration&#x3D;&quot;500&quot;</span><br><span class="line">       android:fromAlpha&#x3D;&quot;1&quot;</span><br><span class="line">       android:toAlpha&#x3D;&quot;1&quot;&gt;</span><br><span class="line">&lt;&#x2F;alpha&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当然，不只是<code>current_stay_alpha</code>，只要使当前页保持不动都可以,下面还有</p>
+<h3 id="R-anim-current-stay-translate"><a href="#R-anim-current-stay-translate" class="headerlink" title="R.anim.current_stay_translate"></a>R.anim.current_stay_translate</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overridePendingTransition(R.anim.right_to_current,R.anim.current_stay_translate);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;translate xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">           android:fromXDelta&#x3D;&quot;0&quot;</span><br><span class="line">           android:toXDelta&#x3D;&quot;0&quot;</span><br><span class="line">           android:duration&#x3D;&quot;500&quot;&gt;</span><br><span class="line">&lt;&#x2F;translate&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="current-stay-scale-xml"><a href="#current-stay-scale-xml" class="headerlink" title="current_stay_scale.xml"></a>current_stay_scale.xml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overridePendingTransition(R.anim.right_to_current,R.anim.current_stay_scale)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;scale xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">       android:duration&#x3D;&quot;500&quot;</span><br><span class="line">       android:fromXScale&#x3D;&quot;1&quot;</span><br><span class="line">       android:fromYScale&#x3D;&quot;1&quot;</span><br><span class="line">       android:toXScale&#x3D;&quot;1&quot;</span><br><span class="line">       android:toYScale&#x3D;&quot;1&quot;&gt;</span><br><span class="line">&lt;&#x2F;scale&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="current-stay-rotate-xml"><a href="#current-stay-rotate-xml" class="headerlink" title="current_stay_rotate.xml"></a>current_stay_rotate.xml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">overridePendingTransition(R.anim.right_to_current,R.anim.current_stay_rotate)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;rotate xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">       android:duration&#x3D;&quot;500&quot;&gt;</span><br><span class="line">&lt;&#x2F;rotate&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="源码-1"><a href="#源码-1" class="headerlink" title="源码"></a>源码</h2><p><a target="_blank" rel="noopener" href="https://git.oschina.net/AnimationDemo/overridePendingTransition">https://git.oschina.net/AnimationDemo/overridePendingTransition</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Activity</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Actiivty%E8%BD%AC%E5%9C%BA%E5%8A%A8%E7%94%BB/">展开全文 >></a>
         </p>
       
 
@@ -945,7 +1442,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -953,11 +1454,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
+                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
+                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,19 +1466,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
+                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ViewAnimator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -989,35 +1482,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">View</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,15 +1490,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,11 +1514,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
+                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RecyclerView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">View</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
             
             <div class="clearfix"></div>

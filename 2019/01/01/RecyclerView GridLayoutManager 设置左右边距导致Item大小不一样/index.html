@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Centos安装Tomcat | 有个瓜哥哥</title>
+  <title>RecyclerView GridLayoutManager 设置左右边距导致Item大小不一样 | 有个瓜哥哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装Tomcat1、下载Tomcat下载地址：http: &#x2F;&#x2F;tomcat.apache.org&#x2F;download-70.cgi 2、将apache-tomcat-7.0.29.tar.gz文件上传到&#x2F;usr&#x2F;local中执行以下操作：123tar -zxv -f apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;解压压缩包rm -rf apache-tomcat-7">
+  <meta name="description" content="1、 RecyclerView 使用GridLayoutManager添加边距添加ItemDecoration重写getItemOffsets方法根据item的位置设置等边距代码如下 12345678910override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos安装Tomcat">
-<meta property="og:url" content="http://example.com/2019/01/01/Centos%E5%AE%89%E8%A3%85Tomcat/index.html">
+<meta property="og:title" content="RecyclerView GridLayoutManager 设置左右边距导致Item大小不一样">
+<meta property="og:url" content="http://example.com/2019/01/01/RecyclerView%20GridLayoutManager%20%E8%AE%BE%E7%BD%AE%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D%E5%AF%BC%E8%87%B4Item%E5%A4%A7%E5%B0%8F%E4%B8%8D%E4%B8%80%E6%A0%B7/index.html">
 <meta property="og:site_name" content="有个瓜哥哥">
-<meta property="og:description" content="安装Tomcat1、下载Tomcat下载地址：http: &#x2F;&#x2F;tomcat.apache.org&#x2F;download-70.cgi 2、将apache-tomcat-7.0.29.tar.gz文件上传到&#x2F;usr&#x2F;local中执行以下操作：123tar -zxv -f apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;解压压缩包rm -rf apache-tomcat-7">
+<meta property="og:description" content="1、 RecyclerView 使用GridLayoutManager添加边距添加ItemDecoration重写getItemOffsets方法根据item的位置设置等边距代码如下 12345678910override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-26T02:53:55.090Z">
+<meta property="article:modified_time" content="2021-04-27T02:46:52.880Z">
 <meta property="article:author" content="有个瓜哥哥">
-<meta property="article:tag" content="Tomcat">
+<meta property="article:tag" content="RecyclerView">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="有个瓜哥哥" type="application/atom+xml">
@@ -155,19 +155,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Centos安装Tomcat" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-RecyclerView GridLayoutManager 设置左右边距导致Item大小不一样" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Centos安装Tomcat
+      RecyclerView GridLayoutManager 设置左右边距导致Item大小不一样
     </h1>
   
 
         
-        <a href="/2019/01/01/Centos%E5%AE%89%E8%A3%85Tomcat/" class="archive-article-date">
+        <a href="/2019/01/01/RecyclerView%20GridLayoutManager%20%E8%AE%BE%E7%BD%AE%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D%E5%AF%BC%E8%87%B4Item%E5%A4%A7%E5%B0%8F%E4%B8%8D%E4%B8%80%E6%A0%B7/" class="archive-article-date">
   	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
@@ -175,11 +175,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h2><h4 id="1、下载Tomcat"><a href="#1、下载Tomcat" class="headerlink" title="1、下载Tomcat"></a>1、下载Tomcat</h4><p>下载地址：<a target="_blank" rel="noopener" href="http://tomcat.apache.org/download-70.cgi">http: //tomcat.apache.org/download-70.cgi</a></p>
-<h4 id="2、将apache-tomcat-7-0-29-tar-gz文件上传到-usr-local中执行以下操作："><a href="#2、将apache-tomcat-7-0-29-tar-gz文件上传到-usr-local中执行以下操作：" class="headerlink" title="2、将apache-tomcat-7.0.29.tar.gz文件上传到/usr/local中执行以下操作："></a>2、将apache-tomcat-7.0.29.tar.gz文件上传到/usr/local中执行以下操作：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxv -f apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;解压压缩包</span><br><span class="line">rm -rf apache-tomcat-7.0.29.tar.gz &#x2F;&#x2F;删除压缩包</span><br><span class="line">mv apache-tomcat-7.0.29 tomcat</span><br></pre></td></tr></table></figure>
+        <h2 id="1、-RecyclerView-使用GridLayoutManager添加边距"><a href="#1、-RecyclerView-使用GridLayoutManager添加边距" class="headerlink" title="1、 RecyclerView 使用GridLayoutManager添加边距"></a>1、 RecyclerView 使用GridLayoutManager添加边距</h2><p>添加ItemDecoration重写getItemOffsets方法根据item的位置设置等边距代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) &#123;</span><br><span class="line">               super.getItemOffsets(outRect, view, parent, state)</span><br><span class="line">               val pos &#x3D; parent.getChildAdapterPosition(view)</span><br><span class="line">              when(pos&#x2F;4)&#123;</span><br><span class="line">                   0-&gt;&#123;outRect.left &#x3D; 50; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   1-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   2-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   3-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 50&#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+<p>看起来没有什么问题刚好间距都是50运行后发现中间Item的大小比两边的要大。</p>
+<blockquote>
+<p><strong>问题原因：outRect方法添加边距是占用item的空间</strong>  导致中间占用的比两边少view展示比较大</p>
+</blockquote>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h4 id="给每个Item设置的左右边距之和都一致"><a href="#给每个Item设置的左右边距之和都一致" class="headerlink" title="给每个Item设置的左右边距之和都一致"></a>给每个Item设置的左右边距之和都一致</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val pos &#x3D; parent.getChildAdapterPosition(view)</span><br><span class="line">val col &#x3D; pos % 4</span><br><span class="line">outRect.left &#x3D; mSpace - col * mSpace &#x2F; 4</span><br><span class="line">outRect.right &#x3D; (col + 1) * mSpace &#x2F; 4</span><br></pre></td></tr></table></figure>
 
-<h4 id="3、启动Tomcat"><a href="#3、启动Tomcat" class="headerlink" title="3、启动Tomcat"></a>3、启动Tomcat</h4><p><code>/usr/local/tomcat/bin/startup.sh</code></p>
-<h4 id="4、防火墙开放8080端口"><a href="#4、防火墙开放8080端口" class="headerlink" title="4、防火墙开放8080端口"></a>4、防火墙开放8080端口</h4><p><strong>增加8080端口到防火墙配置中，执行以下操作：</strong><br>[root@admin ~]# vi + /etc/sysconfig/iptables<br>增加以下代码<br><code>-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT</code><br><strong>重启防火墙</strong><br>[root@admin java]# service iptables restart<br>检验Tomcat安装运行<br>通过以下地址查看tomcat是否运行正常：<br><a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a><br>看到tomcat系统界面，说明安装成功！<br><strong>停止Tomcat</strong><br> [root@admin ~]#/usr/local/tomcat/bin/shutdown.sh</p>
+
+
 
       
 
@@ -214,7 +219,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RecyclerView</a>
         		</li>
       		
 		</ul>
@@ -226,7 +231,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
@@ -281,7 +286,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2019/01/01/Centos%E5%AE%89%E8%A3%85Tomcat/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2019/01/01/RecyclerView%20GridLayoutManager%20%E8%AE%BE%E7%BD%AE%E5%B7%A6%E5%8F%B3%E8%BE%B9%E8%B7%9D%E5%AF%BC%E8%87%B4Item%E5%A4%A7%E5%B0%8F%E4%B8%8D%E4%B8%80%E6%A0%B7/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -295,18 +300,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/01/Centos%E4%BD%BF%E7%94%A8Tomcat/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/01/Retrofit%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Centos使用Tomcat
+          Retrofit使用简介
         
       </div>
     </a>
   
   
-    <a href="/2019/01/01/Charles%E6%8A%93%E5%8C%85/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用Charles抓包</div>
+    <a href="/2019/01/01/SVN%20%E5%88%A0%E9%99%A4%E8%84%9A%E6%9C%AC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SVN 删除脚本</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -432,7 +437,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -440,11 +449,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
+                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
+                <a href="javascript:void(0)" class="js-tag color2">PopupWindow</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -452,19 +461,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Drawable</a>
+                <a href="javascript:void(0)" class="js-tag color5">TabLayout</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ViewAnimator</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,35 +477,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">View</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,15 +485,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">FFmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSON</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Kotlin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,11 +509,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Uri</a>
+                <a href="javascript:void(0)" class="js-tag color4">NDK</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Activity</a>
+                <a href="javascript:void(0)" class="js-tag color4">Retrofit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RecyclerView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ScrollView</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">View</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ViewModel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">RxJava</a>
               </li>
             
             <div class="clearfix"></div>
