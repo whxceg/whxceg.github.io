@@ -152,6 +152,102 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/Android%E9%97%AE%E9%A2%98/">Android问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/Android%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、自定义ViewGroup时onDraw方法不执行"><a href="#1、自定义ViewGroup时onDraw方法不执行" class="headerlink" title="1、自定义ViewGroup时onDraw方法不执行"></a>1、自定义ViewGroup时onDraw方法不执行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">原因：ViewGroup作为一个容器控件，默认情况下是没有任何东西可画的，它是一个透明控件。draw被调用而ondraw不被调用，而ondraw是由draw进行调用的。</span><br><span class="line">解决版本：</span><br><span class="line">方法一：在构造函数中调用setWillNotDraw(false);</span><br><span class="line">方法二：给ViewGroup设置背景。调用setBackground。</span><br></pre></td></tr></table></figure>
+<h2 id="2、-RecyclerView-使用GridLayoutManager添加边距"><a href="#2、-RecyclerView-使用GridLayoutManager添加边距" class="headerlink" title="2、 RecyclerView 使用GridLayoutManager添加边距"></a>2、 RecyclerView 使用GridLayoutManager添加边距</h2><p>添加ItemDecoration重写getItemOffsets方法根据item的位置设置等边距代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) &#123;</span><br><span class="line">               super.getItemOffsets(outRect, view, parent, state)</span><br><span class="line">               val pos &#x3D; parent.getChildAdapterPosition(view)</span><br><span class="line">              when(pos&#x2F;4)&#123;</span><br><span class="line">                   0-&gt;&#123;outRect.left &#x3D; 50; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   1-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   2-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 25&#125;</span><br><span class="line">                   3-&gt;&#123;outRect.left &#x3D; 25; outRect.right &#x3D; 50&#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+<p>看起来没有什么问题刚好间距都是50运行后发现中间Item的大小比两边的要大。</p>
+<blockquote>
+<p><strong>问题原因：outRect方法添加边距是占用item的空间</strong>  导致中间占用的比两边少view展示比较大</p>
+</blockquote>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="给每个Item设置的左右边距之和都一致"><a href="#给每个Item设置的左右边距之和都一致" class="headerlink" title="给每个Item设置的左右边距之和都一致"></a>给每个Item设置的左右边距之和都一致</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val pos &#x3D; parent.getChildAdapterPosition(view)</span><br><span class="line">val col &#x3D; pos % 4</span><br><span class="line">outRect.left &#x3D; mSpace - col * mSpace &#x2F; 4</span><br><span class="line">outRect.right &#x3D; (col + 1) * mSpace &#x2F; 4</span><br></pre></td></tr></table></figure>
+
+<h1 id="Android-7-0行为变更"><a href="#Android-7-0行为变更" class="headerlink" title="Android 7.0行为变更"></a>Android 7.0行为变更</h1><p>官方文档 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/nougat/android-7.0-changes">https://developer.android.google.cn/about/versions/nougat/android-7.0-changes</a></p>
+<h1 id="Android8-0行为变更"><a href="#Android8-0行为变更" class="headerlink" title="Android8.0行为变更"></a>Android8.0行为变更</h1><p>官方文档 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/oreo/android-8.0-changes">https://developer.android.google.cn/about/versions/oreo/android-8.0-changes</a></p>
+<h1 id="Android-9-0行为变更"><a href="#Android-9-0行为变更" class="headerlink" title="Android 9.0行为变更"></a>Android 9.0行为变更</h1><p>官方文档 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/about/versions/pie/android-9.0-changes-28">https://developer.android.google.cn/about/versions/pie/android-9.0-changes-28</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/Android%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Centos使用Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1001,116 +1097,9 @@ summer10123 NjI3OTAzMDc=
 
 
   
-    <article id="post-JobService" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/01/JobService/">JobService使用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/01/JobService/" class="archive-article-date">
-  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="JobService-Android-5-0推出"><a href="#JobService-Android-5-0推出" class="headerlink" title="JobService(Android 5.0推出)"></a>JobService(Android 5.0推出)</h3><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>1、创建MyJobService</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public class MyJobService extends JobService &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2、清单注册，注意必须添加权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;service android:name&#x3D;&quot;.service.MyJobService&quot;</span><br><span class="line">    android:permission&#x3D;&quot;android.permission.BIND_JOB_SERVICE&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-<p>3、启动Job</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">JobScheduler scheduler &#x3D; (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);</span><br><span class="line">ComponentName name &#x3D; new ComponentName(context, MyJobService.class);</span><br><span class="line">JobInfo.Builder builder &#x3D; new JobInfo.Builder(id, name);</span><br><span class="line">builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_NONE); &#x2F;&#x2F;设置需要的网络条件，默认NETWORK_TYPE_NONE</span><br><span class="line">builder.setPeriodic(15 * 60_000);&#x2F;&#x2F;设置间隔时间，不断的触发任务的启动 间隔必须在15分钟以上</span><br><span class="line">&#x2F;&#x2F; 设置任务运行最少延迟时间，与setPeriodic相似，只是间隔时间不确定，不能与setPeriodic一起使用，</span><br><span class="line">&#x2F;&#x2F;一般的都是7、8秒开始执行任务。在任务执行完成后，他们会初始化延缓时间，开始计时，准备下一次任务的执行。</span><br><span class="line">builder.setMinimumLatency(1000);</span><br><span class="line">builder.setOverrideDeadline(50000);&#x2F;&#x2F; 设置deadline，若到期还没有达到规定的条件则会开始执行</span><br><span class="line">builder.setRequiresDeviceIdle(false);&#x2F;&#x2F; 设置手机是否空闲的条件,默认false</span><br><span class="line">builder.setPersisted(true);&#x2F;&#x2F;设备重启之后你的任务是否还要继续执行</span><br><span class="line">scheduler.schedule(builder.build()); &#x2F;&#x2F;返回值：1表示执行成功，0代表失败</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>4、设置传递参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> public static void startDown(Context context, String url, String path) &#123;</span><br><span class="line">      JobScheduler scheduler &#x3D; (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);</span><br><span class="line">      ComponentName name &#x3D; new ComponentName(context, DownService.class);</span><br><span class="line">      JobInfo.Builder builder &#x3D; new JobInfo.Builder(ID++, name);</span><br><span class="line">      builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_NONE); &#x2F;&#x2F;设置需要的网络条件，默认NETWORK_TYPE_NONE</span><br><span class="line">      builder.setMinimumLatency(10);</span><br><span class="line">      builder.setOverrideDeadline(10);&#x2F;&#x2F; 设置deadline，若到期还没有达到规定的条件则会开始执行</span><br><span class="line">      builder.setRequiresDeviceIdle(false);&#x2F;&#x2F; 设置手机是否空闲的条件,默认false</span><br><span class="line">      builder.setPersisted(false);&#x2F;&#x2F;设备重启之后你的任务是否还要继续执行</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;设置传递参数</span><br><span class="line">      PersistableBundle bundle &#x3D; new PersistableBundle();</span><br><span class="line">      bundle.putString(&quot;URL&quot;, url);</span><br><span class="line">      bundle.putString(&quot;PATH&quot;, path);</span><br><span class="line">      builder.setExtras(bundle);</span><br><span class="line">      scheduler.schedule(builder.build()); &#x2F;&#x2F;返回值：1表示执行成功，0代表失败</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>5、读取传递参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;读取传递参数</span><br><span class="line">@Override</span><br><span class="line">   public boolean onStartJob(JobParameters params) &#123;</span><br><span class="line">       PersistableBundle bundle &#x3D; params.getExtras();</span><br><span class="line">       String urlStr &#x3D; bundle.getString(&quot;URL&quot;);</span><br><span class="line">       String path &#x3D; bundle.getString(&quot;PATH&quot;);</span><br><span class="line">       startTask(urlStr, path);</span><br><span class="line">       return true;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>6、结束任务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jobFinished(params, false);&#x2F;&#x2F;任务完成不需要重启传false，任务此时完成还需后续重新启动传true</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="jobFinished"><a href="#jobFinished" class="headerlink" title="jobFinished"></a>jobFinished</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">builder.setBackoffCriteria(15000, BACKOFF_POLICY_LINEAR);</span><br><span class="line"></span><br><span class="line">jobFinished(param, true);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>jobFinished() Job执行完毕后，由App端自己调用，以通知JobScheduler已经完成了任务。<br>注意，该方法调用导致的Job结束并不会回调onStopJob(),只会回调onDestroy()。<br>jobFinished(JobParameters params, boolean wantsReschedule);<br>wantsReschedule:<br>fasle 任务结束后不再重复执行<br>true  任务结束后到达间隔时间重新执行onStartJob, 如果Service destory 会重新创建Service onCreate onStartJob<br>需配合setBackoffCriteria方法使用,<br>BACKOFF_POLICY_LINEAR时间线性增长，     如：15s  30s  45s  60s  current_time + initial_backoff_millis * num_failures<br>BACKOFF_POLICY_EXPONENTIAL时间指数增长，如：15s  30s  60s  120s current_time + initial_backoff_millis * 2 ^ (num_failures - 1)</p>
-<h4 id="onStartJob返回值"><a href="#onStartJob返回值" class="headerlink" title="onStartJob返回值"></a>onStartJob返回值</h4><p>false 系统会自动结束job，意味着job已完成，回调onDestory。<br>true  服务继续运行，启动子线程执行任务。</p>
-<h4 id="onStopJob返回值"><a href="#onStopJob返回值" class="headerlink" title="onStopJob返回值"></a>onStopJob返回值</h4><p>Job中止的时候回调。当JobScheduler发觉该Job条件不满足的时候，或者Job被抢占的时候强制回调该方法。<br>注：如果想让这种意外中止的Job重新开始，复写该函数返回true。 会重新执行onStartJob，如果Service destory 先创建Service。<br>注：如果手动cancelJob此处返回true也不会重新执行job</p>
-<p>Job启动后 执行onStartJob 超过十分钟没有手动stopJob 会执行onStopJob 所以任务都执行完成 执行onDestroy</p>
-<p>将作业安排为定期作业时，默认的最小运行时间为15分钟（不会在15分钟以内安排定期作业），而普通作业则没有此限制。但这并不意味着在满足条件后立即执行作业</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/01/JobService/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
     </nav>
   
 
