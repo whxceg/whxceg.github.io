@@ -16,7 +16,7 @@
 <meta property="og:description" content="SVN SVN 克隆项目1$ svn co http:&#x2F;&#x2F;xxxxxxxx  SVN 命令行add 所有未添加的文件1$ svn add . --no-ignore --force  仓库 在当前目录新建一个Git代码库1$ git init 新建一个目录，将其初始化为Git代码库1$ git init [project-name] 下载一个项目和它的整个代码历史1$ git clone [url">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-10-13T01:47:56.258Z">
+<meta property="article:modified_time" content="2023-02-10T09:13:48.533Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta name="twitter:card" content="summary">
   
@@ -292,8 +292,7 @@
 
 <h4 id="git-clean-从工作区中删除未跟踪的文件，即新建的没有提交过的文件"><a href="#git-clean-从工作区中删除未跟踪的文件，即新建的没有提交过的文件" class="headerlink" title="git clean 从工作区中删除未跟踪的文件，即新建的没有提交过的文件"></a>git clean 从工作区中删除未跟踪的文件，即新建的没有提交过的文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -id</span><br></pre></td></tr></table></figure>
 
-
-
+<h4 id="Git操作-更改历史提交-把改动追加到历史提交上"><a href="#Git操作-更改历史提交-把改动追加到历史提交上" class="headerlink" title="Git操作-更改历史提交/把改动追加到历史提交上"></a>Git操作-更改历史提交/把改动追加到历史提交上</h4><p>1.将HEAD移到需要更改的commit上一次提交<br>git rebase -i commitid<br>2.找到需要更改的commit,pick改成edit,按esc,输入wq退出。<br>3.修改文件<br>4.使用add把修改的文件添加到暂存区<br>5.使用git commit –amend 追加改动到指定的commit上<br>6.使用git rebase –continue移动HEAD到最新的commit处</p>
 
       
 
