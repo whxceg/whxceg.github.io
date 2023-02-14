@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://example.com/images/icon_jenkins_14.jpg">
 <meta property="og:image" content="http://example.com/images/icon_jenkins_14.jpg">
 <meta property="article:published_time" content="2022-07-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-09-20T00:28:52.389Z">
+<meta property="article:modified_time" content="2023-02-14T05:17:14.587Z">
 <meta property="article:author" content="有个瓜哥哥">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/icon_jenkins_01.jpg">
@@ -211,7 +211,7 @@
 <li>新建Item -&gt; 输入名称  -&gt; 选择 Freestyle project<br><img src="/images/icon_jenkins_09.jpg"><br><img src="/images/icon_jenkins_10.jpg"></li>
 <li>配置源码<br><img src="/images/icon_jenkins_13.jpg"></li>
 <li>配置构建<br><img src="/images/icon_jenkins_14.jpg"><br>配置完成后点击Build Now开始打包构建</li>
-<li>配置构建后操作<h5 id="配置Archive-the-artifacts"><a href="#配置Archive-the-artifacts" class="headerlink" title="配置Archive the artifacts"></a>配置Archive the artifacts</h5>用来存在查看编译后生成的文件<br><img src="/images/icon_jenkins_14.jpg"><br>如：*.apk<br>1905App<br>/<br>app/build/outputs/apk/<h4 id="6、配置参数"><a href="#6、配置参数" class="headerlink" title="6、配置参数"></a>6、配置参数</h4>打包时可进行参数配置：如：版本号、版本名称、release、debug等<br>参数使用<br>1、参数覆盖gradle.properties的配置<br>2、<br>clean<br>assemble${BUILD_TYPE}<br>3、shell脚本使用参数</li>
+<li>配置构建后操作<h5 id="配置Archive-the-artifacts"><a href="#配置Archive-the-artifacts" class="headerlink" title="配置Archive the artifacts"></a>配置Archive the artifacts</h5>用来存在查看编译后生成的文件<br><img src="/images/icon_jenkins_14.jpg"><br>如：*.apk<br>1905App<br>/<br>app/build/outputs/apk/<h4 id="6、配置参数"><a href="#6、配置参数" class="headerlink" title="6、配置参数"></a>6、配置参数</h4>打包时可进行参数配置：如：版本号、版本名称、release、debug等<br>参数使用<br>1、参数覆盖gradle.properties的配置<br>2、<br>clean<br>assemble${BUILD_TYPE}<br>3、shell脚本使用参数<br>注：参数配置 -PVERSION_CODE=${VERSION_CODE} -PVERSIONNAME=${VERSION_NAME}<br>示例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-PVERSION_CODE&#x3D;$&#123;VERSION_CODE&#125; -PVERSION_NAME&#x3D;$&#123;VERSION_NAME&#125; -PPACKAGE_JENKINS&#x3D;$&#123;PACKAGE_JENKINS&#125;</span><br><span class="line">clean</span><br><span class="line">assemble$&#123;BUILD_TYPE&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>配置ANDROID_HOME<br>配置gradle</p>
 <p>错误：<br>无法连接仓库的情况：Error performing git command: git ls-remote -h<br>找不到git命令<br>解决：<br>服务器安装git</p>
